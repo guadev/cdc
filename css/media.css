@@ -1,0 +1,16 @@
+@media screen and (max-width:768px) {
+  a[class="navbar-brand"]{
+    display: none;
+  }
+  nav#top-bar input.form-control{
+    display: inline-block;
+    text-align: center;
+  }
+  nav#top-bar input{
+    width: 63%
+  }
+  nav#top-bar form.search{
+    width: 80%;
+  }
+
+}
