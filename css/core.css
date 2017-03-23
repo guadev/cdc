@@ -1,5 +1,33 @@
+body{
+  font-family: 'Exo', sans-serif;
+}
+a{
+  text-decoration: none !important;
+  color: #333;
+}
+ol, ul{
+  list-style: none;
+  display: inline;
+  padding: 0 5px;
+}
+hr{
+  margin-left: 0;
+  width: 30%;
+  border-color: rgb(214, 214, 214);
+  border-width: 5px;
+  margin-top: 10px;
+  border-radius: 50px;
+}
+.inline{display: inline;}
+.block{display: block;}
+li{
+  display: inline;
+}
 .first-content{
-  margin-top: 50px;
+  margin-top: 20px;
+}
+.add-space{
+  margin-bottom: 20px;
 }
 .space-bottom{
   margin-bottom: 30px;
@@ -8,8 +36,15 @@
   -webkit-animation-delay: 1s;
   animation-delay: 1s;
 }
-.primary-color{#000}
-.secondary-color{rgb(13, 13, 13)}
+.no-padding{
+  padding: 0;
+}
+.primary-color{
+  color: #000;
+}
+.secondary-color{
+  color: #555;
+}
 .sec{
   padding: 10px 20px;
 }
@@ -29,25 +64,109 @@
   -webkit-animation-delay: .9s;
   animation-delay: .9s;
 }
+
 .delay-12s{
   -webkit-animation-delay: 1.2s;
   animation-delay: 1.2s;
 }
+hr.edukasi{border-color: aqua;}
+hr.bisnis{border-color: red}
+hr.hiburan{border-color: yellow}
+hr.komik{border-color: green;}
+hr.center-block{
+  width: 10%;
+  margin-top: -10px;
+}
 
-/*carousel*/
-.carousel-bg{
-  background: rgb(83, 108, 138);
-  padding: 10px;
+/*header*/
+header{
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 30px 50px;
+  margin-top: 20px;
+  background: #f0f0f0;
 }
-.carousel-content{
-  float: left;
-  height: 60%;
-  width: 200px;
-  border: 2px solid blue;
+.jumbotron{
+  background: #f0f0f0;
 }
-/*endofcarousel*/
+header h1{
+  font-family: 'diavlo';
+  font-size: 46px;
+  margin-bottom: 10px;
+  padding: 0;
+  padding-right: 10px;
+}
+button[name="search"]{
+  padding: 10px 55px;
+  color: #333;
+  background-color: transparent;
+  border: 2px solid rgb(165, 149, 222);
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+header select.search.form-control{
+  background-image: linear-gradient(rgb(165, 149, 222) 80%, rgb(154, 142, 162));
+  color: black;
+}
+button[name="search"]:hover{
+  color: white;
+  background: rgb(165, 149, 222);
+  border: 2px solid rgb(165, 149, 222);
+  box-shadow: 0 10px 20px -5px rgba(56, 56, 56, 0.32);
+}
+header .jumbotron p{
+  font-size: 18px;
+  line-height: 35px;
+}
+header .button{
+  padding: 3px;
+  padding-bottom: 5px;
+}
+header .button > button{
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 12px;
+}
+header input.search, header select.search.form-control{
+  margin-bottom: 5px;
+}
+header input.search{border-right: none}
+header select.search.form-control{border-left: none}
+.center-vertical{
+  padding: 75px 10px;
+}
+.carousel{
+  position: relative;
+  box-shadow: 0 50px 20px -30px rgba(43, 43, 43, 0.18);
+}
+.carousel h2{
+  margin-bottom: 4px;
+}
+/*.carousel-caption {
+  padding-bottom: 15px;
+  margin-left: -8px;
+  width: 80%;
+}*/
+.cover{
+  position: absolute;
+  left: 0;
+  z-index: 999;
+  height: 50px;
+  width: 30px;
+  background: blue;
+}
+.carousel-indicators {
+    bottom: 0;
+}
+/*header*/
 
 /*kategori*/
+section.kategori{
+  background: #fff;
+  font-size: 35px;
+  padding-bottom: 30px;
+}
 .circle{
   border-radius: 50%;
   background: url(../assets/bg.jpg);
@@ -90,7 +209,7 @@
 
 /*Navbar*/
 nav#top-bar{
-  background: url('../assets/bg.jpg');
+  background: #fff;
   background-size: cover;
   padding-left: 15px;
   padding-right: 15px;
@@ -118,9 +237,6 @@ nav#top-bar li > a:hover{
 .contact{
 	padding:1em 0 3em;
 }
-.contact-form{
-	margin-top: 2em;
-}
 .text-box input,.textarea textarea,
 .text-box select.form-control{
 	border: 2px solid #E5E5E5;
@@ -142,6 +258,7 @@ nav#top-bar li > a:hover{
 }
 .text-box select.form-control{
   height: 47px;
+  border: 2px solid #E5E5E5;
   background-image: linear-gradient(#ffe 70%, rgba(196, 196, 196,.5));
 }
 .text-box input:hover,
@@ -183,19 +300,17 @@ nav#top-bar li > a:hover{
 	background: #D34738 17px 21px;
 	border:1px solid #D34738;
 }
-section.contact > div.login{
-  padding: 10px 150px;
-}
-section.contact > div.login > .well{
-  padding: 30px 150px;
+section.contact > div.container.well.well-lg{
+  padding: 30px 100px;
 }
 /*End of signUp*/
 
 /*footer*/
 footer{
+  border-top: 1px solid rgb(173, 173, 173);
 	text-align:center;
   padding: 10px 0;
-  background: url('../assets/bg.jpg');
+  background: #fff;
   background-size: cover;
 }
 footer p{

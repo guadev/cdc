@@ -10,6 +10,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
     <link rel="stylesheet" href="css/core.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -52,83 +53,131 @@
     <!--end of nav -->
 
     <!-- header -->
-    <div class="container-fluid first-content">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="col-md-6">
-            <h1>Get the book</h1>
-            <hr>
-            <p>Cari buku yang anda inginkan dengan tingkat akurasi maksimal!</p>
-          </div>
-          <div class="col-md-6">
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-              <!-- Indicators -->
-              <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="3"></li>
-              </ol>
+    <header>
+      <div class="container">
+        <div class="jumbotron">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="col-md-12">
+                <h1 class="inline">Get the book</h1>
+                <div class="inline button">
+                  <button type="button" class="btn btn-danger" name="button">Hot</button>
+                  <button type="button" class="btn btn-primary" name="button">New</button>
+                  <button type="button" class="btn btn-success" name="button">Jas</button>
+                  <button type="button" class="btn btn-warning" name="button">asas</button>
+                </div>
+                <hr>
+              </div>
+              <div class="col-md-8 first-content add-space secondary-color">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum molestias consequatur, facere libero doloremque ullam numquam et dignissimos quisquam in.</p>
+              </div>
+              <div class="col-md-6">
+                <p class="secondary-color" >Cari buku yang anda inginkan dengan tingkat akurasi maksimal!</p>
+                <div class="col-md-8 text-box no-padding">
+                  <input class="search" type="text" name="search" placeholder="cari keyword" value="">
+                  <small class="inline">Pencarian populer : </small>
+                  <ul class="">
+                    <li><a href="#"><small class="inline text-primary">uin</small></a></li>
+                    <li><a href="#"><small class="inline text-warning">maulana</small></a></li>
+                    <li><a href="#"><small class="inline text-danger">malik</small></a></li>
+                    <li><a href="#"><small class="inline text-success">ibrahim</small></a></li>
+                  </ul>
+                </div>
+                <div class="col-md-3 text-box no-padding">
+                  <form class="">
+                    <select class="search form-control" name="">
+                      <option value="Kategori">Kategori</option>
+                      <option value="edukasi">Edukasi</option>
+                      <option value="bisnis">Bisnis</option>
+                      <option value="hiburan">Hiburan</option>
+                      <option value="komik">Komik</option>
+                    </select>
+                  </form>
+                </div>
+                <div class="col-md-12 no-padding first-content">
+                  <button class="btn btn-lg btn-primary" type="button" name="search">Cari!</button>
+                </div>
+              </div>
+              <div class="col-md-6 no-padding">
+                <div class="carousel">
+                  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                      <li data-target="#myCarousel" data-slide-to="1"></li>
+                      <li data-target="#myCarousel" data-slide-to="2"></li>
+                      <li data-target="#myCarousel" data-slide-to="3"></li>
+                    </ol>
 
-              <!-- Wrapper for slides -->
-              <div class="carousel-inner" role="listbox">
-                <div class="item active carousel-bg">
-                  <div class="carousel-content">
-                    <img src="bg.jpg" alt="">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, corporis.</p>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                      <div class="item active">
+                        <img src="bg.jpg" alt="">
+                        <div class="carousel-caption">
+                          <small>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dolor hic molestias, repudiandae fugiat nihil consequatur ratione eveniet! Ipsa, voluptatem.</small>
+                        </div>
+                      </div>
+
+                      <div class="item">
+                        <img src="bg.jpg" alt="">
+                        <div class="carousel-caption">
+                          <small>"Lorem ipsum.""</small>
+                        </div>
+                      </div>
+
+                      <div class="item">
+                        <img src="bg.jpg" alt="">
+                        <div class="carousel-caption">
+                          <small>"Lorem ipsum. quote"</small>
+                        </div>
+                      </div>
+
+                      <div class="item">
+                        <img src="bg.jpg" alt="">
+                        <div class="carousel-caption">
+                          <small>"Lorem ipsum.qutoeteot"</small>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <!-- <div class="carousel-caption">
-                    <h1>Tobangado</h1>
-                  </div> -->
-                </div>
-
-                <div class="item carousel-bg">
-
-                </div>
-
-                <div class="item carousel-bg">
-
-                </div>
-
-                <div class="item carousel-bg">
-
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </header>
     <!-- end ofheader -->
 
     <!-- category -->
-    <section class="container-fluid sec">
+    <section class="container-fluid sec kategori">
       <div class="row">
         <div class="col-md-12">
           <h3 class="text-center first-content space-bottom">Kategori</h3>
+          <hr class="center-block">
         </div>
         <div class="col-md-2 col-md-offset-2">
           <div class="category wow animated fadeInUp">
             <div class="center-block circle"></div>
-            <h6 class="text-center">Bisnis dan Ekonomi</h6>
+            <h5 class="text-center">Bisnis dan Ekonomi</h5>
           </div>
         </div>
         <div class="col-md-2">
           <div class="category wow animated fadeInUp delay-3s">
             <div class="center-block circle"></div>
-            <h6 class="text-center">Hiburan</h6>
+            <h5 class="text-center">Hiburan</h5>
           </div>
         </div>
         <div class="col-md-2">
           <div class="category wow animated fadeInUp delay-5s">
             <div class="center-block circle"></div>
-            <h6 class="text-center">Komik</h6>
+            <h5 class="text-center">Komik</h5>
           </div>
         </div>
         <div class="col-md-2">
           <div class="category wow animated fadeInUp delay-7s">
             <div class="center-block circle"></div>
-            <h6 class="text-center">Edukasi</h6>
+            <h5 class="text-center">Edukasi</h5>
           </div>
         </div>
       </div>
@@ -137,8 +186,10 @@
 
     <!-- section 1 -->
     <section class="container-fluid sec">
-      <div class="row">
-        <h3 class="text-center"><i class="fa fa-pencil"></i>Bisnis dan ekonomi</h3>
+      <h3 class=""><i class="fa fa-pencil"></i> Bisnis dan ekonomi</h3>
+      <hr class="bisnis">
+      <div class="well">
+        <div class="row">
         <div class="scroller">
           <div class="col-md-12">
             <div class="col-md-2">
@@ -217,14 +268,17 @@
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
     <!-- endofsection 1 -->
 
     <!-- section 2 -->
     <section class="container-fluid sec">
-      <div class="row">
-        <h3 class="text-center"><i class="fa fa-rocket"></i>Buku hiburan favorit</h3>
+      <h3><i class="fa fa-rocket"></i> Buku hiburan favorit</h3>
+      <hr class="hiburan">
+      <div class="well">
+        <div class="row">
         <div class="scroller">
           <div class="col-md-12">
             <div class="col-md-2">
@@ -303,14 +357,17 @@
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
     <!-- endofsection 2 -->
 
     <!-- section 3 -->
     <section class="container-fluid sec">
-      <div class="row">
-        <h3 class="text-center"><i class="fa fa-headphones"></i>Komik</h3>
+      <h3><i class="fa fa-headphones"></i> Komik</h3>
+      <hr class="komik">
+      <div class="well">
+        <div class="row">
         <div class="scroller">
           <div class="col-md-12">
             <div class="col-md-2">
@@ -390,13 +447,16 @@
           </div>
         </div>
       </div>
+      </div>
     </section>
     <!-- endofsection 3 -->
 
     <!-- section 4 -->
     <section class="container-fluid sec">
-      <div class="row">
-        <h3 class="text-center"><i class="fa fa-book"></i>Edukasi</h3>
+      <h3><i class="fa fa-book"></i> Edukasi</h3>
+      <hr class="edukasi">
+      <div class="well">
+        <div class="row">
         <div class="scroller">
           <div class="col-md-12">
             <div class="col-md-2">
@@ -475,6 +535,7 @@
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
     <!-- endofsection 4 -->
