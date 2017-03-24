@@ -43,9 +43,11 @@ li{
   color: #000;
 }
 .secondary-color{
-  color: #555;
+  color: #999;
 }
 .sec{
+  border-top-right-radius: 160px;
+  background: #ffeaee;
   padding: 10px 20px;
 }
 .delay-3s{
@@ -84,10 +86,14 @@ header{
   height: 100vh;
   padding: 30px 50px;
   margin-top: 20px;
-  background: #f0f0f0;
+  background: url('../bg2.jpg') ;
+  background-size: cover;
 }
 .jumbotron{
-  background: #f0f0f0;
+  border-radius: 20px !important;
+  margin-top: 15px;
+  background: rgba(255,255,255,.7);
+  box-shadow: 0 5px 20px 10px rgba(45, 45, 45, 0.2);
 }
 header h1{
   font-family: 'diavlo';
@@ -105,10 +111,6 @@ button[name="search"]{
   -o-transition: .3s;
   transition: .3s;
 }
-header select.search.form-control{
-  background-image: linear-gradient(rgb(165, 149, 222) 80%, rgb(154, 142, 162));
-  color: black;
-}
 button[name="search"]:hover{
   color: white;
   background: rgb(165, 149, 222);
@@ -119,9 +121,10 @@ header .jumbotron p{
   font-size: 18px;
   line-height: 35px;
 }
-header .button{
+header div.inline.button{
   padding: 3px;
   padding-bottom: 5px;
+  margin-bottom: 10px;
 }
 header .button > button{
   padding-top: 3px;
@@ -143,11 +146,11 @@ header select.search.form-control{border-left: none}
 .carousel h2{
   margin-bottom: 4px;
 }
-/*.carousel-caption {
-  padding-bottom: 15px;
-  margin-left: -8px;
-  width: 80%;
-}*/
+.carousel-caption {
+  padding-bottom: 60px;
+  /*margin-left: -8px;*/
+  /*width: 80%;*/
+}
 .cover{
   position: absolute;
   left: 0;
@@ -158,6 +161,9 @@ header select.search.form-control{border-left: none}
 }
 .carousel-indicators {
     bottom: 0;
+}
+header .text-box{
+  margin-top: 5px;
 }
 /*header*/
 
@@ -201,9 +207,8 @@ section.kategori{
 }
 .box img{
   height: 100%;
-  width: auto;
-  display: inline-block;
-  margin-right: 10px;
+  display: block;
+  margin: 0 auto;
 }
 /*endsectionobjekt*/
 
@@ -214,9 +219,9 @@ nav#top-bar{
   padding-left: 15px;
   padding-right: 15px;
 }
-nav#top-bar .search{
-  padding-left: 190px;
-}
+/*nav#top-bar .search{
+  padding-left: 120px;
+}*/
 nav#top-bar input{
   width: 700px;
 }
