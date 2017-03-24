@@ -46,9 +46,9 @@ li{
   color: #999;
 }
 .sec{
-  border-top-right-radius: 160px;
   background: #ffeaee;
   padding: 10px 20px;
+  border-radius: 20px;
 }
 .delay-3s{
   -webkit-animation-delay: .3s;
@@ -86,7 +86,7 @@ header{
   height: 100vh;
   padding: 30px 50px;
   margin-top: 20px;
-  background: url('../bg2.jpg') ;
+  background: url('../assets/bg2.jpg') ;
   background-size: cover;
 }
 .jumbotron{
@@ -148,8 +148,6 @@ header select.search.form-control{border-left: none}
 }
 .carousel-caption {
   padding-bottom: 60px;
-  /*margin-left: -8px;*/
-  /*width: 80%;*/
 }
 .cover{
   position: absolute;
@@ -204,6 +202,15 @@ section.kategori{
   width: 125px;
   position: relative;
   margin-bottom: 40px;
+}
+section div.well{
+  border-radius: 10px;
+  border: none;
+  padding-bottom: 0;
+}
+section.content{
+  margin-bottom: 50px;
+  box-shadow: 0 65px 20px -50px rgba(45, 45, 45, 0.2);
 }
 .box img{
   height: 100%;
