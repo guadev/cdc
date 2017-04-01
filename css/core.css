@@ -1,5 +1,18 @@
 body{
   font-family: 'Exo', sans-serif;
+  font-size: 15px;
+}
+h1{
+  font-size: 4em;
+}
+h2{
+  font-size: 3em;
+}
+h3{
+  font-size: 2.7em;
+}
+p{
+  font-size: 1.3em;
 }
 a{
   text-decoration: none !important;
@@ -17,6 +30,9 @@ hr{
   border-width: 5px;
   margin-top: 10px;
   border-radius: 50px;
+}
+.deskrip{
+  font-size: 1em;
 }
 .inline{display: inline;}
 .block{display: block;}
@@ -39,14 +55,24 @@ li{
 .no-padding{
   padding: 0;
 }
+.no-margin{
+  margin: 0;
+  margin-bottom: 5px;
+}
 .primary-color{
   color: #000;
 }
 .secondary-color{
-  color: #999;
+  color: #666;
+}
+.primary-colorwhite{
+  color: #fff;
+}
+.secondary-colorwhite{
+  color: #ddd;
 }
 .sec{
-  background: #ffeaee;
+  background: #fff;
   padding: 10px 20px;
   border-radius: 20px;
 }
@@ -84,32 +110,66 @@ hr.center-block{
 header{
   box-sizing: border-box;
   height: 100vh;
-  padding: 30px 50px;
-  margin-top: 20px;
-  background: url('../assets/bg2.jpg') ;
-  background-size: cover;
+  width: auto;
+  padding: 0;
+  position: relative;
 }
-.jumbotron{
-  border-radius: 20px !important;
-  margin-top: 15px;
-  background: rgba(255,255,255,.7);
-  box-shadow: 0 5px 20px 10px rgba(45, 45, 45, 0.2);
+.cover{
+  position: relative;
+  color: white;
+  height: 100%;
+  padding: 30px 50px;
+  background: rgba(12, 10, 27, 0.69);
 }
 header h1{
+  text-shadow: 0 3px 3px rgba(0, 0, 0, 1);
   font-family: 'diavlo';
-  font-size: 46px;
   margin-bottom: 10px;
   padding: 0;
   padding-right: 10px;
+  margin-top: 50px;
+}
+header p{
+  line-height: 25px;
+}
+header div.inline.button{ //tombol hot, new
+  padding: 0;
+  border-radius: 0.3em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+header .button > button{
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: .8em;
+}
+.cover input[class="search"]{
+  border-color: rgb(165, 149, 222);
+  border-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+  height: 50px;
 }
 button[name="search"]{
-  padding: 10px 55px;
   color: #333;
+  height: 50px;
+  line-height: 50px;
   background-color: transparent;
   border: 2px solid rgb(165, 149, 222);
   -webkit-transition: .3s;
   -o-transition: .3s;
   transition: .3s;
+  width: 100%;
+  padding: 0px;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  color: white;
+}
+button[name="search"] p{
+  margin: 0 auto;
 }
 button[name="search"]:hover{
   color: white;
@@ -117,122 +177,176 @@ button[name="search"]:hover{
   border: 2px solid rgb(165, 149, 222);
   box-shadow: 0 10px 20px -5px rgba(56, 56, 56, 0.32);
 }
-header .jumbotron p{
-  font-size: 18px;
-  line-height: 35px;
+
+hr.hrcenter{
+  margin: 0 auto;
+  opacity: .8;
+  margin-top: 20px;
+  border-width: 5px;
+  border-radius: 30%;
 }
-header div.inline.button{
-  padding: 3px;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-}
-header .button > button{
-  padding-top: 3px;
-  padding-bottom: 3px;
-  font-size: 12px;
-}
-header input.search, header select.search.form-control{
-  margin-bottom: 5px;
-}
-header input.search{border-right: none}
-header select.search.form-control{border-left: none}
-.center-vertical{
-  padding: 75px 10px;
-}
-.carousel{
-  position: relative;
-  box-shadow: 0 50px 20px -30px rgba(43, 43, 43, 0.18);
-}
-.carousel h2{
-  margin-bottom: 4px;
-}
-.carousel-caption {
-  padding-bottom: 60px;
-}
-.cover{
+.headerfooter{
+  font-family: 'Montserrat';
+  color: #aaa;
   position: absolute;
-  left: 0;
-  z-index: 999;
-  height: 50px;
-  width: 30px;
-  background: blue;
-}
-.carousel-indicators {
-    bottom: 0;
-}
-header .text-box{
-  margin-top: 5px;
+  bottom: 10px;
+  left: 5px;
 }
 /*header*/
 
-/*kategori*/
-section.kategori{
-  background: #fff;
-  font-size: 35px;
-  padding-bottom: 30px;
+.sosmed img{
+  height: 30px;
+  width: auto;
+  margin: 0 5px;
 }
-.circle{
-  border-radius: 50%;
-  background: url(../assets/bg.jpg);
-  height: 100px;
-  width: 100px;
-  border: 6px solid white;
-  box-shadow: 0 2px 5px rgba(75, 75, 75, 0.51);
+.headerfooter .sosmed img{
+  -webkit-filter: grayscale(1) opacity(.4);
+  -o-filter: grayscale(1) opacity(.4);
+  filter: grayscale(1) opacity(.4);
   -webkit-transition: .3s;
   -o-transition: .3s;
   transition: .3s;
-  position: relative;
 }
-.category:hover .circle{
-  -webkit-transform: translateY(-10px);
-  -ms-transform: translateY(-10px);
-  transform: translateY(-10px);
-  box-shadow: 0px 20px 5px -10px rgba(75, 75, 75, 0.2);
+.headerfooter .sosmed img:hover{
+  -webkit-filter: grayscale(0) opacity(1);
+  -o-filter: grayscale(0) opacity(1);
+  filter: grayscale(0) opacity(1);
 }
-/*endkategori*/
 
-/*sectionobjek*/
-.scroller{
-  padding: 10px 0;
-  overflow-x: auto;
-  overflow-y: hidden;
+/*offer*/
+.offer{
+  background:#333566;
+  padding: 20px;
 }
-.box{
-  height: 125px;
-  width: 125px;
-  position: relative;
-  margin-bottom: 40px;
+.offer h4{
+  font-size: 2em;
+  color: white;
 }
-section div.well{
-  border-radius: 10px;
-  border: none;
-  padding-bottom: 0;
+.offer small{
+  font-size: 1em;
+  color: #ddd;
 }
-section.content{
-  margin-bottom: 50px;
-  box-shadow: 0 65px 20px -50px rgba(45, 45, 45, 0.2);
+.offer button.btn.btn-lg.btn-default.pull-right{
+  margin-left: 10px;
+  margin-top: 10px;
+  transition: .3s;
 }
-.box img{
-  height: 100%;
-  display: block;
-  margin: 0 auto;
+.offer button.btn.btn-lg.btn-default.pull-right:hover{
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
 }
-/*endsectionobjekt*/
+
+/*promoted*/
+.panelkiri{
+  border-right: 2px solid rgb(152, 162, 254);
+  padding-right: 25px;
+}
+.media-object{
+  width: 100px;
+  height: auto;
+  max-height: 130px;
+  overflow: hidden;
+}
+.promoted a .media{
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+.promoted a:hover .media{
+  background: #ddd;
+}
+.promoted .media{
+  padding-left: 10px;
+  padding-top: 15px;
+}
+.promoted .media-object{
+  width: 70px;
+  max-height: 90px;
+}
+.garisbawah{
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+.promoted{
+  margin-top: 50px;
+}
+.promoted h2,
+div.kategori h2{
+  font-size: 1.5em}
+.promoted h4.media-heading{
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+.promoted small{
+  display: inline-block;
+  margin-top: -5px;
+  font-size: .7em;
+  color: #999;
+  margin-bottom: 8px;
+}
+.promoted p{
+  font-size: .9em;
+  color: #555;
+}
+
+/*featured*/
+.featured{
+  padding-left: 10px;
+}
+.featured div.nav.nav-tabs li{
+  margin-right: 20px;
+}
+.featured h2{
+  font-size: 1.6em;
+}
+.featured h2.garisbawah{
+  padding-bottom: 5px;
+  border-bottom: 2px solid rgb(119, 143, 244);
+}
+.featured h4.media-heading{
+  font-size: 1.6em;
+  margin-bottom: 0;
+}
+.featured small{
+  display: inline-block;
+  margin-top: -5px;
+  font-size: .9em;
+  color: #999;
+  margin-bottom: 10px;
+}
+.featured p{
+  font-size: 1em;
+  color: #555;
+}
+.navbody{
+
+  height: 3em;
+  line-height: 3em;
+}
+.navbody button{
+  margin: 0 5px;
+  float: right;
+}
+
+/*kategori*/
+div.kategori{
+  margin-top: 20px;
+}
 
 /*Navbar*/
 nav#top-bar{
-  background: #fff;
+  background: transparent;
   background-size: cover;
   padding-left: 15px;
   padding-right: 15px;
 }
-/*nav#top-bar .search{
-  padding-left: 120px;
-}*/
+nav.navbar-static-top{
+  margin-bottom: 0 !important;
+}
 nav#top-bar input{
   width: 700px;
 }
 nav#top-bar li > a{
+  font-size:
   -webkit-transition: .3s ease-in-out;
   -o-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
@@ -241,7 +355,7 @@ nav#top-bar li > a:hover{
   background-color: rgba(200, 200, 200, 0.1);
   padding-left: 20px;
   padding-right: 20px;
-  color: #eee;
+  color: #000;
 }
 /*Endnavbar*/
 
@@ -297,6 +411,7 @@ nav#top-bar li > a:hover{
 	padding: 0.8em 0 1em;
 }
 .btn-red-lg{
+  color: white !important;
 	background: #E74C3C 17px 21px;
 	border: 1px solid #E74C3C;
 	transition: 0.5s all;
@@ -308,37 +423,121 @@ nav#top-bar li > a:hover{
 	margin: 0 auto;
 	display: inherit;
 }
-.btn-red-lg:hover,.btn-red-lg:focus{
+.btn-red-lg:hover,
+.btn-red-lg:focus{
 	background: #D34738 17px 21px;
-	border:1px solid #D34738;
 }
 section.contact > div.container.well.well-lg{
   padding: 30px 100px;
 }
+section.contact .deskrip{
+  font-size: 9px;
+  color: #999;
+}
+section.contact input{
+  margin-bottom: 10px;
+}
+.input1::before{
+  content: "\f007";
+}
+.input2::before{
+  content: "\f023";
+}
+section.contact .login{
+  position: relative;
+  top: 100px;
+  width: 400px;
+  padding: 30px;
+  padding-top: 70px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.5);
+}
+.icon{
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  padding:  33px 25px;
+  position: absolute;
+  left: 50%;
+  margin-left: -75px;
+  top: -50px;
+}
+
 /*End of signUp*/
 
 /*footer*/
 footer{
-  border-top: 1px solid rgb(173, 173, 173);
-	text-align:center;
-  padding: 10px 0;
-  background: #fff;
-  background-size: cover;
+  margin-top: 150px;
+}
+footer h2{
+  font-size: 1.2em;
+  color: #eee;
 }
 footer p{
 	color: #858585;
-	font-size: 0.96em;
+	font-size: 0.9em;
 	line-height: 1.5em;
 	text-align: center;
 }
-footer span,footer a{
-	color:#E74C3C;
-}
 footer a{
-	margin:0 0.2em;
-	text-decoration:none;
+  line-height: 1.5em;
 }
-footer a:hover{
-	color: #858585;
+footer h4.text-center.text-muted{
+  position: relative;
+  top:-110px;
+}
+.dark{
+  background: #212247;
+  padding: 20px 0;
+}
+.darklight{
+  background:#333566;
+}
+.fade-up{
+  margin-top: -100px;
+  margin-bottom:30px;
+}
+.spec{
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  border: 2px solid pink;
+  line-height: 140px;
+  background: #eee;
+  border: 8px solid white;
+}
+.help{
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: #333566;
+  color: #ccc;
+  border-radius: 3px;
+  line-height: 50px;
+  box-shadow: 0 4px 5px rgba(1, 1, 1, 0.5);
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+.help:hover{
+  color: #eee;
+  box-shadow: 0 3px 2px rgba(1, 1, 1, 0.3);
+}
+footer .about{
+  padding-top: 10px
+}
+footer .about a{
+  color: #eee;
+  line-height:30px;
+}
+footer .about a{
+  color: #ddd;
+}
+#logo{
+  padding: 40px;
+}
+footer img.guadev{
+  height: 100px;
+  width: auto;
 }
 /*endoffooter*/

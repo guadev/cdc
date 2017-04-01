@@ -22,7 +22,7 @@
   </head>
   <body>
     <!-- nav -->
-    <nav id="top-bar" class="navbar navbar-default navbar-fixed-top">
+    <nav id="top-bar" class="navbar navbar-default navbar-fixed-top" data-nav-status="toggle">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -53,92 +53,46 @@
     <!--end of nav -->
 
     <!-- header -->
-    <header>
-      <div class="container">
-        <div class="jumbotron">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="col-md-12 text-center add-space">
-                <h1 class="inline">Get the book</h1>
-                <p class="first-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum molestias consequatur, facere libero doloremque ullam numquam et dignissimos quisquam in.</p>
+    <header  class="parallax-window" data-parallax="scroll" data-speed="0.3" data-image-src="pexels-photo-110252.jpeg">
+      <div class="cover">
+        <div class="container first-content">
+          <div class="row first-content">
+            <div class="col-md-12 text-center first-content add-space no-padding">
+              <h1>GEDEBUK</h1>
+              <div class="secondary-colorwhite">
+                <p class="first-content">Lorem ipsum dolor sit amet, djsdnejnd ejsubd jues bjst dignissimos quisquam in.</p>
+                <p>Derah malang dan sekitarnya</p>
               </div>
-              <div class="col-md-6 first-content">
-                <p class="secondary-color" >Cari buku yang anda inginkan dengan tingkat akurasi maksimal!</p>
-                <div class="inline button">
-                  <button type="button" class="btn btn-danger" name="button">Hot</button>
-                  <button type="button" class="btn btn-primary" name="button">New</button>
-                  <button type="button" class="btn btn-success" name="button">Jas</button>
-                  <button type="button" class="btn btn-warning" name="button">asas</button>
-                </div>
-                <div class="col-md-8 text-box no-padding">
-                  <input class="search" type="text" name="search" placeholder="cari keyword" value="">
-                  <small class="inline secondary-color">Pencarian populer : </small>
-                  <ul class="">
-                    <li><a href="#"><small class="inline text-primary">uin</small></a></li>
-                    <li><a href="#"><small class="inline text-warning">maulana</small></a></li>
-                    <li><a href="#"><small class="inline text-danger">malik</small></a></li>
-                    <li><a href="#"><small class="inline text-success">ibrahim</small></a></li>
-                  </ul>
-                </div>
-                <div class="col-md-3 text-box no-padding">
-                  <form class="">
-                    <select class="search form-control" name="">
-                      <option value="Kategori">Kategori</option>
-                      <option value="edukasi">Edukasi</option>
-                      <option value="bisnis">Bisnis</option>
-                      <option value="hiburan">Hiburan</option>
-                      <option value="komik">Komik</option>
-                    </select>
-                  </form>
-                </div>
-                <div class="col-md-12 no-padding first-content">
-                  <button class="btn btn-lg btn-primary" type="button" name="search">Cari!</button>
-                </div>
-              </div>
-              <div class="col-md-6 no-padding first-content">
-                <div class="carousel">
-                  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                      <li data-target="#myCarousel" data-slide-to="1"></li>
-                      <li data-target="#myCarousel" data-slide-to="2"></li>
-                      <li data-target="#myCarousel" data-slide-to="3"></li>
-                    </ol>
-
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
-                      <div class="item active">
-                        <img src="assets/bg.jpg" alt="">
-                        <div class="carousel-caption">
-                          <small>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dolor hic molestias, repudiandae fugiat nihil consequatur ratione eveniet! Ipsa, voluptatem.</small>
-                        </div>
-                      </div>
-
-                      <div class="item">
-                        <img src="assets/bg.jpg" alt="">
-                        <div class="carousel-caption">
-                          <small>"Lorem ipsum.""</small>
-                        </div>
-                      </div>
-
-                      <div class="item">
-                        <img src="assets/bg.jpg" alt="">
-                        <div class="carousel-caption">
-                          <small>"Lorem ipsum. quote"</small>
-                        </div>
-                      </div>
-
-                      <div class="item">
-                        <img src="assets/bg.jpg" alt="">
-                        <div class="carousel-caption">
-                          <small>"Lorem ipsum.qutoeteot"</small>
-                        </div>
-                      </div>
-                    </div>
+              <div class="col-md-offset-3 col-md-6">
+                <div class="secondary-colorwhite first-content">
+                  <div class="col-md-12 inline button no-padding">
+                    <button type="button" class="btn btn-danger" name="button">Hot</button>
+                    <button type="button" class="btn btn-primary" name="button">New</button>
+                    <button type="button" class="btn btn-success" name="button">Jas</button>
+                    <button type="button" class="btn btn-warning" name="button">asas</button>
+                  </div>
+                  <div class="col-md-10 text-box no-padding no-margin">
+                    <input class="search" type="text" name="search" placeholder="cari keyword" value="">
+                  </div>
+                  <div class="col-md-2 text-box no-padding no-margin">
+                    <button class="btn btn-lg btn-primary no-margin" type="button" name="search"><p><i class="fa fa-search"></i></p></button>
+                  </div>
+                  <div class="col-md-12">
+                    <p class="inline secondary-colorwhite deskrip">Pencarian populer : </p>
+                    <ul class="">
+                      <li><a href="#"><p class="inline text-primary deskrip">uin</p></a></li>
+                      <li><a href="#"><p class="inline text-warning deskrip">maulana</p></a></li>
+                      <li><a href="#"><p class="inline text-danger deskrip">malik</p></a></li>
+                      <li><a href="#"><p class="inline text-success deskrip">ibrahim</p></a></li>
+                    </ul>
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="headerfooter">
+              <a class="sosmed" href="https://www.facebook.com/gedebuk"><img src="assets\fb.png" alt="Share to Facebook"></a>
+              <a class="sosmed" href="https://instagram.com/gedebuk"><img src="assets\ig.png" alt="Share to Instagram"></a>
+              <a class="sosmed" href="https://twitter.com/gedebuk"><img src="assets\tw.png" alt="Share to Twiter"></a>
             </div>
           </div>
         </div>
@@ -146,409 +100,328 @@
     </header>
     <!-- end ofheader -->
 
-    <!-- category -->
-    <section class="container sec kategori">
-      <div class="row">
-        <div class="col-md-12">
-          <h3 class="text-center first-content space-bottom">Kategori</h3>
-          <hr class="center-block">
-        </div>
-        <div class="col-md-2 col-md-offset-2">
-          <div class="category wow animated fadeInUp">
-            <div class="center-block circle"></div>
-            <h5 class="text-center">Bisnis dan Ekonomi</h5>
+    <section class="offer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <h4>Punya buku tapi tidak terpakai/hiasan rak?</h4>
+            <small>Lorem ipsum dolor sit.</small>
           </div>
-        </div>
-        <div class="col-md-2">
-          <div class="category wow animated fadeInUp delay-3s">
-            <div class="center-block circle"></div>
-            <h5 class="text-center">Hiburan</h5>
-          </div>
-        </div>
-        <div class="col-md-2">
-          <div class="category wow animated fadeInUp delay-5s">
-            <div class="center-block circle"></div>
-            <h5 class="text-center">Komik</h5>
-          </div>
-        </div>
-        <div class="col-md-2">
-          <div class="category wow animated fadeInUp delay-7s">
-            <div class="center-block circle"></div>
-            <h5 class="text-center">Edukasi</h5>
+          <div class="col-md-3 text-center">
+            <button type="submit" class="btn btn-lg btn-default pull-right">Pinjemin aja!</button>
           </div>
         </div>
       </div>
     </section>
-    <!--  edn of category -->
 
-    <!-- section 1 -->
-    <section class="first-content container sec content">
-      <h3 class=""><i class="fa fa-pencil"></i> Bisnis dan ekonomi</h3>
-      <hr class="bisnis">
-      <div class="well">
+    <!-- category -->
+    <section class="sec">
+      <div class="container">
         <div class="row">
-        <div class="scroller">
-          <div class="col-md-12">
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn">
-                <a href="#">
-                  <img src="GUAdev.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                  <h5 class="text-center">Judul buku</h5>
+          <div class="col-md-4 panelkiri">
+            <div class="kategori add-space">
+              <h2 class="garisbawah">Kategori</h2>
+              <div class="list-group">
+                <a href="#" class="list-group-item">
+                  <i class="fa fa-book fa-fw"></i> Edukasi
+                </a>
+                <a href="#" class="list-group-item">
+                  <i class="fa fa-money fa-fw"></i> Bisnis
+                </a>
+                <a href="#" class="list-group-item">
+                  <i class="fa fa-fire fa-fw"></i> Komik
+                </a>
+                <a href="#" class="list-group-item">
+                  <i class="fa fa-book fa-fw"></i> Bacaan sehari-hari
                 </a>
               </div>
             </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-3s">
-                <img src="main color.png" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-5s">
-                <img src="assets/bg2.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-7s">
-                <img src="assets/bg2.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-9s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-12s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
+            <div class="promoted first-content">
+              <h2 class="garisbawah">Promoted Books</h2>
+              <a href="#">
+                <div class="media ">
+                  <div class="media-left">
+                      <img class="media-object" src="assets/coverbuku.jpg" alt="Judul Buku">
+                  </div>
+                  <div class="media-body garisbawah">
+                    <h4 class="media-heading">Ini judul buku</h4>
+                    <small>oleh WR. Supratman</small>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, reiciendis?</p>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="media ">
+                  <div class="media-left">
+                      <img class="media-object" src="assets/coverbuku.jpg" alt="Judul Buku">
+                  </div>
+                  <div class="media-body garisbawah">
+                    <h4 class="media-heading">Ini judul buku</h4>
+                    <small>oleh WR. Supratman</small>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, reiciendis?</p>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="media ">
+                  <div class="media-left">
+                      <img class="media-object" src="assets/coverbuku.jpg" alt="Judul Buku">
+                  </div>
+                  <div class="media-body garisbawah">
+                    <h4 class="media-heading">Ini judul buku</h4>
+                    <small>oleh WR. Supratman</small>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, reiciendis?</p>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="media ">
+                  <div class="media-left">
+                      <img class="media-object" src="assets/coverbuku.jpg" alt="Judul Buku">
+                  </div>
+                  <div class="media-body garisbawah">
+                    <h4 class="media-heading">Ini judul buku</h4>
+                    <small>oleh WR. Supratman</small>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, reiciendis?</p>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="media ">
+                  <div class="media-left">
+                    <img class="media-object" src="assets/coverbuku.jpg" alt="Judul Buku">
+                  </div>
+                  <div class="media-body garisbawah">
+                    <h4 class="media-heading">Ini judul buku</h4>
+                    <small>oleh WR. Supratman</small>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, reiciendis?</p>
+                  </div>
+                </div>
+              </a>
+              <a href=""><small class="first-content text-primary"><i class="fa fa-tasks"></i> Bagaimana agar buku dipromosikan?</small></a>
             </div>
           </div>
-          <div class="col-md-12 first-content">
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
+          <div class="col-md-8">
+            <div class="featured">
+              <ul class="nav nav-pills">
+                <li role="presentation" class="active"><a class="garisbawah">Buku Populer</a></li>
+                <li role="presentation" ><a class="garisbawah">Buku baru</a></li>
+                <li role="presentation" ><a class="garisbawah">Buku terlaris</a></li>
+              </ul>
+              <div class="media ">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object" src="assets/coverbuku.jpg" alt="Judul Buku">
+                  </a>
+                </div>
+                <div class="media-body garisbawah">
+                  <a href="#"><h4 class="media-heading">Ini judul buku</h4></a>
+                  <small>oleh WR. Supratman</small>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam blanditiis neque sit necessitatibus architecto iusto voluptates ex optio, quia, ipsam cupiditate esse maiores vero dolore.</p>
+                  <div class="navbody">
+                    <div class="col-md-6">
+                      <small class="inline">Share : </small>
+                      <a class="sosmed" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="assets\fb.png" alt="Share to Facebook"></a>
+                      <a class="sosmed" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="assets\wa.png" alt="Share to Instagram"></a>
+                      <a class="sosmed" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="assets\tw.png" alt="Share to Twiter"></a>
+                    </div>
+                    <div class="col-md-6">
+                      <a href="#"><button type="button" class="btn btn-primary" name="button">Sewa</button></a>
+                      <a href="#"><button type="button" class="btn btn-danger" name="button">Beli</button></a>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-3s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
+              <div class="media ">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object" src="assets/coverbuku.jpg" alt="Judul Buku">
+                  </a>
+                </div>
+                <div class="media-body garisbawah">
+                  <a href="#"><h4 class="media-heading">Ini judul buku</h4></a>
+                  <small>oleh WR. Supratman</small>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam blanditiis neque sit necessitatibus architecto iusto voluptates ex optio, quia, ipsam cupiditate esse maiores vero dolore.</p>
+                  <div class="navbody">
+                    <div class="col-md-6">
+                      <small class="inline">Share : </small>
+                      <a class="sosmed" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="assets\fb.png" alt="Share to Facebook"></a>
+                      <a class="sosmed" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="assets\wa.png" alt="Share to Instagram"></a>
+                      <a class="sosmed" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="assets\tw.png" alt="Share to Twiter"></a>
+                    </div>
+                    <div class="col-md-6">
+                      <a href="#"><button type="button" class="btn btn-primary" name="button">Sewa</button></a>
+                      <a href="#"><button type="button" class="btn btn-danger" name="button">Beli</button></a>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-5s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
+              <div class="media ">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object" src="assets/coverbuku.jpg" alt="Judul Buku">
+                  </a>
+                </div>
+                <div class="media-body garisbawah">
+                  <a href="#"><h4 class="media-heading">Ini judul buku</h4></a>
+                  <small>oleh WR. Supratman</small>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam blanditiis neque sit necessitatibus architecto iusto voluptates ex optio, quia, ipsam cupiditate esse maiores vero dolore.</p>
+                  <div class="navbody">
+                    <div class="col-md-6">
+                      <small class="inline">Share : </small>
+                      <a class="sosmed" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="assets\fb.png" alt="Share to Facebook"></a>
+                      <a class="sosmed" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="assets\wa.png" alt="Share to Instagram"></a>
+                      <a class="sosmed" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="assets\tw.png" alt="Share to Twiter"></a>
+                    </div>
+                    <div class="col-md-6">
+                      <a href="#"><button type="button" class="btn btn-primary" name="button">Sewa</button></a>
+                      <a href="#"><button type="button" class="btn btn-danger" name="button">Beli</button></a>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-7s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
+              <div class="media ">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object" src="assets/coverbuku.jpg" alt="Judul Buku">
+                  </a>
+                </div>
+                <div class="media-body garisbawah">
+                  <a href="#"><h4 class="media-heading">Ini judul buku</h4></a>
+                  <small>oleh WR. Supratman</small>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam blanditiis neque sit necessitatibus architecto iusto voluptates ex optio, quia, ipsam cupiditate esse maiores vero dolore.</p>
+                  <div class="navbody">
+                    <div class="col-md-6">
+                      <small class="inline">Share : </small>
+                      <a class="sosmed" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="assets\fb.png" alt="Share to Facebook"></a>
+                      <a class="sosmed" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="assets\wa.png" alt="Share to Instagram"></a>
+                      <a class="sosmed" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="assets\tw.png" alt="Share to Twiter"></a>
+                    </div>
+                    <div class="col-md-6">
+                      <a href="#"><button type="button" class="btn btn-primary" name="button">Sewa</button></a>
+                      <a href="#"><button type="button" class="btn btn-danger" name="button">Beli</button></a>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-9s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
+              <div class="media ">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object" src="assets/coverbuku.jpg" alt="Judul Buku">
+                  </a>
+                </div>
+                <div class="media-body garisbawah">
+                  <a href="#"><h4 class="media-heading">Ini judul buku</h4></a>
+                  <small>oleh WR. Supratman</small>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam blanditiis neque sit necessitatibus architecto iusto voluptates ex optio, quia, ipsam cupiditate esse maiores vero dolore.</p>
+                  <div class="navbody">
+                    <div class="col-md-6">
+                      <small class="inline">Share : </small>
+                      <a class="sosmed" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="assets\fb.png" alt="Share to Facebook"></a>
+                      <a class="sosmed" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="assets\wa.png" alt="Share to Instagram"></a>
+                      <a class="sosmed" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="assets\tw.png" alt="Share to Twiter"></a>
+                    </div>
+                    <div class="col-md-6">
+                      <a href="#"><button type="button" class="btn btn-primary" name="button">Sewa</button></a>
+                      <a href="#"><button type="button" class="btn btn-danger" name="button">Beli</button></a>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-12s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
+
+
             </div>
           </div>
         </div>
       </div>
-      </div>
     </section>
-    <!-- endofsection 1 -->
 
-    <!-- section 2 -->
-    <section class="first-content container sec content">
-      <h3><i class="fa fa-rocket"></i> Buku hiburan favorit</h3>
-      <hr class="hiburan">
-      <div class="well">
-        <div class="row">
-        <div class="scroller">
-          <div class="col-md-12">
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
+    <footer>
+      <section class="darklight">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12"><h4 class="text-center text-muted">Mengapa Gedebuk.com ?</h4></div>
+              <div class="col-md-3 text-center">
+                <div class="fade-up">
+                <div class="spec center-block">
+                  <h1 class="inline"><i class="fa fa-pencil fa-fw"></i></h1>
+                </div>
+                <h2>User Interface Ramah</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nulla.</p>
               </div>
             </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-3s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
+              <div class="col-md-3 text-center">
+                <div class="fade-up">
+                <div class="spec center-block">
+                  <h1 class="inline"><i class="fa fa-pencil fa-fw"></i></h1>
+                </div>
+                <h2>Tingkat akurasi maksimal</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nulla.</p>
               </div>
             </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-5s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
+              <div class="col-md-3 text-center">
+                <div class="fade-up">
+                <div class="spec center-block">
+                  <h1 class="inline"><i class="fa fa-pencil fa-fw"></i></h1>
+                </div>
+                <h2>Lebih mudah</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nulla.</p>
               </div>
             </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-7s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-9s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-12s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-3s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-5s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-7s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-9s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-12s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
+              <div class="col-md-3 text-center">
+                <div class="fade-up">
+                <div class="spec center-block">
+                  <h1 class="inline"><i class="fa fa-pencil fa-fw"></i></h1>
+                </div>
+                <h2>Saling menguntungkan</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nulla.</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      </div>
-    </section>
-    <!-- endofsection 2 -->
-
-    <!-- section 3 -->
-    <section class="first-content container sec content">
-      <h3><i class="fa fa-headphones"></i> Komik</h3>
-      <hr class="komik">
-      <div class="well">
-        <div class="row">
-        <div class="scroller">
-          <div class="col-md-12">
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
+      </section>
+      <section class="dark">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <a href="#">
+                <div class="block help text-center">Hubungi kami</div>
+              </a>
+              <a href="#">
+                <div class="block help text-center">Tips belanja aman</div>
+              </a>
+              <a href="#">
+                <div class="block help text-center">Tips measas</div>
+              </a>
             </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-3s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
+            <div class="col-md-6 about">
+              <div class="col-md-12">
+                <a class="block" href="#"><h4>Gedebuk.com</h4></a>
+                <div class="col-md-12">
+                  <a href="">About Us</a>
+                </div>
+                <div class="col-md-12">
+                  <a href="">FAQ</a>
+                </div>
+                <div class="col-md-12">
+                  <a href="">About Us</a>
+                </div>
+                <div class="col-md-12">
+                  <a href="">FAQ</a>
+                </div>
               </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-5s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-7s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-9s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-12s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
           </div>
-          <div class="col-md-12">
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-3s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-5s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-7s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-9s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-12s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
+          <div class="col-md-3" id="logo">
+            <img src="GUAdev.jpg" class="pull-right guadev img-circle" alt="GUAdev">
           </div>
         </div>
-      </div>
-      </div>
-    </section>
-    <!-- endofsection 3 -->
-
-    <!-- section 4 -->
-    <section class="first-content container sec content">
-      <h3><i class="fa fa-book"></i> Edukasi</h3>
-      <hr class="edukasi">
-      <div class="well">
-        <div class="row">
-        <div class="scroller">
-          <div class="col-md-12">
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-3s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-5s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-7s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-9s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-12s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-3s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-5s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-7s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-9s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="box wow center-block animated zoomIn delay-12s">
-                <img src="assets/bg.jpg" class="img-rounded img-thumbnail" alt="Buku favorit">
-                <h5 class="text-center">Judul buku</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </section>
-    <!-- endofsection 4 -->
-
-    <footer class="copy-right">
-      <p>Copyright &copy; 2017 <span>Get The Book.</span> All Rights Reserved.</p>
-      <p>Designed by<a href="http://uin-malang.ac.id">Fuck your self</a></p>
+      </section>
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/parallax.min.js"></script>
     <script src="js/wow.min.js"></script>
-    <script type="text/javascript">
-      new WOW().init();
-    </script>
+    <script src="js/main.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
