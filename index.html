@@ -22,7 +22,7 @@
   </head>
   <body>
     <!-- nav -->
-    <nav id="top-bar" class="navbar navbar-default navbar-fixed-top" data-nav-status="toggle">
+    <nav id="top-bar" class="navbar navbar-hidden" data-nav-status="toggle">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -32,7 +32,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">gedebuk</a>
+          <a class="navbar-brand" href="index.html">GEDEBUK</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -53,17 +53,23 @@
     <!--end of nav -->
 
     <!-- header -->
-    <header  class="parallax-window" data-parallax="scroll" data-speed="0.3" data-image-src="pexels-photo-110252.jpeg">
+    <header  class="parallax-window" data-parallax="scroll" data-speed="0.2" data-image-src="assets/bg.jpeg">
       <div class="cover">
+        <div class="fly">
+          <!-- <ul> -->
+            <a href="pages/login.html">Log In</a>
+            <a href="pages/signup.html">Daftar</a>
+          <!-- </ul> -->
+        </div>
         <div class="container first-content">
           <div class="row first-content">
-            <div class="col-md-12 text-center first-content add-space no-padding">
+            <div class="col-md-12 text-center first-content add-space no-padding" id="layer">
               <h1>GEDEBUK</h1>
-              <div class="secondary-colorwhite">
+              <div class="secondary-colorwhite first-content scroll">
                 <p class="first-content">Lorem ipsum dolor sit amet, djsdnejnd ejsubd jues bjst dignissimos quisquam in.</p>
                 <p>Derah malang dan sekitarnya</p>
               </div>
-              <div class="col-md-offset-3 col-md-6">
+              <div class="col-md-offset-3 col-md-6 first-content scroll">
                 <div class="secondary-colorwhite first-content">
                   <div class="col-md-12 inline button no-padding">
                     <button type="button" class="btn btn-danger" name="button">Hot</button>
@@ -78,19 +84,19 @@
                     <button class="btn btn-lg btn-primary no-margin" type="button" name="search"><p><i class="fa fa-search"></i></p></button>
                   </div>
                   <div class="col-md-12">
-                    <p class="inline secondary-colorwhite deskrip">Pencarian populer : </p>
+                    <p class="inline secondary-colorwhite caripopuler">Pencarian populer : </p>
                     <ul class="">
-                      <li><a href="#"><p class="inline text-primary deskrip">uin</p></a></li>
-                      <li><a href="#"><p class="inline text-warning deskrip">maulana</p></a></li>
-                      <li><a href="#"><p class="inline text-danger deskrip">malik</p></a></li>
-                      <li><a href="#"><p class="inline text-success deskrip">ibrahim</p></a></li>
+                      <li><a href="#"><p class="inline caripopuler text-primary">uin</p></a></li>
+                      <li><a href="#"><p class="inline caripopuler text-warning">maulana</p></a></li>
+                      <li><a href="#"><p class="inline caripopuler text-danger">malik</p></a></li>
+                      <li><a href="#"><p class="inline caripopuler text-success">ibrahim</p></a></li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
             <div class="headerfooter">
-              <a class="sosmed" href="https://www.facebook.com/gedebuk"><img src="assets\fb.png" alt="Share to Facebook"></a>
+              <a class="sosmed fb" href="https://www.facebook.com/gedebuk"><img src="assets\fb.png" alt="Share to Facebook"></a>
               <a class="sosmed" href="https://instagram.com/gedebuk"><img src="assets\ig.png" alt="Share to Instagram"></a>
               <a class="sosmed" href="https://twitter.com/gedebuk"><img src="assets\tw.png" alt="Share to Twiter"></a>
             </div>
@@ -104,7 +110,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-9">
-            <h4>Punya buku tapi tidak terpakai/hiasan rak?</h4>
+            <h4>Punya buku tapi tidak terpakai/hanya sebagai hiasan rak?</h4>
             <small>Lorem ipsum dolor sit.</small>
           </div>
           <div class="col-md-3 text-center">
@@ -139,7 +145,7 @@
             <div class="promoted first-content">
               <h2 class="garisbawah">Promoted Books</h2>
               <a href="#">
-                <div class="media ">
+                <div class="media">
                   <div class="media-left">
                       <img class="media-object" src="assets/coverbuku.jpg" alt="Judul Buku">
                   </div>
@@ -198,15 +204,15 @@
                   </div>
                 </div>
               </a>
-              <a href=""><small class="first-content text-primary"><i class="fa fa-tasks"></i> Bagaimana agar buku dipromosikan?</small></a>
+              <a href=""><small class="first-content text-primary premium"><i class="fa fa-tasks"></i> Bagaimana agar buku dipromosikan?</small></a>
             </div>
           </div>
           <div class="col-md-8">
             <div class="featured">
               <ul class="nav nav-pills">
-                <li role="presentation" class="active"><a class="garisbawah">Buku Populer</a></li>
-                <li role="presentation" ><a class="garisbawah">Buku baru</a></li>
-                <li role="presentation" ><a class="garisbawah">Buku terlaris</a></li>
+                <li role="presentation" class="active"><a href="#" class="garisbawah">Buku Populer</a></li>
+                <li role="presentation" ><a href="#" class="garisbawah">Buku baru</a></li>
+                <li role="presentation" ><a href="#" class="garisbawah">Buku terlaris</a></li>
               </ul>
               <div class="media ">
                 <div class="media-left">
@@ -219,7 +225,7 @@
                   <small>oleh WR. Supratman</small>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam blanditiis neque sit necessitatibus architecto iusto voluptates ex optio, quia, ipsam cupiditate esse maiores vero dolore.</p>
                   <div class="navbody">
-                    <div class="col-md-6">
+                    <div class="col-md-6 no-padding">
                       <small class="inline">Share : </small>
                       <a class="sosmed" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="assets\fb.png" alt="Share to Facebook"></a>
                       <a class="sosmed" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="assets\wa.png" alt="Share to Instagram"></a>
@@ -343,7 +349,7 @@
             <div class="col-md-12"><h4 class="text-center text-muted">Mengapa Gedebuk.com ?</h4></div>
               <div class="col-md-3 text-center">
                 <div class="fade-up">
-                <div class="spec center-block">
+                <div class="spec center-block wow animated pulse">
                   <h1 class="inline"><i class="fa fa-pencil fa-fw"></i></h1>
                 </div>
                 <h2>User Interface Ramah</h2>
@@ -352,7 +358,7 @@
             </div>
               <div class="col-md-3 text-center">
                 <div class="fade-up">
-                <div class="spec center-block">
+                <div class="spec center-block wow animated pulse delay-2s">
                   <h1 class="inline"><i class="fa fa-pencil fa-fw"></i></h1>
                 </div>
                 <h2>Tingkat akurasi maksimal</h2>
@@ -361,7 +367,7 @@
             </div>
               <div class="col-md-3 text-center">
                 <div class="fade-up">
-                <div class="spec center-block">
+                <div class="spec center-block wow animated pulse delay-4s">
                   <h1 class="inline"><i class="fa fa-pencil fa-fw"></i></h1>
                 </div>
                 <h2>Lebih mudah</h2>
@@ -370,7 +376,7 @@
             </div>
               <div class="col-md-3 text-center">
                 <div class="fade-up">
-                <div class="spec center-block">
+                <div class="spec center-block wow animated pulse delay-6s">
                   <h1 class="inline"><i class="fa fa-pencil fa-fw"></i></h1>
                 </div>
                 <h2>Saling menguntungkan</h2>
@@ -397,28 +403,28 @@
             <div class="col-md-6 about">
               <div class="col-md-12">
                 <a class="block" href="#"><h4>Gedebuk.com</h4></a>
-                <div class="col-md-12">
+                <div class="col-md-4 no-padding">
                   <a href="">About Us</a>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-8 no-padding">
                   <a href="">FAQ</a>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-4 no-padding">
                   <a href="">About Us</a>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-8 no-padding">
                   <a href="">FAQ</a>
                 </div>
               </div>
           </div>
           <div class="col-md-3" id="logo">
-            <img src="GUAdev.jpg" class="pull-right guadev img-circle" alt="GUAdev">
+            <abbr title="developed by GUAdev"><img src="GUAdev.jpg" class="pull-right guadev img-circle" alt="GUAdev"></abbr>
           </div>
         </div>
       </section>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/jquery.js"></script>
     <script src="js/parallax.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/main.js"></script>

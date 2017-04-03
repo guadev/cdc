@@ -59,6 +59,9 @@ li{
   margin: 0;
   margin-bottom: 5px;
 }
+.none{
+  opacity: 0;
+}
 .primary-color{
   color: #000;
 }
@@ -76,34 +79,17 @@ li{
   padding: 10px 20px;
   border-radius: 20px;
 }
-.delay-3s{
-  -webkit-animation-delay: .3s;
-  animation-delay: .3s;
+.delay-2s{
+  -webkit-animation-delay: .2s;
+  animation-delay: .2s;
 }
-.delay-5s{
-  -webkit-animation-delay: .5s;
-  animation-delay: .5s;
+.delay-4s{
+  -webkit-animation-delay: .4s;
+  animation-delay: .4s;
 }
-.delay-7s{
-  -webkit-animation-delay: .7s;
-  animation-delay: .7s;
-}
-.delay-9s{
-  -webkit-animation-delay: .9s;
-  animation-delay: .9s;
-}
-
-.delay-12s{
-  -webkit-animation-delay: 1.2s;
-  animation-delay: 1.2s;
-}
-hr.edukasi{border-color: aqua;}
-hr.bisnis{border-color: red}
-hr.hiburan{border-color: yellow}
-hr.komik{border-color: green;}
-hr.center-block{
-  width: 10%;
-  margin-top: -10px;
+.delay-6s{
+  -webkit-animation-delay: .6s;
+  animation-delay: .6s;
 }
 
 /*header*/
@@ -121,13 +107,41 @@ header{
   padding: 30px 50px;
   background: rgba(12, 10, 27, 0.69);
 }
+header .fly{
+  position: absolute;
+  top: 30px;
+  right: 100px;
+}
+header .fly a{
+  display: inline-block;
+  color: white;
+  font-size: 1.3em;
+  margin-left: 20px;
+  padding-bottom: 10px;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+  border-bottom: 1px solid transparent;
+}
+header .fly a:last-child{
+  color: orange;
+}
+header .fly a:hover{
+  border-bottom: 1px solid white;
+}
+.scroll{
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
 header h1{
   text-shadow: 0 3px 3px rgba(0, 0, 0, 1);
-  font-family: 'diavlo';
-  margin-bottom: 10px;
+  font-family: 'impact';
+  margin-bottom: 29px;
   padding: 0;
   padding-right: 10px;
-  margin-top: 50px;
+  margin-top: 70px;
+  letter-spacing: .1em;
 }
 header p{
   line-height: 25px;
@@ -138,6 +152,18 @@ header div.inline.button{ //tombol hot, new
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: left;
+  opacity: .8
+}
+.caripopuler{
+  font-size: .9em;
+}
+.caripopuler.inline.secondary-colorwhite,
+.caripopuler.inline.secondary-colorwhite:hover{
+  text-decoration: none;
+  color: #999;
+}
+.caripopuler:hover{
+  text-decoration: underline;
 }
 header .button > button{
   padding-top: 3px;
@@ -207,6 +233,14 @@ hr.hrcenter{
   -o-transition: .3s;
   transition: .3s;
 }
+.headerfooter .sosmed.fb img{
+  -webkit-filter: brightness(2) grayscale(1) opacity(.4);
+  -o-filter: brightness(2) grayscale(1) opacity(.4);
+  filter: brightness(2) grayscale(1) opacity(.4);
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
 .headerfooter .sosmed img:hover{
   -webkit-filter: grayscale(0) opacity(1);
   -o-filter: grayscale(0) opacity(1);
@@ -237,7 +271,7 @@ hr.hrcenter{
 
 /*promoted*/
 .panelkiri{
-  border-right: 2px solid rgb(152, 162, 254);
+  border-right: 2px solid rgba(152, 162, 254,.3);
   padding-right: 25px;
 }
 .media-object{
@@ -255,7 +289,7 @@ hr.hrcenter{
   background: #ddd;
 }
 .promoted .media{
-  padding-left: 10px;
+  padding-left: 0px;
   padding-top: 15px;
 }
 .promoted .media-object{
@@ -279,13 +313,20 @@ div.kategori h2{
 .promoted small{
   display: inline-block;
   margin-top: -5px;
-  font-size: .7em;
+  font-size: .75em;
   color: #999;
   margin-bottom: 8px;
 }
 .promoted p{
   font-size: .9em;
   color: #555;
+}
+.promoted .premium{
+  font-size: 1em;
+  margin-top: 10px;
+}
+.promoted .premium:hover{
+  text-decoration: underline;
 }
 
 /*featured*/
@@ -318,13 +359,22 @@ div.kategori h2{
   color: #555;
 }
 .navbody{
-
   height: 3em;
   line-height: 3em;
 }
 .navbody button{
   margin: 0 5px;
   float: right;
+  background-color: transparent;
+  border: 2px solid rgb(80, 145, 205);
+  color: #555;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+.navbody button:hover{
+  background-color: rgba(80, 145, 205,.7);
+  border-color: rgba(80, 145, 205,.7);
 }
 
 /*kategori*/
@@ -334,13 +384,15 @@ div.kategori{
 
 /*Navbar*/
 nav#top-bar{
-  background: transparent;
-  background-size: cover;
   padding-left: 15px;
   padding-right: 15px;
 }
-nav.navbar-static-top{
-  margin-bottom: 0 !important;
+.navbar-hidden{
+  display: none;
+}
+.navbar-fixed-top{
+  background: white;
+  box-shadow: 0 1px 3px rgba(43, 43, 43, 0.57);
 }
 nav#top-bar input{
   width: 700px;
@@ -352,10 +404,7 @@ nav#top-bar li > a{
   transition: .3s ease-in-out;
 }
 nav#top-bar li > a:hover{
-  background-color: rgba(200, 200, 200, 0.1);
-  padding-left: 20px;
-  padding-right: 20px;
-  color: #000;
+  border-bottom: 2px solid #aaa;
 }
 /*Endnavbar*/
 
@@ -430,10 +479,6 @@ nav#top-bar li > a:hover{
 section.contact > div.container.well.well-lg{
   padding: 30px 100px;
 }
-section.contact .deskrip{
-  font-size: 9px;
-  color: #999;
-}
 section.contact input{
   margin-bottom: 10px;
 }
@@ -504,6 +549,8 @@ footer h4.text-center.text-muted{
   line-height: 140px;
   background: #eee;
   border: 8px solid white;
+  cursor: default;
+  animation-duration: 2s;
 }
 .help{
   width: 100%;
@@ -512,9 +559,9 @@ footer h4.text-center.text-muted{
   margin-bottom: 10px;
   background: #333566;
   color: #ccc;
-  border-radius: 3px;
+  border-radius: 6px;
   line-height: 50px;
-  box-shadow: 0 4px 5px rgba(1, 1, 1, 0.5);
+  box-shadow: 0 2px 3px rgba(1, 1, 1, 0.2);
   -webkit-transition: .3s;
   -o-transition: .3s;
   transition: .3s;
@@ -530,11 +577,23 @@ footer .about a{
   color: #eee;
   line-height:30px;
 }
-footer .about a{
+footer .about a:hover{
   color: #ddd;
+  text-decoration: underline !important;
 }
 #logo{
   padding: 40px;
+  -webkit-filter: grayscale(1) opacity(.3);
+  -o-filter: grayscale(1) opacity(.3);
+  filter: grayscale(1) opacity(.3);
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+#logo:hover{
+  -webkit-filter: grayscale(1) opacity(.7);
+  -o-filter: grayscale(1) opacity(.7);
+  filter: grayscale(1) opacity(.7);
 }
 footer img.guadev{
   height: 100px;
