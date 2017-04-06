@@ -10,11 +10,11 @@ $(document).ready(function(){
   $(window).scroll(function (event) {
         var y = $(this).scrollTop();
         if (y <= 500) {
-          $('#top-bar').addClass('navbar-hidden');
+          $('#home-bar').addClass('navbar-hidden');
         }else {
-          $('#top-bar').addClass('animated').addClass('fadeInDown');
-          $('#top-bar').addClass('navbar-fixed-top').addClass('navbar-default');
-          $('#top-bar').removeClass('navbar-hidden');
+          $('#home-bar').addClass('animated').addClass('fadeInDown');
+          $('#home-bar').addClass('navbar-fixed-top').addClass('navbar-default');
+          $('#home-bar').removeClass('navbar-hidden');
         }
         if (y >= 200) {
           $('.scroll').addClass('none');
