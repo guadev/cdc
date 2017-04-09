@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cari buku yang anda inginkan dengan mudah!">
     <title>Get The Book | Home</title>
-
-    <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
     <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -55,11 +55,14 @@
     <!-- header -->
     <header class="parallax-window" data-parallax="scroll" data-speed="0.2" data-image-src="assets/bg.jpeg">
       <div class="cover">
-        <div class="fly">
-          <a href="pages/login.html">Log In</a>
-          <a href="pages/signup.html">Daftar</a>
-        </div>
         <div class="container first-content">
+          <div class="fly">
+            <ul>
+              <li class="pull-left"><a href="pages/login.html">Forum</a></li>
+              <li class="pull-right"><a href="pages/login.html">Log In</a></li>
+              <li class="pull-right"><a href="pages/signup.html">Daftar</a></li>
+            </ul>
+          </div>
           <div class="row first-content">
             <div class="col-md-12 text-center first-content add-space no-padding" id="layer">
               <h1>GEDEBUK</h1>
@@ -69,19 +72,19 @@
               </div>
               <div class="col-md-offset-3 col-md-6 first-content scroll">
                 <div class="secondary-colorwhite first-content">
-                  <div class="col-md-12 inline button no-padding">
+                  <div class="col-md-12 col-sm-12 inline button no-padding">
                     <button type="button" class="btn btn-danger" name="button">Hot</button>
                     <button type="button" class="btn btn-primary" name="button">New</button>
                     <button type="button" class="btn btn-success" name="button">Jas</button>
                     <button type="button" class="btn btn-warning" name="button">asas</button>
                   </div>
-                  <div class="col-md-10 text-box no-padding no-margin">
-                    <input class="search" type="text" name="search" placeholder="cari keyword" value="">
+                  <div class="col-md-10 col-sm-10 col-xs-9 text-box no-padding no-margin">
+                    <input id="inputcari" class="search" type="text" name="search" placeholder="cari keyword" value="">
                   </div>
-                  <div class="col-md-2 text-box no-padding no-margin">
-                    <button class="btn btn-lg btn-primary no-margin" type="button" name="search"><p><i class="fa fa-search"></i></p></button>
+                  <div class="col-md-2 col-sm-2 col-xs-3 text-box no-padding no-margin">
+                    <button class="btn btn-lg btn-primary no-margin" type="submit" name="search"><p><i class="fa fa-search"></i></p></button>
                   </div>
-                  <div class="col-md-12">
+                  <div class="col-md-12 col-sm-12">
                     <p class="inline secondary-colorwhite caripopuler">Pencarian populer : </p>
                     <ul class="">
                       <li><a href="#"><p class="inline caripopuler text-primary">uin</p></a></li>
@@ -107,12 +110,12 @@
     <section class="offer">
       <div class="container">
         <div class="row">
-          <div class="col-md-9">
+          <div class="col-md-9 col-sm-9 col-xs-12">
             <h4>Punya buku tapi tidak terpakai/hanya sebagai hiasan rak?</h4>
             <small>Lorem ipsum dolor sit.</small>
           </div>
-          <div class="col-md-3 text-center">
-            <button type="submit" class="btn btn-lg btn-default pull-right">Pinjemin aja!</button>
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <button type="submit" class="btn btn-lg btn-default">Pinjemin aja!</button>
           </div>
         </div>
       </div>
@@ -122,7 +125,7 @@
     <section class="sec">
       <div class="container">
         <div class="row">
-          <div class="col-md-4 panelkiri">
+          <div class="col-md-4 col-xs-12 panelkiri">
             <div class="kategori add-space">
               <h2 class="garisbawah">Kategori</h2>
               <div class="list-group">
@@ -205,16 +208,16 @@
               <a href=""><small class="first-content text-primary premium"><i class="fa fa-tasks"></i> Bagaimana agar buku dipromosikan?</small></a>
             </div>
           </div>
-          <div class="col-md-8">
+          <div class="col-md-8 col-sm-12 col-xs-12 no-page-padding">
             <div class="featured">
-              <ul class="nav nav-pills">
+              <ul class="nav nav-pills no-padding">
                 <li role="presentation" class="active"><a href="#" class="garisbawah">Buku Populer</a></li>
                 <li role="presentation" ><a href="#" class="garisbawah">Buku baru</a></li>
                 <li role="presentation" ><a href="#" class="garisbawah">Buku terlaris</a></li>
               </ul>
               <ul>
                 <li>
-                  <div class="media ">
+                  <div class="media">
                     <div class="media-left">
                       <a href="#">
                         <img class="media-object" src="assets/bg.jpeg" alt="Judul Buku">
@@ -354,8 +357,8 @@
       <section class="darklight">
         <div class="container">
           <div class="row">
-            <div class="col-md-12"><h4 class="text-center text-muted">Mengapa Gedebuk.com ?</h4></div>
-              <div class="col-md-3 text-center">
+            <div class="col-md-12 col-sm-12 col-xs-12"><h4 class="text-center text-muted">Mengapa Gedebuk.com ?</h4></div>
+              <div class="col-md-3 col-sm-3 text-center">
                 <div class="fade-up">
                 <div class="spec center-block wow animated pulse">
                   <h1 class="inline"><i class="fa fa-pencil fa-fw"></i></h1>
@@ -364,7 +367,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nulla.</p>
               </div>
             </div>
-              <div class="col-md-3 text-center">
+              <div class="col-md-3 col-sm-3 text-center">
                 <div class="fade-up">
                 <div class="spec center-block wow animated pulse delay-2s">
                   <h1 class="inline"><i class="fa fa-pencil fa-fw"></i></h1>
@@ -373,7 +376,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nulla.</p>
               </div>
             </div>
-              <div class="col-md-3 text-center">
+              <div class="col-md-3 col-sm-3 text-center">
                 <div class="fade-up">
                 <div class="spec center-block wow animated pulse delay-4s">
                   <h1 class="inline"><i class="fa fa-pencil fa-fw"></i></h1>
@@ -382,7 +385,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nulla.</p>
               </div>
             </div>
-              <div class="col-md-3 text-center">
+              <div class="col-md-3 col-sm-3 text-center">
                 <div class="fade-up">
                 <div class="spec center-block wow animated pulse delay-6s">
                   <h1 class="inline"><i class="fa fa-pencil fa-fw"></i></h1>
@@ -397,7 +400,7 @@
       <section class="dark">
         <div class="container">
           <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-4">
               <a href="#">
                 <div class="block help text-center">Hubungi kami</div>
               </a>
@@ -408,7 +411,7 @@
                 <div class="block help text-center">Tips measas</div>
               </a>
             </div>
-            <div class="col-md-6 about">
+            <div class="col-md-6 col-sm-4 about">
               <div class="col-md-12">
                 <a class="block" href="#"><h4>Copyright Gedebuk &copy; 2017</h4></a>
                 <div class="col-md-4 no-padding">
@@ -425,7 +428,7 @@
                 </div>
               </div>
           </div>
-          <div class="col-md-3" id="logo">
+          <div class="col-md-3 col-sm-4" id="logo">
             <abbr title="developed by GUAdev"><img src="GUAdev.jpg" class="pull-right guadev img-circle" alt="GUAdev"></abbr>
           </div>
         </div>

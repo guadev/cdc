@@ -1,0 +1,103 @@
+@media screen and (max-width:992px){
+  h1{
+    font-size: 55px !important;
+  }
+  h2{
+    font-size: 25px !important;
+  }
+  h3{
+    font-size: 18px !important;
+  }
+  h4{
+    font-size: 20px !important;
+  }
+  p{
+    font-size: 15px !important;
+  }
+  small{
+    font-size: 13px !important;
+  }
+  footer section.darklight h2{
+    font-size: 20px !important;
+  }
+  .panelkiri{
+    border: none;
+    padding: 0;
+  }
+  footer a{
+    font-size: 13px;
+  }
+  .featured{
+    margin: 0;
+    padding-left: 0;
+  }
+  .no-page-padding{
+    margin: 0;
+    padding: 0;
+  }
+}
+@media screen and (max-width:768px) {
+  .darklight{
+    display: none;
+  }
+}
+
+@media screen and (max-width:480px) {
+
+}
+@media screen and (max-width:320px) {
+  h1{
+    font-size: 40px !important;
+  }
+  h2{
+    font-size: 25px !important;
+  }
+  h3{
+    font-size: 22px !important;
+  }
+  h4{
+    font-size: 13px !important;
+  }
+  p{
+    font-size: 12px !important;
+  }
+  small{
+    font-size: 10px !important;
+  }
+  .offer h4{
+    line-height: 20px;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .offer button{
+    width: 100px;
+    height: 40px;
+    float: none;
+    display: block;
+    margin: 0 auto;
+    font-size: 12px;
+  }
+  header .button{
+    display: none;
+  }
+  .text-center-page{
+    text-align: center;
+  }
+  .promoted .media{
+    padding-top: 10px;
+  }
+  .promoted .media p{
+    margin-bottom: 0;
+  }
+  .featured .media{
+    padding-left: 0px;
+    padding-top: 3px;
+  }
+  .featured img.media-object{
+    width: 70px;
+    max-height: 95px;
+  }
+  .featured .navbody{
+    display: none;
+  }
+}

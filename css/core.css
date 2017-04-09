@@ -102,7 +102,7 @@ header{
   height: 100vh;
   width: auto;
   padding: 0;
-  position: relative;
+  /*position: relative;*/
 }
 .cover{
   position: relative;
@@ -114,21 +114,21 @@ header{
 header .fly{
   position: absolute;
   top: 30px;
-  right: 100px;
+  right: 30px;
+  left: 30px;
 }
-header .fly a{
+header .fly > ul > li.pull-right{
+  margin-left: 20px;
+}
+header .fly > ul > li > a{
   display: inline-block;
   color: white;
   font-size: 1.3em;
-  margin-left: 20px;
   padding-bottom: 10px;
   -webkit-transition: .3s;
   -o-transition: .3s;
   transition: .3s;
   border-bottom: 1px solid transparent;
-}
-header .fly a:last-child{
-  color: orange;
 }
 header .fly a:hover{
   border-bottom: 1px solid white;
@@ -255,6 +255,7 @@ hr.hrcenter{
 .offer{
   background:#333566;
   padding: 20px;
+  position: relative;
 }
 .offer h4{
   font-size: 2em;
@@ -264,12 +265,13 @@ hr.hrcenter{
   font-size: 1em;
   color: #ddd;
 }
-.offer button.btn.btn-lg.btn-default.pull-right{
+.offer button.btn.btn-lg.btn-default{
   margin-left: 10px;
   margin-top: 10px;
   transition: .3s;
+  float: right;
 }
-.offer button.btn.btn-lg.btn-default.pull-right:hover{
+.offer button.btn.btn-lg.btn-default:hover{
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
 }
 
@@ -278,17 +280,6 @@ hr.hrcenter{
   border-right: 2px solid rgba(152, 162, 254,.3);
   padding-right: 25px;
 }
-.media-object{
-  width: 100px;
-  height: auto;
-  max-height: 130px;
-  overflow: hidden;
-}
-.promoted a .media{
-  -webkit-transition: .3s;
-  -o-transition: .3s;
-  transition: .3s;
-}
 .promoted a:hover .media{
   color: rgb(49, 145, 193);
 }
@@ -296,13 +287,9 @@ hr.hrcenter{
   padding-left: 0px;
   padding-top: 15px;
 }
-.promoted .media-left{
-  overflow: hidden;
-  width: 70px;
-  max-height: 90px;
-}
 .promoted .media-object{
   width: 70px;
+  max-height: 95px;
 }
 .garisbawah{
   padding-bottom: 5px;
@@ -341,6 +328,9 @@ div.kategori h2{
 .featured{
   padding-left: 10px;
 }
+.nav-pills{
+  display: flex;
+}
 .featured div.nav.nav-tabs li{
   margin-right: 20px;
 }
@@ -354,6 +344,10 @@ div.kategori h2{
 .featured h4.media-heading{
   font-size: 1.6em;
   margin-bottom: 0;
+}
+.featured img.media-object{
+  width: 130px;
+  max-height: 170px;
 }
 .featured li{
   margin: 0;
