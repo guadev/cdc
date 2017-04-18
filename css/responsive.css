@@ -1,24 +1,24 @@
 @media screen and (max-width:992px){
   h1{
-    font-size: 55px !important;
+    font-size: 55px;
   }
   h2{
-    font-size: 25px !important;
+    font-size: 40px;
   }
   h3{
-    font-size: 18px !important;
+    font-size: 33px;
   }
   h4{
-    font-size: 20px !important;
+    font-size: 30px;
   }
   p{
-    font-size: 15px !important;
+    font-size: 28px;
   }
   small{
-    font-size: 13px !important;
+    font-size: 18px;
   }
   footer section.darklight h2{
-    font-size: 20px !important;
+    font-size: 20px;
   }
   .panelkiri{
     border: none;
@@ -37,48 +37,153 @@
   }
 }
 @media screen and (max-width:768px) {
+  .cover{
+    margin: 0;
+    padding: 0;
+    padding-top: 4em;
+  }
+  header{
+    height: 80vh;
+  }
   .darklight{
     display: none;
+  }
+  .offer button{
+    width: 10em;
+    padding: 1em;
+    box-shadow: 0 2px 2px #444;
+    height: 4em;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .promoted, .featured{
+    padding-right: 20px;
+  }
+  .kategori{
+    width: 30%;
+    display: table-cell;
+    padding-right: 20px;
+  }
+  .promoted{
+    width: 65%;
+    display: table-cell;
   }
 }
 
 @media screen and (max-width:480px) {
-
-}
-@media screen and (max-width:320px) {
-  h1{
-    font-size: 40px !important;
-  }
-  h2{
-    font-size: 25px !important;
-  }
-  h3{
-    font-size: 22px !important;
-  }
-  h4{
-    font-size: 13px !important;
-  }
   p{
-    font-size: 12px !important;
+    font-size: 15px;
   }
-  small{
-    font-size: 10px !important;
+  .kategori, .promoted{
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+  header{
+    height: 80vh;
+  }
+  .offer{
+    line-height: 20px;
   }
   .offer h4{
-    line-height: 20px;
+    padding-right: 15px;
+    font-size: 1em;
+    line-height: 23px;
     margin-bottom: 0;
-    text-align: center;
+  }
+  .offer small{
+    font-size: .8em;
   }
   .offer button{
-    width: 100px;
-    height: 40px;
-    float: none;
-    display: block;
-    margin: 0 auto;
-    font-size: 12px;
+    width: 95px;
+    padding: 2px;
+    box-shadow: 0 2px 2px #444;
+    height: 50px;
+    font-size: 14px;
+    font-weight: bold;
   }
   header .button{
     display: none;
+  }
+  .sosmed{
+    display: none;
+  }
+  .scroll-page{
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding-bottom: 20px;
+  }
+  .scroll-page a{
+    display: inline-block;
+    width: 80%;
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid #eee;
+  }
+  .scroll-page a:last-child{
+    border: none;
+  }
+  .scroll-page a .media-object{
+    max-height: 70px;
+  }
+  .scroll-page .media-body.garisbawah{
+    border: 0;
+    padding: 0;
+  }
+  .featured .media-left{
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: .6em;
+    height: 10em;
+  }
+  .featured .media-object{
+    display: inline-block;
+    height: 100%;
+    width: auto !important;
+  }
+  .featured .media .navbody{
+    display: none;
+  }
+}
+@media screen and (max-width:320px) {
+  h1{
+    font-size: 40px;
+  }
+  h2{
+    font-size: 25px;
+  }
+  h3{
+    font-size: 22px;
+  }
+  h4{
+    font-size: 13px;
+  }
+  p{
+    font-size: 12px;
+  }
+  small{
+    font-size: 10px;
+  }
+  .offer h4{
+    padding-right: 10px;
+    font-size: .6em;
+    line-height: 18px;
+    margin-bottom: 0;
+  }
+  .offer small{
+    font-size: .6em;
+  }
+  .offer button{
+    width: 60px;
+    padding: 2px;
+    height: 30px;
+    font-size: 8px;
+    font-weight: bold;
+
   }
   .text-center-page{
     text-align: center;
@@ -96,8 +201,5 @@
   .featured img.media-object{
     width: 70px;
     max-height: 95px;
-  }
-  .featured .navbody{
-    display: none;
   }
 }

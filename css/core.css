@@ -82,6 +82,7 @@ li{
   background: #fff;
   padding: 10px 20px;
   border-radius: 20px;
+  position: relative;
 }
 .delay-2s{
   -webkit-animation-delay: .2s;
@@ -181,13 +182,18 @@ header .button > button{
   border-bottom-right-radius: 0;
   border-right: none;
   height: 50px;
+  background: rgba(255, 255, 255, 0.7);
+}
+.cover input[class="search"]:hover,
+.cover input[class="search"]:focus{
+  background: rgba(255, 255, 255, 1);
 }
 button[name="search"]{
   color: #333;
   height: 50px;
   line-height: 50px;
   background-color: transparent;
-  border: 2px solid rgb(165, 149, 222);
+  border: 2px solid rgb(120, 94, 212);
   -webkit-transition: .3s;
   -o-transition: .3s;
   transition: .3s;
