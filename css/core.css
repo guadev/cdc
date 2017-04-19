@@ -70,7 +70,7 @@ li{
   color: #000;
 }
 .secondary-color{
-  color: #666;
+  color: #999;
 }
 .primary-colorwhite{
   color: #fff;
@@ -281,6 +281,18 @@ hr.hrcenter{
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
 }
 
+.media .media-left{
+  overflow: hidden;
+}
+.media img.media-object{
+  transition: .3s;
+  transform-origin: right;
+}
+.media img.media-object:hover{
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
 /*promoted*/
 .panelkiri{
   border-right: 2px solid rgba(152, 162, 254,.3);
@@ -605,6 +617,8 @@ footer img.guadev{
   width: auto;
 }
 /*endoffooter*/
+
+/*Search.html start*/
 .page{
   margin-top: 60px;
 }
@@ -638,4 +652,55 @@ footer img.guadev{
 .page .input-group .input-group-addon,
 .page .input-group .form-control{
   border-radius: 0;
+}
+/*Search.html end*/
+
+/*upload.html start*/
+.upload{
+  margin-top: 3em;
+}
+input[id^="foto"]{
+  display: none;
+}
+.upload .panelkiri .thumbnail{
+  height: 6em;
+  background: #eee;
+  text-align: center;
+  line-height: 6em;
+  font-size: .75em;
+  padding: 0;
+  cursor: pointer;
+  color: #aaa;
+}
+.upload .panelkiri .thumbnail.priority{
+  height: 15em;
+  line-height: 15em;
+  font-size: .8em;
+}
+.upload .fotobox .col-md-4{
+  cursor: pointer;
+}
+.space{
+  padding: 0;
+  margin: 0;
+  border: .3em solid transparent;
+}
+.space-left{
+  border-left: none;
+}
+.space-right{
+  border-right: none;
+}
+.upload form input{
+  margin-bottom: 1em;
+}
+.upload label{
+  text-decoration: none;
+  font-weight: normal;
+}
+.upload form textarea{
+  height: 6em;
+}
+.upload p.form-control{
+  width: 100%;
 }
