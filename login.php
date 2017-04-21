@@ -1,25 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Get The Book | Log In</title>
+<?php
+require_once 'core/init.php';
+include_once 'view/header.php';
 
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/animate.min.css">
-    <link rel="stylesheet" href="../css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/core.css">
-    <link rel="stylesheet" href="../css/media.css">
+$pesan = '';
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
+if(isset($_SESSION['user'])) {
+  header('location:index.php');
+}
+
+if(isset($_POST['submit'])) {
+  $username  = $_POST['username'];
+  $password  = $_POST['password'];
+
+  if(!empty(trim($username)) && !empty(trim($password))) {
+    if(loginadmin($password)) {
+      $_SESSION['user'] = $username;
+      online($_SESSION['user']);
+      header('location:admin.php');
+    } else if(login($username, $password)) {
+      $_SESSION['user'] = $username;
+      online($_SESSION['user']);
+      header('location:index.php');
+    } else {
+      $pesan = '<div class="alert alert-danger" role="alert">username atau password salah!</div>';
+    }
+  } else {
+    $pesan = '<div class="alert alert-warning" role="alert">username dan password harus diisi!</div>';
+  }
+
+}
+?>
     <nav id="top-bar" class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -30,20 +40,19 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Brand</a>
-          <form class="navbar-form navbar-left">
+          <a class="navbar-brand" href="index.php">Gedebuk</a>
+          <!-- <form class="navbar-form navbar-left">
             <div class="form-group center-block">
               <input type="text" class="form-control" placeholder="Cari judul/nama pengarang">
             </div>
             <button type="submit" class="btn btn-default">Cari</button>
-          </form>
+          </form> -->
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="login.html">Log In</a></li>
-            <li><a href="signup.html"><span class="text-danger">Daftar</span></a></li>
+            <li><a href="register.php"><span class="text-danger">Register</span></a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -56,14 +65,15 @@
               <div class="login center-block well">
                 <div class="icon text-center"><i class="fa fa-fw fa-5x fa-user"></i></div>
                 <h3 class="text-center">Log In</h3>
-                <form>
+                <?php echo $pesan; ?>
+                <form action="" method="post">
                   <div class="text-box">
-                    <input type="text" placeholder="Username/email" >
-                    <input type="password" placeholder="Password" >
+                    <input class="input1" type="text" name="username" min="5" placeholder="Username" />
+                    <input class="input2" type="password" name="password" min="6" placeholder="Password" />
                   </div>
-                  <div class="clearfix"> </div><br />
-                  <button class="btn btn-lg btn-primary wow animated fadeInUp center-block" type="submit">Log In</button>
-                  <a href="#" class="pull-right first-content"><small class="text-danger underline">Lupa password?</small></a>
+                  <div class="alert alert-info" role="alert">Belum punya akun? <a href="register.php"><strong style="color:#31708f;">Daftar</strong></a> sekarang!</div>
+                  <div class="clearfix"> </div>
+                  <button class="btn btn-lg btn-primary wow animated fadeInUp center-block" name="submit" type="submit">Log In</button>
                 </form>
               </div>
             </div>
@@ -88,7 +98,7 @@
             </div>
             <div class="col-md-6 about">
               <div class="col-md-12">
-                <a class="block" href="#"><h4>Copyright Gedebuk &copy; 2017</h4></a>
+                <a class="block" href="#"><h4>Copyright Gedebuk &copy; <?php echo date('Y'); ?></h4></a>
                 <div class="col-md-4 no-padding">
                   <a href="">About Us</a>
                 </div>
