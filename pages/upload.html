@@ -53,20 +53,21 @@
     <!--end of nav -->
 
         <!-- category -->
-    <section class="first-content upload">
+    <section class="upload">
       <div class="container">
         <div class="row">
           <div class="col-md-12 add-space">
-            <h2>Upload buku</h2>
-            <p class="secondary-color">Cara mudah meluaskan manfaat. Pinjamkan buku anda kepada orang yang lebih membutuhkan.</p>
+            <h2 class="text-primary">Upload buku</h2>
+            <small class="secondary-color">Cara mudah meluaskan manfaat. Pinjamkan buku anda kepada orang yang lebih membutuhkan.</small>
           </div>
-          <div class="col-md-3 panelkiri ">
-            <h4>Foto</h4>
-            <div class="thumbnail priority">
+          <form autocomplete="on">
+          <div class="col-md-3 panelkiri">
+            <h4 class="text-primary">Foto</h4>
+            <div class="thumbnail priority text-box">
               <label for="foto1">Foto 1</label>
               <input type="file" id="foto1" name="fotobuku1" value="">
             </div>
-            <div class="col-md-12 no-padding fotobox">
+            <div class="col-md-12 no-padding fotobox text-box garisbawah add-space">
               <div class="col-md-4 space space-left">
                 <div class="thumbnail">
                   <label for="foto2">Foto 2</label>
@@ -86,25 +87,62 @@
                 </div>
               </div>
             </div>
-            <div class="garisbawah"></div>
-            <h4 class="first-content">Kategori</h4>
+            <h4 class="first-content text-primary">Transaksi</h4>
             <div class="input-group">
                 <div class="input-group-addon">
-                  <input type="checkbox" name="kategoriupload" value="dijual" required="true">
+                  <input type="checkbox" name="transaksi" value="dijual" id="jenis1">
+                  <label for="jenis1"></label>
                 </div>
                 <p class="form-control">Dijual</p>
             </div>
             <div class="input-group">
                 <div class="input-group-addon">
-                  <input type="checkbox" name="kategoriupload" value="disewakan" required="true">
+                  <input type="checkbox" name="transaksi" value="disewakan" id="jenis2">
+                  <label for="jenis2"></label>
                 </div>
                 <p class="form-control">Disewakan</p>
             </div>
+            <div class="garisbawah first-content"></div>
+            <h4 class="first-content text-primary">Kategori</h4>
+            <ul class="add-space block">
+              <li>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <input type="checkbox" aria-label="...">
+                  </div>
+                  <p class="inline form-control"><i class="fa fa-book fa-fw"></i> Edukasi</p>
+                </div>
+              </li>
+              <li>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <input type="checkbox" aria-label="...">
+                  </div>
+                  <p class="inline form-control"><i class="fa fa-money fa-fw"></i> Bisnis</p>
+                </div>
+              </li>
+              <li>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <input type="checkbox" aria-label="...">
+                  </div>
+                  <p class="inline form-control"><i class="fa fa-fire fa-fw"></i> Komik</p>
+                </div>
+              </li>
+              <li>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <input type="checkbox" aria-label="...">
+                  </div>
+                  <p class="inline form-control"><i class="fa fa-book fa-fw"></i> Bacaan sehari-hari</p>
+                </div>
+              </li>
+            </ul>
           </div>
 
-          <div class="col-md-9 panelkanan">
-            <h4>Form</h4>
-            <form autocomplete="on">
+          <div class="col-md-9 panelkanan text-box">
+            <h4 class="text-primary">Form</h4>
+
               <input class="form-control" type="text" name="" value="" placeholder="Judul Buku" required>
               <input class="form-control" list="pengarang" placeholder="Nama Pengarang" required>
               <datalist class="" id="pengarang">
@@ -115,7 +153,7 @@
                 <option value="Eko budi santoos">Eko budi santoos</option>
               </datalist>
               <div class="col-md-2 space space-left">
-                <input class="form-control" type="text" name="" value="" placeholder="Tahun Terbit" required>
+                <input class="form-control" type="number" name="" value="" min="1990" max="2017" placeholder="Tahun Terbit" required>
               </div>
               <div class="col-md-5 space">
                 <input class="form-control" type="text" name="" value="" placeholder="Penerbit" required>
@@ -129,9 +167,8 @@
               <label for="deskripsibuku" class="first-content block">Deskripsi</label>
               <textarea name="deskripsibuku" id="deskripsibuku" class="block form-control" required></textarea>
               <button type="button" name="upload" class="first-content add-space btn btn-primary btn-lg"><i class="fa fa-send-o"></i>&nbsp; Upload</button>
-
-            </form>
           </div>
+          </form>
         </div>
       </div>
     </section>

@@ -63,8 +63,8 @@
               <li class="pull-right"><a href="pages/signup.html">Daftar</a></li>
             </ul>
           </div>
-          <div class="row first-content">
-            <div class="col-md-12 col-sm-12 text-center first-content add-space no-padding" id="layer">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 text-center add-space no-padding" id="layer">
               <h1>GEDEBUK</h1>
               <div class="secondary-colorwhite first-content scroll">
                 <p class="first-content">Lorem ipsum dolor sit amet, djsdnejnd ejsubd jues bjst dignissimos quisquam in.</p>
@@ -79,7 +79,7 @@
                     <button type="button" class="btn btn-warning" name="button">asas</button>
                   </div>
                   <div class="col-md-10 col-sm-10 col-xs-9 text-box no-padding no-margin">
-                    <input id="inputcari" class="search" type="text" name="search" placeholder="cari keyword" value="">
+                    <input id="inputcari" class="search" type="text" name="search" placeholder="Cari Buku!" value="">
                   </div>
                   <div class="col-md-2 col-sm-2 col-xs-3 text-box no-padding no-margin">
                     <button class="btn btn-lg btn-primary no-margin" type="submit" name="search"><p><i class="fa fa-search"></i></p></button>
@@ -96,30 +96,30 @@
                 </div>
               </div>
             </div>
-            <div class="headerfooter">
-              <a class="sosmed fb" href="https://www.facebook.com/gedebuk"><img src="assets\fb.png" alt="Share to Facebook"></a>
-              <a class="sosmed" href="https://instagram.com/gedebuk"><img src="assets\ig.png" alt="Share to Instagram"></a>
-              <a class="sosmed" href="https://twitter.com/gedebuk"><img src="assets\tw.png" alt="Share to Twiter"></a>
-            </div>
+
           </div>
         </div>
+        <section class="offer">
+          <div class="headerfooter">
+            <a class="sosmed fb" href="https://www.facebook.com/gedebuk"><img src="assets\fb.png" alt="Share to Facebook"></a>
+            <a class="sosmed" href="https://instagram.com/gedebuk"><img src="assets\ig.png" alt="Share to Instagram"></a>
+            <a class="sosmed" href="https://twitter.com/gedebuk"><img src="assets\tw.png" alt="Share to Twiter"></a>
+          </div>
+          <div class="container">
+            <div class="left">
+              <h4>Punya buku tapi tidak terpakai, atau hanya sebagai hiasan rak?</h4>
+              <small>Lorem ipsum dolor sit.</small>
+            </div>
+            <div class="right">
+              <button type="link" class="btn btn-lg btn-default wow animated tada">Pinjemin aja!</button>
+            </div>
+          </div>
+        </section>
       </div>
     </header>
     <!-- end ofheader -->
 
-    <section class="offer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-9 col-sm-9 col-xs-9">
-            <h4>Punya buku tapi tidak terpakai/hanya sebagai hiasan rak?</h4>
-            <small>Lorem ipsum dolor sit.</small>
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-3">
-            <button type="submit" class="btn btn-lg btn-default">Pinjemin aja!</button>
-          </div>
-        </div>
-      </div>
-    </section>
+
 
     <!-- category -->
     <section class="sec">
@@ -127,7 +127,7 @@
         <div class="row">
           <div class="col-md-4 col-sm-12 col-xs-12 panelkiri">
             <div class="kategori add-space">
-              <h2 class="garisbawah">Kategori</h2>
+              <h2 class="garisbawah text-primary">Kategori</h2>
               <div class="list-group">
                 <a href="#" class="list-group-item">
                   <i class="fa fa-book fa-fw"></i> Edukasi
@@ -144,7 +144,7 @@
               </div>
             </div>
             <div class="promoted first-content">
-              <h2 class="garisbawah">Promoted Books</h2>
+              <h2 class="garisbawah text-primary">Promoted Books</h2>
               <div class="scroll-page">
                 <a href="#">
                   <div class="media">
@@ -208,15 +208,15 @@
                 </a>
               </div>
 
-              <a href=""><small class="first-content text-primary premium"><i class="fa fa-tasks"></i> Bagaimana agar buku dipromosikan?</small></a>
+              <a href=""><small class="first-content premium"><span class="text-primary"><i class="fa fa-tasks"></i> Bagaimana agar buku dipromosikan?</span></small></a>
             </div>
           </div>
           <div class="col-md-8 col-sm-12 col-xs-12 no-page-padding">
             <div class="featured">
               <ul class="nav nav-pills no-padding">
                 <li role="presentation" class="active"><a href="#" class="garisbawah">Buku Populer</a></li>
-                <li role="presentation" ><a href="#" class="garisbawah">Buku baru</a></li>
-                <li role="presentation" ><a href="#" class="garisbawah">Buku terlaris</a></li>
+                <li role="presentation" ><a href="#" class="garisbawah text-primary">Buku baru</a></li>
+                <li role="presentation" ><a href="#" class="garisbawah text-primary">Buku terlaris</a></li>
               </ul>
               <ul>
                 <li>
@@ -233,9 +233,9 @@
                       <div class="navbody">
                         <div class="col-md-6 col-sm-6 no-padding">
                           <small class="inline">Share : </small>
-                          <a class="sosmed" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="assets/fb.png" alt="Share to Facebook"></a>
-                          <a class="sosmed" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="assets/wa.png" alt="Share to Instagram"></a>
-                          <a class="sosmed" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="assets/tw.png" alt="Share to Twiter"></a>
+                          <a class="sosmed" target="_blank" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="assets/fb.png" alt="Share to Facebook"></a>
+                          <a class="sosmed" target="_blank" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="assets/wa.png" alt="Share to Instagram"></a>
+                          <a class="sosmed" target="_blank" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="assets/tw.png" alt="Share to Twiter"></a>
                         </div>
                         <div class="col-md-6 col-sm-6 attention">
                           <a href="#"><button type="button" class="btn btn-primary" name="button">Sewa</button></a>
@@ -259,9 +259,9 @@
                       <div class="navbody">
                         <div class="col-md-6 col-sm-6 no-padding">
                           <small class="inline">Share : </small>
-                          <a class="sosmed" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="assets/fb.png" alt="Share to Facebook"></a>
-                          <a class="sosmed" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="assets/wa.png" alt="Share to Instagram"></a>
-                          <a class="sosmed" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="assets/tw.png" alt="Share to Twiter"></a>
+                          <a class="sosmed" target="_blank" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="assets/fb.png" alt="Share to Facebook"></a>
+                          <a class="sosmed" target="_blank" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="assets/wa.png" alt="Share to Instagram"></a>
+                          <a class="sosmed" target="_blank" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="assets/tw.png" alt="Share to Twiter"></a>
                         </div>
                         <div class="col-md-6 col-sm-6 attention">
                           <a href="#"><button type="button" class="btn btn-primary" name="button">Sewa</button></a>
@@ -285,9 +285,9 @@
                       <div class="navbody">
                         <div class="col-md-6 col-sm-6 no-padding">
                           <small class="inline">Share : </small>
-                          <a class="sosmed" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="assets/fb.png" alt="Share to Facebook"></a>
-                          <a class="sosmed" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="assets/wa.png" alt="Share to Instagram"></a>
-                          <a class="sosmed" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="assets/tw.png" alt="Share to Twiter"></a>
+                          <a class="sosmed" target="_blank" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="assets/fb.png" alt="Share to Facebook"></a>
+                          <a class="sosmed" target="_blank" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="assets/wa.png" alt="Share to Instagram"></a>
+                          <a class="sosmed" target="_blank" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="assets/tw.png" alt="Share to Twiter"></a>
                         </div>
                         <div class="col-md-6 col-sm-6 attention">
                           <a href="#"><button type="button" class="btn btn-primary" name="button">Sewa</button></a>
@@ -311,9 +311,9 @@
                       <div class="navbody">
                         <div class="col-md-6 col-sm-6 no-padding">
                           <small class="inline">Share : </small>
-                          <a class="sosmed" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="assets/fb.png" alt="Share to Facebook"></a>
-                          <a class="sosmed" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="assets/wa.png" alt="Share to Instagram"></a>
-                          <a class="sosmed" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="assets/tw.png" alt="Share to Twiter"></a>
+                          <a class="sosmed" target="_blank" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="assets/fb.png" alt="Share to Facebook"></a>
+                          <a class="sosmed" target="_blank" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="assets/wa.png" alt="Share to Instagram"></a>
+                          <a class="sosmed" target="_blank" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="assets/tw.png" alt="Share to Twiter"></a>
                         </div>
                         <div class="col-md-6 col-sm-6 attention">
                           <a href="#"><button type="button" class="btn btn-primary" name="button">Sewa</button></a>
@@ -337,9 +337,9 @@
                       <div class="navbody">
                         <div class="col-md-6 col-sm-6 no-padding">
                           <small class="inline">Share : </small>
-                          <a class="sosmed" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="assets/fb.png" alt="Share to Facebook"></a>
-                          <a class="sosmed" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="assets/wa.png" alt="Share to Instagram"></a>
-                          <a class="sosmed" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="assets/tw.png" alt="Share to Twiter"></a>
+                          <a class="sosmed" target="_blank" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="assets/fb.png" alt="Share to Facebook"></a>
+                          <a class="sosmed" target="_blank" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="assets/wa.png" alt="Share to Instagram"></a>
+                          <a class="sosmed" target="_blank" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="assets/tw.png" alt="Share to Twiter"></a>
                         </div>
                         <div class="col-md-6 col-sm-6 attention">
                           <a href="#"><button type="button" class="btn btn-primary" name="button">Sewa</button></a>

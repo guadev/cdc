@@ -1,3 +1,12 @@
+/*@media screen and (min-width:993px) {
+  .offer{
+    padding: 10vh 0;
+    background: url(../assets/bg.jpeg);
+  }
+  .offer .container{
+    background:rgba(51, 53, 102,.5);
+  }
+}*/
 @media screen and (max-width:992px){
   h1{
     font-size: 55px;
@@ -42,9 +51,9 @@
     padding: 0;
     padding-top: 4em;
   }
-  header{
+  /*header{
     height: 80vh;
-  }
+  }*/
   .darklight{
     display: none;
   }
@@ -85,9 +94,6 @@
     display: block;
     width: 100%;
     padding: 0;
-  }
-  header{
-    height: 80vh;
   }
   .offer{
     line-height: 20px;

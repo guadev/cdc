@@ -51,26 +51,26 @@
       <div class="bg"></div>
 			<div class="container well well-lg first-content">
 				<div class="row contact-form">
-          <h2 class="text-center">Daftar</h2>
+          <h2 class="text-center text-primary">Daftar</h2>
           <p class="contact-head">Daftar dengan akun baru. Nikmati semua kemudahan
             yang ada, gratis!</p>
 					<form class="first-content">
             <div class="col-md-offset-7 col-md-5">
               <div class="col-md-12 text-box">
-                <div class="col-md-6 no-padding">
-                  <input type="text" placeholder="First Name" />
+                <div class="col-md-6 space space-left">
+                  <input type="text" class="form-control" placeholder="First Name" >
                 </div>
-                <div class="col-md-6 no-padding">
-                  <input type="text" placeholder="Last Name" />
+                <div class="col-md-6 space space-right">
+                  <input type="text" class="form-control" placeholder="Last Name" >
                 </div>
-                <input type="text" placeholder="Username" />
-                <input type="email" placeholder="e-Mail" />
-                <input type="password" placeholder="Password" />
-                <input type="password" placeholder="Konfirmasi Password" />
-                <label for="">Unggah foto <span class="deskrip">(*Foto ukuran max 350kb)</span></label>
-                <input type="file" name="" value="" placeholder="Foto">
-                <label class="block"><a href="#">Untuk apa nomor identitas?</a></label>
-                <div class="col-md-3 text-box no-padding">
+                <input type="text" placeholder="Username" class="form-control">
+                <input type="email" placeholder="e-Mail" class="form-control">
+                <input type="password" placeholder="Password" class="form-control">
+                <input type="password" placeholder="Konfirmasi Password" class="form-control">
+                <small class="text-muted">Unggah foto</small>
+                <input type="file" name="" value="" >
+                <small class="block underline"><a href="#" class="text-warning">Untuk apa nomor identitas?</a></small>
+                <div class="col-md-3 no-padding">
                   <select class="form-control">
                     <option value="KTP">KTP</option>
                     <option value="KTM">KTM</option>
@@ -79,18 +79,19 @@
                     <option value="Kartu pelajar">Kartu pelajar</option>
                   </select>
                 </div>
-                <div class="col-md-9 col-xs-9 col-sm-9 text-box no-padding">
-                  <input type="text" placeholder="Nomor identitas" >
+                <div class="col-md-9 col-xs-9 col-sm-9 text-box no-padding clearfix">
+                  <input type="text" placeholder="Nomor identitas" class="form-control">
                 </div>
-              <input type="text" placeholder="Alamat" />
-              <label class="text-warning">*Jika masih mahasiswa/pelajar</label>
-              <input type="text" placeholder="Asal Universitas/sekolah" />
+                <small class="text-muted block">Alamat</small>
+              <textarea name="alamat" class="form-control text-box"></textarea>
+              <small class="text-warning">*Jika masih mahasiswa/pelajar</small>
+              <input type="text" placeholder="Asal Universitas/sekolah" class="form-control">
               <div class="col-md-12 first-content">
                 <div class="col-md-2 no-padding text-left">
                   <input class="inline no-padding" type="checkbox" name="deal" required>
                 </div>
                 <div class="col-md-10 no-padding add-space">
-                  <p>Setuju dengan semua <a class="text-warning" href="#">syarat</a> dan <a class="text-warning" href="#">ketentuan <a href="#">gedebuk.com</a></a></p>
+                  <p>Setuju dengan semua <a class="text-warning underline" href="#">syarat</a> dan <a class="text-warning underline" href="#">ketentuan </a> gedebuk.</p>
                 </div>
               </div>
               <button type="button" class="btn btn-lg btn-primary center-block" name="button">Daftar</button>

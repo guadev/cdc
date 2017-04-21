@@ -31,9 +31,6 @@ hr{
   margin-top: 10px;
   border-radius: 50px;
 }
-.deskrip{
-  font-size: 1em;
-}
 .inline{display: inline;}
 .block{display: block;}
 li{
@@ -61,10 +58,13 @@ li{
 }
 .no-space{
   margin: 0;
-
 }
 .none{
   opacity: 0;
+}
+.underline:hover{
+  text-decoration: underline !important;
+  text-decoration-color: inherit;
 }
 .primary-color{
   color: #000;
@@ -97,6 +97,15 @@ li{
   animation-delay: .6s;
 }
 
+select{
+  background: rgb(165, 149, 222) !important;
+  color: #fff !important;
+}
+option{
+  background-color: white;
+  color: #999;
+}
+
 /*header*/
 header{
   box-sizing: border-box;
@@ -119,7 +128,7 @@ header .fly{
   left: 30px;
 }
 header .fly > ul > li.pull-right{
-  margin-left: 20px;
+  margin-left: 40px;
 }
 header .fly > ul > li > a{
   display: inline-block;
@@ -225,7 +234,7 @@ hr.hrcenter{
   font-family: 'Montserrat';
   color: #aaa;
   position: absolute;
-  bottom: 10px;
+  top: -3em;
   left: 5px;
 }
 /*header*/
@@ -259,26 +268,66 @@ hr.hrcenter{
 
 /*offer*/
 .offer{
-  background:#333566;
+  background-image:linear-gradient(0deg, rgba(51, 53, 102,.71), rgba(51, 53, 102, 0.3));
   padding: 20px;
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 .offer h4{
-  font-size: 2em;
+  font-size: 1.8em;
   color: white;
+  font-weight: 200;
 }
 .offer small{
   font-size: 1em;
-  color: #ddd;
+  color: #eee;
 }
-.offer button.btn.btn-lg.btn-default{
-  margin-left: 10px;
-  margin-top: 10px;
+.offer .left, .offer .right{
+  float: left;
+  box-sizing: border-box;
+}
+.offer .left{
+  width: 70%;
+}
+.offer .right{
+  width: 30%;
+  padding: .5em 0;
+  text-align: right;
+}
+.offer button{
+  -webkit-transition: .3s;
+  -o-transition: .3s;
   transition: .3s;
-  float: right;
+  position: relative;
+  z-index: 999;
+  overflow: hidden;
 }
-.offer button.btn.btn-lg.btn-default:hover{
+.offer button::after{
+  content: '';
+  z-index: -1;
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #ddd;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
+.offer button:hover::after{
+  height: 120px;
+  width: 100%;
+}
+.offer button:hover{
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+  background-color: white;
 }
 
 .media .media-left{
@@ -312,6 +361,7 @@ hr.hrcenter{
 .garisbawah{
   padding-bottom: 5px;
   border-bottom: 1px solid #eee;
+  min-height: 1px;
 }
 .promoted{
   margin-top: 50px;
@@ -434,9 +484,6 @@ nav#top-bar li > a:hover{
 /*Endnavbar*/
 
 /*Sign up*/
-.headercontact .cover{
-  color: inherit;
-}
 .contact{
 	padding:1em 0 3em;
   position: relative;
@@ -444,7 +491,7 @@ nav#top-bar li > a:hover{
 .contact .well{
   background-color: rgba(255, 255, 255, 0.5);
 }
-.text-box input, .textarea textarea,
+.text-box input, textarea.form-control,
 .text-box select.form-control{
 	border: 2px solid #E5E5E5;
 	width: 100%;
@@ -463,16 +510,23 @@ nav#top-bar li > a:hover{
 	-o-transition:0.5s all;
 	outline:none;
 }
-select.form-control{
-  height: 51px;
-  border: 2px solid #E5E5E5;
-  border-color: rgb(165, 149, 222);
+.text-box select.form-control{
+  font-size: .75em;
+  padding: .3em;
+  border: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.text-box input[placeholder="Nomor identitas"]{
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-left: none;
 }
 .text-box input:hover,
-.textarea textarea:hover,
+textarea:hover,
 .text-box select.form-control:hover,
 .text-box input:focus,
-.textarea textarea:focus,
+textarea.form-control:focus,
 .text-box select.form-control:focus{
 	border-color: rgba(231, 76, 60, 0.55);
 }
@@ -480,12 +534,9 @@ select.form-control{
   width: 100%;
   border-radius: 3px;
 }
-.contact .login button{
-  width: 40%;
-  border-radius: 3px;
-}
 .contact .login h3{
   margin-bottom: 20px;
+  color: #666;
 }
 .contact-head{
 	color: #858585;
@@ -509,10 +560,12 @@ section.contact .login{
   padding: 30px;
   padding-top: 70px;
   border-radius: 10px;
+  padding-bottom: 4em;
   background: rgba(255, 255, 255, 0.5);
 }
 .icon{
   background: rgb(255, 255, 255);
+  color: rgb(154, 162, 179);
   padding:  33px 25px;
   padding-bottom: 0;
   position: absolute;
@@ -553,6 +606,9 @@ footer h4.text-center.text-muted{
 .darklight{
   background:#333566;
   margin-top: 150px;
+}
+.darklight h4{
+  color: rgb(102, 166, 235);
 }
 .fade-up{
   margin-top: -100px;
@@ -648,16 +704,23 @@ footer img.guadev{
 }
 .page p.divider{
   padding-top: 1.5px;
+  color: lightblue;
 }
-.page .input-group .input-group-addon,
-.page .input-group .form-control{
-  border-radius: 0;
+.page button[type="submit"]{
+  border: .2em solid lightblue;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+.page button[type="submit"]:hover{
+  background: rgb(165, 149, 222);
+  color: #eee;
 }
 /*Search.html end*/
 
 /*upload.html start*/
 .upload{
-  margin-top: 3em;
+  margin-top: 4em;
 }
 input[id^="foto"]{
   display: none;
@@ -672,13 +735,54 @@ input[id^="foto"]{
   cursor: pointer;
   color: #aaa;
 }
+.upload .input-group-addon{
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.upload input[name="transaksi"]{
+  display: none;
+}
+.upload input[name="transaksi"] + label{
+  width: 3em;
+  height: 1.3em;
+  background: #ccc;
+  border-radius: .6em;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 .1em #888;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+.upload input[name="transaksi"] + label::after{
+  content: '';
+  position: absolute;
+  left: .1em;
+  top: .09em;
+  border-radius: 50%;
+  width: 1.15em;
+  height: 1.15em;
+  background: white;
+  box-shadow: 0 .3em 1em rgba(0, 0, 0, 0.3);
+  cursor: default;
+}
+.upload input[name="transaksi"]:checked + label::after{
+  right: .1em;
+}
+.upload input[name="transaksi"]:checked{
+  background: green;
+}
 .upload .panelkiri .thumbnail.priority{
   height: 15em;
   line-height: 15em;
   font-size: .8em;
 }
-.upload .fotobox .col-md-4{
+.upload .thumbnail:hover, .upload label:hover{
   cursor: pointer;
+}
+.upload li, .upload ul{
+  margin: 0;
+  padding: 0;
 }
 .space{
   padding: 0;
@@ -691,12 +795,12 @@ input[id^="foto"]{
 .space-right{
   border-right: none;
 }
-.upload form input{
-  margin-bottom: 1em;
-}
 .upload label{
   text-decoration: none;
   font-weight: normal;
+}
+.upload form input:not([type="checkbox"]){
+  margin-bottom: 1em;
 }
 .upload form textarea{
   height: 6em;
