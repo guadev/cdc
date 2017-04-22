@@ -41,11 +41,13 @@ $allPost = showAllPost();
                     <button type="button" class="btn btn-warning" name="button">asas</button>
                   </div> -->
                   <div class="col-md-10 col-sm-10 col-xs-9 text-box no-padding no-margin">
-                    <input id="inputcari" class="search" type="text" name="search" placeholder="cari keyword" value="">
+                    <form class="form-action" action="search" method="get">
+                      <input id="inputcari" class="search" type="text" name="search" placeholder="cari keyword" value="">
                   </div>
                   <div class="col-md-2 col-sm-2 col-xs-3 text-box no-padding no-margin">
                     <button class="btn btn-lg btn-primary no-margin" type="submit" name="search"><p><i class="fa fa-search"></i></p></button>
                   </div>
+                  </form>
                   <!-- <div class="col-md-12 col-sm-12 col-xs-12">
                     <p class="inline secondary-colorwhite caripopuler">Pencarian populer : </p>
                     <ul class="">

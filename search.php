@@ -1,26 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Get The Book | Home</title>
-
-    <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/animate.min.css">
-    <link rel="stylesheet" href="../css/font-awesome.css">
-    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
-    <link rel="stylesheet" href="../css/core.css">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="../https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="../https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
+<?php
+require_once 'core/init.php';
+include_once 'view/header.php';
+?>
     <!-- nav -->
     <nav id="top-bar" class="navbar navbar-default navbar-fixed-top" data-nav-status="toggle">
       <div class="container">
@@ -32,7 +13,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">GEDEBUK</a>
+          <a class="navbar-brand" href="index.php">GEDEBUK</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -44,8 +25,8 @@
             <button type="submit" class="btn btn-default">Cari</button>
           </form>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="pages/login.html">Log In</a></li>
-            <li><a  href="pages/signup.html"><span class="text-warning">Daftar</span></a></li>
+            <li><a href="login.php">Log In</a></li>
+            <li><a  href="register.php"><span class="text-warning">Daftar</span></a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

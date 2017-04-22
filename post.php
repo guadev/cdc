@@ -9,16 +9,15 @@ if(isset($_SESSION['user'])) {
 
 $allPost = showAllPost();
 
-$url = $_GET['show'];
-$readData = showPostByUrl($url);
+$url          = $_GET['show'];
+$readData     = showPostByUrl($url);
+$trackView    = viewsCounter($url);
+
 if(isset($_GET['show'])) {
   $readData = showPostByUrl($url);
   while($row = mysqli_fetch_assoc($readData)) {
-    $infoUsers = informasiUsers();
-    $readUsers = mysqli_fetch_assoc($infoUsers);
-    $firstname      = $readUsers['firstname'];
-    $lastname       = $readUsers['lastname'];
     $judulBuku      = $row['judul_buku'];
+    $penulisPost    = $row['penulis_post'];
     $penulisBuku    = $row['penulis_buku'];
     $penerbit       = $row['penerbit'];
     $harga          = $row['harga'];
@@ -26,6 +25,7 @@ if(isset($_GET['show'])) {
     $tanggalPost    = $row['tanggal_post'];
     $tag            = $row['tag'];
     $deskripsi      = $row['deskripsi_buku'];
+    $views          = $row['views'];
   }
 }
 
@@ -96,9 +96,10 @@ if(isset($_GET['show'])) {
           <div class="col-md-9 panelkanan">
             <h3><?php echo $judulBuku; ?></h3>
             <div class="alert alert-info" role="alert"><strong style="color:#31708f;">Tersedia!</strong> Buku tidak sedang dipinjam.</div>
-            <small><i class="fa fa-pencil-square-o"></i> Diposting oleh: <?php echo $firstname . ' ' . $lastname; ?></small><br>
+            <small><i class="fa fa-pencil-square-o"></i> Diposting oleh: <?php echo $penulisPost; ?></small><br>
             <small>Tanggal: <?php echo $tanggalPost; ?></small><br>
-            <small>Kategori: <?php echo $tag; ?></small>
+            <small>Kategori: <?php echo $tag; ?></small><br>
+            <small>Dilihat: <?php echo $views; ?> kali</small>
             <h4>Deskripsi</h4>
             <legend>
               <p>
@@ -113,7 +114,7 @@ if(isset($_GET['show'])) {
         </div>
       </div>
     </section>
-    
+
     <footer>
       <section class="dark">
         <div class="container">

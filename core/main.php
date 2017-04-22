@@ -2,15 +2,8 @@
 
 function showAllPost() {
   global $link; //mengambil nilai variabel dari $link pada koneksi db
-  $query  = "SELECT * FROM post";
+  $query  = "SELECT * FROM post ORDER BY id_post DESC LIMIT 5";
   $result = mysqli_query($link, $query) or die('Gagal memuat post!');
-  return $result;
-}
-
-function informasiUsers() {
-  global $link;
-  $query = "SELECT * FROM users";
-  $result = mysqli_query($link, $query) or die('Gagal memuat informasi users!');
   return $result;
 }
 
@@ -69,8 +62,11 @@ function escape($data) {
   return mysqli_real_escape_string($link, $data);
 }
 
-function viewsCounter() {
-  //setelah view per post selesai dikerjakan
+function viewsCounter($url) {
+  global $link;
+  $query = "UPDATE post SET views = views + 1 WHERE url_post = '$url'";
+  $result = mysqli_query($link, $query) or die('null');
+  return $result;
 }
 
  ?>
