@@ -155,12 +155,25 @@ if(isset($_POST['submit'])) {
                 </div>
                 <p class="form-control">Jual</p>
               </div>
+              <!-- jika pinjemin maka langsung centang -->
               <div class="input-group">
                 <div class="input-group-addon">
-                  <input type="checkbox" name="sewa" value="sewa">
+                  <?php
+                    if (isset($_POST['pinjemin'])) {
+                    ?>
+                    <input type="checkbox" name="sewa" value="sewa" checked="true">
+                    <?php
+                  }else {
+                    ?>
+                    <input type="checkbox" name="sewa" value="sewa" >
+                    <?php
+                  }
+                   ?>
                 </div>
                 <p class="form-control">Sewakan</p>
-              </div> <br>
+              </div>
+
+              <br>
               <input class="form-control" type="number" min="4" name="harga" value="" placeholder="Harga. e.g: 10000" required>
               <label for="deskripsibuku" class="first-content block">Deskripsi</label>
               <textarea name="deskripsibuku" id="deskripsibuku" class="block form-control" placeholder="Deskripsikan apa yang dibahas di dalam buku, sinopsis (jika novel), jumlah halaman dan informasi yang menggambarkan buku tersebut. " required></textarea> <br>

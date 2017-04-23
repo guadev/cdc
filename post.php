@@ -84,7 +84,7 @@ if(isset($_GET['show'])) {
               </tr>
               <tr>
                 <td>Harga</td>
-                <td>Rp. <?php echo $harga; ?>,-</td>
+                <td>Rp. <?php echo number_format($harga,'0',',','.'); ?>,-</td>
               </tr>
               <tr>
                 <td>Alamat</td>

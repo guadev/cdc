@@ -79,12 +79,15 @@ $allPost = showAllPost();
             <small>Lorem ipsum dolor sit.</small>
           </div>
           <div class="col-md-3 col-sm-3 col-xs-3">
-            <button type="submit" class="btn btn-lg btn-default">Pinjemin aja!</button>
+
+            <form action="publish.php" method="post">
+              <button  type="submit" class="btn btn-lg btn-default" name="pinjemin" >Pinjemin aja!</button>
+            </form>
+
           </div>
         </div>
       </div>
     </section>
-
     <!-- category -->
     <section class="sec">
       <div class="container">
