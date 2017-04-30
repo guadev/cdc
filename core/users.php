@@ -29,12 +29,19 @@ function register($firstname, $lastname, $username, $email, $password, $identita
   $alamat     = escape($alamat);
   $noHP       = escape($noHP);
   $asal       = escape($asal);
-
   $password   = md5($password);
+  //user duplicate
   $query      = "SELECT * FROM users WHERE username = '$username'";
   $result     = mysqli_query($link, $query);
-  $row        = mysqli_fetch_assoc($result);
-  if($row == 0) {
+  $row1        = mysqli_fetch_assoc($result);
+  //email duplicate
+  $query      = "SELECT * FROM users WHERE email = '$email'";
+  $result     = mysqli_query($link, $query);
+  $row2        = mysqli_fetch_assoc($result);
+  //email validation
+  $valid=emailValidation($email);
+
+  if($row1 == 0 && $row2==0 && $valid==true) {
     $query    = "INSERT INTO users(firstname, lastname, username, email, password, identitas, no_identitas, alamat, no_hp, asal, online)
                   VALUES('$firstname', '$lastname', '$username', '$email', '$password', '$identitas', '$noIdentitas', '$alamat', '$noHP', '$asal', 0)";
     $register = mysqli_query($link, $query);
@@ -42,6 +49,15 @@ function register($firstname, $lastname, $username, $email, $password, $identita
   } else {
     return false;
   }
+}
+
+function emailValidation($email)
+{
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+      return true;
+    } else {
+      return false;
+    }
 }
 
 function online($username) {
