@@ -6,88 +6,111 @@ $allPost = showAllPost();
 
 ?>
 
-    <!-- header -->
-    <header class="parallax-window" data-parallax="scroll" data-speed="0.2" data-image-src="assets/bg.jpeg">
-      <div class="cover">
-        <div class="container first-content">
-          <div class="fly">
-            <ul>
-              <li class="pull-left"><a href="forum.php">Forum</a></li>
-              <?php
-              if($login) {
-              ?>
-                <li class="pull-right"><a href="logout.php">Log out</a></li>
-                <li class="pull-right"><a href="akun.php">Dashboard</a></li>
-              <?php
-              } else { ?>
-                <li class="pull-right"><a href="login.php">Log In</a></li>
-                <li class="pull-right"><a href="register.php">Register</a></li>
-              <?php } ?>
-              <li class="pull-right"><a href="publish.php">Posting Buku</a></li>
-            </ul>
+<!-- header -->
+<header class="parallax-window" data-parallax="scroll" data-speed="0.2" data-image-src="assets/bg.jpeg">
+  <div class="cover">
+    <div class="container first-content">
+      <div class="fly hidden-xs">
+        <ul>
+          <li class="pull-left"><a href="index"><i class="fa fa-gg"></i> Gedebuk</a></li>
+          <?php
+            if ($login) {
+            ?>
+            <li class="pull-right"><a href="akun"><?php echo "Selamat datang, ".$_SESSION['user']; ?></a></li>
+            <li class="pull-right"><a href="logout">Log Out</a></li>
+
+            <?php
+          }else{
+            ?>
+            <li class="pull-right"><a href="login">Log In</a></li>
+            <li class="pull-right"><a href="register">Register</a></li>
+            <?php
+          }
+           ?>
+           <li class="pull-right"><a href="forum/">Forum</a></li>
+
+        </ul>
+      </div>
+      <div class="headerfooter">
+        <abbr title="Temukan kami di facebook!"><a class="sosmed fb" href="https://www.facebook.com/gedebuk"><img src="assets\fb.png" alt="Share to Facebook"></a></abbr>
+        <abbr title="Temukan kami di Instagram"><a class="sosmed" href="https://instagram.com/gedebuk"><img src="assets\ig.png" alt="Share to Instagram"></a></abbr>
+        <abbr title="Temukan kami di twitter!"><a class="sosmed" href="https://twitter.com/gedebuk"><img src="assets\tw.png" alt="Share to Twiter"></a></abbr>
+      </div>
+      <div class="forum hidden-xs hidden-sm">
+        <abbr title="Buka forum"><a href="#"><h4 class="garisbawah secondary-colorwhite">Forum</h4></a></abbr>
+        <ul class="fa fa-ul">
+          <h6 class="first-content">BELUM TERJAWAB</h6>
+          <li><a href="#" class="underline"><i class="fa fa-li fa-list"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, maxime.</a></li>
+          <li><a href="#" class="underline"><i class="fa fa-li fa-list"></i> Pertanyaan 2</a></li>
+          <li><a href="#" class="underline"><i class="fa fa-li fa-list"></i> Pertanyaan 3</a></li>
+          <li><a href="#" class="underline"><i class="fa fa-li fa-list"></i> Pertanyaan 4</a></li>
+          <li><a href="#" class="underline"><i class="fa fa-li fa-list"></i> Pertanyaan 5</a></li>
+          <li role="separator" class="divider first-content"></li>
+          <h6>SOLVED</h6>
+          <li><a href="#" class="underline"><i class="fa fa-li fa-list"></i> Pertanyaan 1 [SOLVED]</a></li>
+          <li><a href="#" class="underline"><i class="fa fa-li fa-list"></i> Pertanyaan 2</a></li>
+          <li><a href="#" class="underline"><i class="fa fa-li fa-list"></i> Pertanyaan 3</a></li>
+          <li><a href="#" class="underline"><i class="fa fa-li fa-list"></i> Pertanyaan 4</a></li>
+          <li><a href="#" class="underline"><i class="fa fa-li fa-list"></i> Pertanyaan 5</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-md-9 col-md-offset-3 col-xs-12 col-sm-12 text-center add-space no-padding" id="layer">
+          <h1>Cara mudah cari buku!</h1>
+          <div class="secondary-colorwhite first-content scroll">
+            <p class="first-content">Lorem ipsum dolor sit amet, djsdnejnd ejsubd jues bjst dignissimos quisquam in.</p>
+            <p>Derah malang dan sekitarnya</p>
           </div>
-          <div class="row first-content">
-            <div class="col-md-12 col-sm-12 text-center first-content add-space no-padding" id="layer">
-              <h1>GEDEBUK</h1>
-              <div class="secondary-colorwhite first-content scroll">
-                <p class="first-content">Buku tahu semuanya!<br>Temukan buku favoritmu dan bantu teman-teman lain yang membutuhkan buku.</p>
+          <div class="col-md-offset-2 col-md-8 scroll">
+            <div class="secondary-colorwhite">
+              <div class="col-md-12 col-sm-12 col-xs-12 inline button no-padding">
+                <button type="button" class="btn btn-danger" name="button">Hot</button>
+                <button type="button" class="btn btn-primary" name="button">New</button>
+                <button type="button" class="btn btn-success" name="button">Jas</button>
+                <button type="button" class="btn btn-warning" name="button">asas</button>
               </div>
-              <div class="col-md-offset-3 col-md-6 first-content scroll">
-                <div class="secondary-colorwhite first-content">
-                  <!-- <div class="col-md-12 col-sm-12 col-xs-12 inline button no-padding">
-                    <button type="button" class="btn btn-danger" name="button">Hot</button>
-                    <button type="button" class="btn btn-primary" name="button">New</button>
-                    <button type="button" class="btn btn-success" name="button">Jas</button>
-                    <button type="button" class="btn btn-warning" name="button">asas</button>
-                  </div> -->
-                  <div class="col-md-10 col-sm-10 col-xs-9 text-box no-padding no-margin">
-                    <form class="form-action" action="search" method="get">
-                      <input id="inputcari" class="search" type="text" name="search" placeholder="cari keyword" value="">
-                  </div>
-                  <div class="col-md-2 col-sm-2 col-xs-3 text-box no-padding no-margin">
-                    <button class="btn btn-lg btn-primary no-margin" type="submit" name="search"><p><i class="fa fa-search"></i></p></button>
-                  </div>
-                  </form>
-                  <!-- <div class="col-md-12 col-sm-12 col-xs-12">
-                    <p class="inline secondary-colorwhite caripopuler">Pencarian populer : </p>
-                    <ul class="">
-                      <li><a href="#"><p class="inline caripopuler text-primary">uin</p></a></li>
-                      <li><a href="#"><p class="inline caripopuler text-warning">maulana</p></a></li>
-                      <li><a href="#"><p class="inline caripopuler text-danger">malik</p></a></li>
-                      <li><a href="#"><p class="inline caripopuler text-success">ibrahim</p></a></li>
-                    </ul>
-                  </div> -->
-                </div>
+              <div class="col-md-10 col-sm-10 col-xs-9 text-box no-padding no-margin">
+                <input id="inputcari" class="search" type="text" name="search" placeholder="Cari Buku!" value="">
+                <div id="suggest"></div>
               </div>
-            </div>
-            <div class="headerfooter">
-              <a class="sosmed fb" href="https://www.facebook.com/gedebuk"><img src="assets\fb.png" alt="Share to Facebook"></a>
-              <a class="sosmed" href="https://instagram.com/gedebuk"><img src="assets\ig.png" alt="Share to Instagram"></a>
-              <a class="sosmed" href="https://twitter.com/gedebuk"><img src="assets\tw.png" alt="Share to Twiter"></a>
+              <div class="col-md-2 col-sm-2 col-xs-3 text-box no-padding no-margin">
+                <button class="btn btn-lg btn-primary no-margin" type="submit" id="search"><p><i class="fa fa-search"></i></p></button>
+              </div>
+              <div class="col-md-12 col-sm-12 col-xs-12 populer">
+                <p class="inline secondary-colorwhite caripopuler">Pencarian populer : </p>
+                <ul class="">
+                  <li><a href="#"><p class="inline caripopuler text-primary">uin</p></a></li>
+                  <li><a href="#"><p class="inline caripopuler text-warning">maulana</p></a></li>
+                  <li><a href="#"><p class="inline caripopuler text-danger">malik</p></a></li>
+                  <li><a href="#"><p class="inline caripopuler text-success">ibrahim</p></a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </header>
-    <!-- end ofheader -->
+    </div>
+  </div>
+</header>
+<!-- end ofheader -->
 
-    <section class="offer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-9 col-sm-9 col-xs-9">
-            <h4>Punya buku tapi tidak terpakai/hanya sebagai hiasan rak?</h4>
-            <small>Lorem ipsum dolor sit.</small>
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-3">
-
-            <form action="publish.php" method="post">
-              <button  type="submit" class="btn btn-lg btn-default" name="pinjemin" >Pinjemin aja!</button>
-            </form>
-
-          </div>
-        </div>
+<section class="offer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-9">
+        <h4>Punya buku tapi tidak terpakai, atau hanya sebagai hiasan rak?</h4>
+        <small>Dan dapatkan keuntungannya!</small>
       </div>
-    </section>
+      <div class="col-xs-12 col-md-3">
+
+        <form action="publish.php" method="post">
+          <button  type="submit" class="btn btn-lg btn-default wow animated tada" name="pinjemin" >Pinjemin aja!</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
     <!-- category -->
     <section class="sec">
       <div class="container">
@@ -217,7 +240,25 @@ $allPost = showAllPost();
                 </li>
               <?php } //end of while ?>
               </ul>
-
+              <nav aria-label="Page navigation first-content">
+                <ul class="pagination pull-right">
+                  <li>
+                    <a href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="active"><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                  <li>
+                    <a href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>

@@ -89,17 +89,17 @@
           <small class="block">Supported by:</small>
           <abbr title="Stasion">
             <a href="#">
-              <img src="assets/stasion.png" alt="">
+              <img src="../assets/stasion.png" alt="">
             </a>
           </abbr>
           <abbr title="CDC ICT">
             <a href="#">
-              <img src="assets/ict.jpg" alt="">
+              <img src="../assets/ict.jpg" alt="">
             </a>
           </abbr>
           <abbr title="Inagata technosmith">
             <a href="#">
-              <img src="assets/inagata.png" alt="">
+              <img src="../assets/inagata.png" alt="">
             </a>
           </abbr>
         </div>
@@ -107,7 +107,7 @@
           <p class="inline"><span class="primary-colorwhite">Copyright 2017</span> | developed by &nbsp; </p>
           <abbr title="Guadev">
             <a href="#">
-              <img src="assets/GUAdev.jpg" alt="">
+              <img src="../assets/GUAdev.jpg" alt="">
             </a>
           </abbr>
         </div>
@@ -116,10 +116,10 @@
   </section>
 </footer>
 
-<script src="js/jquery.js"></script>
-<script src="js/parallax.min.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/main.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/parallax.min.js"></script>
+<script src="../js/wow.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

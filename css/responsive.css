@@ -1,3 +1,22 @@
+@media screen and (min-width:993px) {
+  .space{
+    padding: 0;
+    margin: 0;
+    border: .3em solid transparent;
+  }
+  .space-left{
+    border-left: none;
+  }
+  .space-right{
+    border-right: none;
+  }
+  .offer button{
+    float: right;
+  }
+  #input{
+    width: 600px;
+  }
+}
 @media screen and (max-width:992px){
   h1{
     font-size: 55px;
@@ -36,28 +55,58 @@
     padding: 0;
   }
 }
+@media screen and (max-width:768px) and (min-width:481px) {
+  .kategori, .promoted, .featured{
+    font-size: 1.2em;
+  }
+  .promoted h4.media-heading{
+    font-size: 1.5em;
+  }
+  .promoted small,
+  .promoted p{
+    font-size: 1.1em;
+  }
+}
 @media screen and (max-width:768px) {
   .cover{
     margin: 0;
     padding: 0;
     padding-top: 4em;
+    padding-left: 1.3em;
+    padding-right: 1.3em;
   }
   header{
     height: 80vh;
   }
+  header p{
+    line-height: 2em;
+  }
+  header .button,
+  header .populer{
+    font-size: 2em;
+  }
   .darklight{
     display: none;
   }
+  .offer h4{
+    font-size: 2.3em;
+  }
+  .offer small{
+    font-size: 2em;
+  }
   .offer button{
     width: 10em;
-    padding: 1em;
+    padding: .7em;
     box-shadow: 0 2px 2px #444;
-    height: 4em;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 2em;
+    font-weight: lighter;
+    margin-top: 2em;
   }
   .promoted, .featured{
     padding-right: 20px;
+  }
+  .premium{
+    margin-top: 1em;
   }
   .kategori{
     width: 30%;
@@ -68,9 +117,23 @@
     width: 65%;
     display: table-cell;
   }
+  .featured .media .navbody .attention button{
+    float: left;
+    margin: 0;
+  }
 }
 
 @media screen and (max-width:480px) {
+  h1{
+    font-size: 40px;
+  }
+  header h1{
+    margin-top: 20px;
+  }
+  header .scroll{
+    margin-top: 3em;
+    margin-bottom: 5em;
+  }
   .media img.media-object{
     transform-origin: center;
   }
@@ -86,31 +149,34 @@
     width: 100%;
     padding: 0;
   }
-  header{
-    height: 80vh;
-  }
   .offer{
     line-height: 20px;
   }
   .offer h4{
     padding-right: 15px;
-    font-size: 1em;
-    line-height: 23px;
+    font-size: 1.6em;
+    line-height: 30px;
     margin-bottom: 0;
   }
   .offer small{
+    display: inline-block;
+    padding-top: 15px;
     font-size: .8em;
   }
   .offer button{
-    width: 95px;
-    padding: 2px;
+    padding: 10px;
     box-shadow: 0 2px 2px #444;
     height: 50px;
     font-size: 14px;
     font-weight: bold;
+    margin-top: 30px;
   }
   header .button{
     display: none;
+  }
+  header .populer{
+    font-size: 1.2em;
+    line-height: 1em;
   }
   .sosmed{
     display: none;
@@ -119,27 +185,26 @@
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    padding-bottom: 20px;
   }
-  .scroll-page a{
+  .scroll-page li{
     display: inline-block;
-    width: 80%;
+    width: auto;
+    width: 60%;
+    padding: 1em 0;
     margin-right: 10px;
     padding-right: 10px;
     border-right: 1px solid #eee;
+    box-sizing: 0 1px 2px #eee;
   }
-  .scroll-page a:last-child{
+  .promoted .scroll-page .media-body p{
+    display: none;
+  }
+  .scroll-page li:last-child{
     border: none;
-  }
-  .scroll-page a .media-object{
-    max-height: 70px;
-  }
-  .scroll-page .media-body.garisbawah{
-    border: 0;
-    padding: 0;
   }
   .featured{
     padding: 0;
+    margin-top: 1em;
   }
   .featured .media-left{
     display: block;
@@ -150,18 +215,31 @@
     border-radius: .6em;
     height: 10em;
   }
-  .featured .media-object{
+  .featured .media-object, .promoted .media-object{
     display: inline-block;
     height: 100%;
+    max-height: 100%;
     width: auto !important;
   }
-  .featured .media .navbody{
-    display: none;
+  .promoted .media-left{
+    display: block;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: .3em;
+    height: 10em;
+  }
+  .promoted .media-body{
+    display: block;
+    text-align: center;
+    width: 100%;
   }
 }
-@media screen and (max-width:320px) {
+@media screen and (max-width:360px) {
   h1{
-    font-size: 40px;
+    font-size: 30px;
   }
   h2{
     font-size: 25px;
@@ -173,26 +251,41 @@
     font-size: 18px;
   }
   p{
-    font-size: 12px;
+    font-size: 18px;
+  }
+  header{
+    height: 100vh;
+  }
+  .cover{
+    padding-left: 10px;
+    padding-right: 10px;
   }
   small{
     font-size: 10px;
   }
+  header h1{
+    margin-top: 1em;
+  }
+  header p{
+    line-height: 30px;
+  }
+  header .scroll{
+    margin-top: .2em;
+  }
   .offer h4{
     padding-right: 10px;
-    font-size: .8em;
+    font-size: 1.4em;
     line-height: 1.5em;
     margin-bottom: 0;
   }
   .offer small{
-    font-size: .6em;
+    font-size: 1em;
   }
   .offer button{
-    width: 60px;
-    padding: 2px;
-    height: 30px;
-    font-size: 8px;
-    font-weight: bold;
+    width: auto;
+    padding: 10px;
+    font-size: 1.1em;
+    font-weight: lighter;
   }
   .text-center-page{
     text-align: center;
@@ -206,9 +299,5 @@
   .featured .media{
     padding-left: 0px;
     padding-top: 3px;
-  }
-  .featured img.media-object{
-    width: 70px;
-    max-height: 95px;
   }
 }

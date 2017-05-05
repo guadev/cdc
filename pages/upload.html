@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Get The Book | Home</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+    <link rel="stylesheet" href="../css/core.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="../https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="../https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- nav -->
+    <nav id="top-bar" class="navbar navbar-default navbar-fixed-top" data-nav-status="toggle">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">GEDEBUK</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="menu">
+          <form class="navbar-form navbar-left search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Cari judul buku/nama pengarang">
+            </div>
+            <button type="submit" class="btn btn-default">Cari</button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="pages/login.html">Log In</a></li>
+            <li><a  href="pages/signup.html"><span class="text-warning">Daftar</span></a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!--end of nav -->
+
+        <!-- category -->
+    <section class="upload">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 add-space">
+            <h2 class="text-primary">Posting buku</h2>
+            <small class="secondary-color">Cara mudah meluaskan manfaat. Pinjamkan buku anda kepada orang yang lebih membutuhkan.</small>
+          </div>
+          <form autocomplete="on">
+          <div class="col-md-3 panelkiri">
+            <h4 class="text-primary">Foto</h4>
+            <div class="col-md-12 no-padding">
+              <div class="col-md-6 space space-left">
+                <div class="thumbnail text-box">
+                  <label for="foto1">foto buku 1</label>
+                  <input type="file" id="foto1" name="fotobuku1" value="">
+                </div>
+              </div>
+              <div class="col-md-6 space space-right">
+                <div class="thumbnail text-box">
+                  <label for="foto1">foto buku 2</label>
+                  <input type="file" id="foto1" name="fotobuku1" value="">
+                </div>
+              </div>
+            </div>
+            <h4 class="first-content text-primary">Transaksi</h4>
+            <div class="input-group">
+                <div class="input-group-addon">
+                  <input type="checkbox" name="transaksi" value="dijual" id="jenis1">
+                  <label for="jenis1"></label>
+                </div>
+                <p class="form-control">Dijual</p>
+            </div>
+            <div class="input-group">
+                <div class="input-group-addon">
+                  <input type="checkbox" name="transaksi" value="disewakan" id="jenis2">
+                  <label for="jenis2"></label>
+                </div>
+                <p class="form-control">Disewakan</p>
+            </div>
+            <h4 class="first-content text-primary">Kategori</h4>
+            <ul class="add-space block">
+              <li>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <input type="checkbox" aria-label="...">
+                  </div>
+                  <p class="inline form-control"><i class="fa fa-book fa-fw"></i> Edukasi</p>
+                </div>
+              </li>
+              <li>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <input type="checkbox" aria-label="...">
+                  </div>
+                  <p class="inline form-control"><i class="fa fa-money fa-fw"></i> Bisnis</p>
+                </div>
+              </li>
+              <li>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <input type="checkbox" aria-label="...">
+                  </div>
+                  <p class="inline form-control"><i class="fa fa-fire fa-fw"></i> Komik</p>
+                </div>
+              </li>
+              <li>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <input type="checkbox" aria-label="...">
+                  </div>
+                  <p class="inline form-control"><i class="fa fa-book fa-fw"></i> Bacaan sehari-hari</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-9 panelkanan text-box">
+            <h4 class="text-primary">Detail buku</h4>
+
+              <input class="form-control" type="text" name="" value="" placeholder="Judul Buku" required>
+              <input class="form-control" list="pengarang" placeholder="Nama Pengarang" required>
+              <datalist class="" id="pengarang">
+                <option value="W.R. Supratman">W.R. Supratman</option>
+                <option value="Namaja Gandi">Namaja Gandi</option>
+                <option value="Ikeh ikeh kimochi">Ikeh ikeh kimochi</option>
+                <option value="Hell Yeah">Hell Yeah</option>
+                <option value="Eko budi santoos">Eko budi santoos</option>
+              </datalist>
+              <div class="col-md-2 space space-left">
+                <input class="form-control" type="number" name="" value="" min="1990" max="2017" placeholder="Tahun Terbit" required>
+              </div>
+              <div class="col-md-5 space">
+                <input class="form-control" type="text" name="" value="" placeholder="Penerbit" required>
+              </div>
+              <div class="col-md-5 space space-right">
+                <input class="form-control" type="text" name="" value="" placeholder="Tempat terbit" required>
+              </div>
+              <div class="col-md-12 add-space no-padding">
+                <div class="col-md-6 space-left space">
+                  <label for="harga">Harga Sewa</label>
+                  <div class="input-group">
+                    <span class="input-group-addon">Rp</span>
+                    <input type="text" class="form-control text-right harga">
+                    <span class="input-group-addon">,00</span>
+                  </div>
+                </div>
+                <div class="col-md-6 space-right space">
+                  <label for="harga">Harga Jual</label>
+                  <div class="input-group">
+                    <span class="input-group-addon">Rp</span>
+                    <input type="text" class="form-control text-right harga">
+                    <span class="input-group-addon">,00</span>
+                  </div>
+                </div>
+              </div>
+              <input class="form-control" type="text" name="" value="" placeholder="Keterangan tambahan. e.g: Cetakan kedua, dll.">
+              <label for="deskripsibuku" class="first-content block">Deskripsi</label>
+              <textarea name="deskripsibuku" id="deskripsibuku" placeholder="Deskripsi buku, sinopsis" class="block form-control" required></textarea>
+              <label for="deskripsibuku" class="first-content block">Alamat</label>
+              <textarea name="deskripsibuku" placeholder="Alamat dimana buku berada" class="block form-control" required></textarea>
+              <button type="submit" class="first-content add-space btn btn-primary btn-lg"><i class="fa fa-send-o"></i>&nbsp; Posting</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <section class="dark">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <a href="#">
+                <div class="block help text-center">Hubungi kami</div>
+              </a>
+              <a href="#">
+                <div class="block help text-center">Tips belanja aman</div>
+              </a>
+              <a href="#">
+                <div class="block help text-center">Tips measas</div>
+              </a>
+            </div>
+            <div class="col-md-6 about">
+              <div class="col-md-12">
+                <a class="block" href="#"><h4>Copyright Gedebuk &copy; 2017</h4></a>
+                <div class="col-md-4 no-padding">
+                  <a href="">About Us</a>
+                </div>
+                <div class="col-md-8 no-padding">
+                  <a href="">FAQ</a>
+                </div>
+                <div class="col-md-4 no-padding">
+                  <a href="">About Us</a>
+                </div>
+                <div class="col-md-8 no-padding">
+                  <a href="">FAQ</a>
+                </div>
+              </div>
+          </div>
+          <div class="col-md-3" id="logo">
+            <abbr title="developed by GUAdev"><img src="../GUAdev.jpg" class="pull-right guadev img-circle" alt="GUAdev"></abbr>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/wow.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+  </body>
+</html>

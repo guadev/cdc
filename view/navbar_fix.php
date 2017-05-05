@@ -5,9 +5,9 @@ if(isset($_SESSION['user'])) {
   $login = true;
 }
  ?>
-
-<!-- nav -->
-<nav id="home-bar" class="navbar navbar-hidden" data-nav-status="toggle">
+<body>
+  <!-- nav -->
+<nav id="top-bar" class="navbar navbar-default navbar-fixed-top" data-nav-status="toggle">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -31,7 +31,6 @@ if(isset($_SESSION['user'])) {
       <ul class="nav navbar-nav navbar-right">
         <?php
           if($login) { ?>
-            <li><a href="forum/">Forum</a></li>
             <li><a href="publish">Posting Buku</a></li>
             <li><a href="akun">Dashboard</a></li>
             <li><a  href="logout"><span class="text-warning">Log out</span></a></li>

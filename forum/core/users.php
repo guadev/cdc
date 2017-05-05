@@ -1,5 +1,21 @@
 <?php
 
+function login($username, $password) {
+  global $link;
+  $username = escape($username);
+  $password = escape($password);
+
+  $password = md5($password);
+
+  $query    = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+  $result   = mysqli_query($link, $query);
+
+  if(mysqli_num_rows($result) != 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 function register($firstname, $lastname, $username, $email, $password, $identitas, $noIdentitas, $alamat, $noHP, $asal) {
   global $link;
@@ -58,24 +74,16 @@ function offline($username) {
   return $result;
 }
 
-function login($username, $password) {
+function loginadmin($password) {
   global $link;
-
   $password = escape($password);
   $password = md5($password);
-  $query    = "SELECT username, password FROM users WHERE username = '$username' AND password = '$password'";
-  $result1   = mysqli_query($link, $query);
-  $query    = "SELECT username, email, password FROM users WHERE email = '$username' AND password = '$password'";
-  $result2   = mysqli_query($link, $query);
+  $query    = "SELECT username, password, status FROM users WHERE username = 'admin' AND password = '$password' AND status = 1";
+  $result   = mysqli_query($link, $query);
 
-  if(mysqli_num_rows($result1) != 0) {
-    $_SESSION['user']=$username;
+  if(mysqli_num_rows($result) != 0) {
     return true;
-  } else if (mysqli_num_rows($result2) != 0) {
-    $row=mysqli_fetch_assoc($result2);
-    $_SESSION['user']=$row['username'];
-    return true;
-  }else{
+  } else {
     return false;
   }
 }
