@@ -4,7 +4,7 @@ include_once 'view/header.php';
 include_once 'view/navbar_fix.php';
 
 if(isset($_SESSION['user'])) {
-  header('location:index.php');
+  header('location:index');
 }
 
 $pesan = '';
@@ -12,25 +12,28 @@ $pesan = '';
 if(isset($_POST['submit'])) {
   $firstname = $_POST['firstname'];
   $lastname  = $_POST['lastname'];
+  $nama      = $firstname .' '. $lastname;
   $username  = $_POST['username'];
   $email     = $_POST['email'];
   $pass1     = $_POST['pass1'];
   $pass2     = $_POST['pass2'];
   $identitas = $_POST['identitas'];
-  $noIdentitas= $_POST['noIdentitas'];
+  $no_identitas= $_POST['no_identitas'];
+  $gender     = $_POST['gender'];
   $alamat     = $_POST['alamat'];
-  $noHP       = $_POST['no_hp'];
+  $hp         = $_POST['no_hp'];
   $asal       = $_POST['asal'];
 
   $password = '';
+
   if(strlen($pass1)>=8){
   if($pass1 == $pass2) {
     $password = $pass1;
-    if(!empty(trim($firstname)) && !empty(trim($lastname)) && !empty(trim($username)) && !empty(trim($email)) && !empty(trim($password))
-        && !empty(trim($identitas)) && !empty(trim($noIdentitas)) && !empty(trim($alamat)) && !empty(trim($noHP))) {
-      if(register($firstname, $lastname, $username, $email, $password, $identitas, $noIdentitas, $alamat, $noHP, $asal)) {
-        $_POST= array();
-        $pesan = '<div class="alert alert-success" role="alert">Berhasil mendaftar! Silahkan <a href="login.php"><b>Masuk</b></a> untuk melanjutkan</div>';
+    if(!empty(trim($nama)) && !empty(trim($username)) && !empty(trim($email)) && !empty(trim($password))
+        && !empty(trim($identitas)) && !empty(trim($no_identitas)) && !empty(trim($gender)) && !empty(trim($alamat)) && !empty(trim($hp))) {
+      if(register($nama, $username, $email, $password, $identitas, $no_identitas, $gender, $alamat, $hp, $asal)) {
+        $_POST = array();
+        $pesan = '<div class="alert alert-success" role="alert">Berhasil mendaftar! Silahkan <a href="login"><b>Masuk</b></a> untuk melanjutkan</div>';
       } else {
         $pesan = '<div class="alert alert-warning" role="alert">Username atau email telah digunakan/tidak valid!.</div>';
       }
@@ -41,7 +44,7 @@ if(isset($_POST['submit'])) {
   } else {
     $pesan = '<div class="alert alert-danger" role="alert">Kata sandi tidak cocok!</div>';
   }
-}else{
+} else{
   $pesan = '<div class="alert alert-danger" role="alert">Kata sandi minimal 8 karakter!</div>';
 }
 }
@@ -58,8 +61,7 @@ if(isset($_POST['submit'])) {
          ?>
       </div>
       <?php
-        function isSubmit()
-        {
+        function isSubmit() {
           if (isset($_POST['submit'])) {
             return true;
           }
@@ -87,21 +89,26 @@ if(isset($_POST['submit'])) {
             <small class="block underline first-content"><a href="#" class="text-warning">Untuk apa nomor identitas?</a></small>
             <div class="col-md-3 no-padding">
               <select class="form-control" id="select" name="identitas">
-                <option value="KTP">KTP</option>
-                <option value="KTM">KTM</option>
-                <option value="SIM">SIM</option>
-                <option value="Paspor">Paspor</option>
-                <option value="Kartu pelajar">Kartu pelajar</option>
+                <option value="ktp">KTP</option>
+                <option value="ktm">KTM</option>
+                <option value="kartu pelajar">Kartu Pelajar</option>
               </select>
             </div>
             <div class="col-md-9 col-xs-9 col-sm-9 text-box no-padding clearfix">
-              <input type="text" class="form-control" name="noIdentitas" min="8" placeholder="Nomor identitas" value="<?php if(isSubmit())echo $noIdentitas;?>" required>
+              <input type="text" class="form-control" name="no_identitas" min="8" placeholder="Nomor identitas" value="<?php if(isSubmit())echo $no_identitas;?>" required>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-12 no-padding">
+              <select class="form-control" id="select" name="gender" required>
+                <option value="L">Laki-laki</option>
+                <option value="P">Perempuan</option>
+              </select>
             </div>
             <div class="clearfix"></div>
             <small class="text-muted block">Alamat</small>
             <textarea name="alamat" class="form-control text-box"><?php if(isSubmit())echo $alamat;?></textarea>
             <small class="text-warning">*Wajib menggunakan nomor yang valid</small>
-            <input class="form-control" type="text" name="no_hp" min="11" placeholder="No. HP" value="<?php if(isSubmit())echo $noHP;?>" required/>
+            <input class="form-control" type="text" name="no_hp" min="11" placeholder="No. HP" value="<?php if(isSubmit())echo $hp;?>" required/>
             <small class="text-warning">*Jika masih mahasiswa/pelajar</small>
             <input type="text" name="asal" placeholder="Asal Universitas/sekolah" class="form-control" value="<?php if(isSubmit())echo $asal;?>">
             <div class="col-md-12 first-content">
@@ -131,11 +138,11 @@ if(isset($_POST['submit'])) {
     if(pass1.value == pass2.value){
       pass2.style.borderColor = goodColor;
       message.style.color = goodColor;
-      message.innerHTML = "Password benar";
+      message.innerHTML = "Cocok";
     }else{
       pass2.style.borderColor = badColor;
       message.style.color = badColor;
-      message.innerHTML = "Password salah";
+      message.innerHTML = "Password tidak cocok!";
     }
   }
 </script>

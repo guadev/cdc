@@ -22,9 +22,9 @@ if(isset($_SESSION['user'])) {
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="menu">
-      <form class="navbar-form navbar-left search">
+      <form class="navbar-form navbar-left search" action="search" method="get">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Cari judul buku/nama pengarang">
+          <input type="text" class="form-control" placeholder="Ketik judul buku...">
         </div>
         <button type="submit" class="btn btn-default">Cari</button>
       </form>

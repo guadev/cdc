@@ -18,10 +18,10 @@ if(isset($_POST['submit'])) {
       online($_SESSION['user']);
       header('location:index');
     } else {
-      $pesan = '<div class="alert alert-danger" role="alert">username atau password salah!</div>';
+      $pesan = '<div class="alert alert-danger" role="alert">username / email atau password salah!</div>';
     }
   } else {
-    $pesan = '<div class="alert alert-warning" role="alert">username dan password harus diisi!</div>';
+    $pesan = '<div class="alert alert-warning" role="alert">username / email dan password harus diisi!</div>';
   }
 
 }
@@ -37,11 +37,11 @@ if(isset($_POST['submit'])) {
               <?php echo $pesan; ?>
             <form action="" method="post" >
               <div class="text-box">
-                <input type="text" name="username" placeholder="Username/email" >
+                <input type="text" name="username" placeholder="Username atau Email">
                 <input type="password" name="password" placeholder="Password" >
               </div>
               <div class="alert alert-warning">
-                <p>Belum punya akun? <a href="register.php" class="text-danger underline">Daftar disini.</a></p>
+                <p>Belum punya akun? <a href="register" class="text-danger underline">Daftar disini.</a></p>
               </div>
               <button type="submit" class="btn btn-lg btn-primary wow animated fadeInUp center-block"  name="submit" >Log In</button>
               <a href="#" class="pull-right first-content"><small class="text-danger underline">Lupa password?</small></a>
@@ -85,7 +85,7 @@ if(isset($_POST['submit'])) {
               </div>
           </div>
           <div class="col-md-3" id="logo">
-            <abbr title="developed by GUAdev"><img src="../GUAdev.jpg" class="pull-right guadev img-circle" alt="GUAdev"></abbr>
+            <!-- <abbr title="developed by GUAdev"><img src="../GUAdev.jpg" class="pull-right guadev img-circle" alt="GUAdev"></abbr> -->
           </div>
         </div>
       </section>

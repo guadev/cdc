@@ -3,7 +3,7 @@
   $dbhost = 'localhost';
   $dbuser = 'root';
   $dbpass = '';
-  $dbname = 'buku';
+  $dbname = 'gedebuk';
 
   $link = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 

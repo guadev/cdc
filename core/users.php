@@ -1,33 +1,34 @@
 <?php
 
 
-function register($firstname, $lastname, $username, $email, $password, $identitas, $noIdentitas, $alamat, $noHP, $asal) {
+function register($nama, $username, $email, $password, $identitas, $no_identitas, $gender, $alamat, $hp, $asal) {
   global $link;
-  $firstname  = escape($firstname);
-  $lastname   = escape($lastname);
+  $nama       = escape($nama);
   $username   = escape($username);
   $email      = escape($email);
   $password   = escape($password);
   $identitas  = escape($identitas);
-  $noIdentitas= escape($noIdentitas);
+  $no_identitas= escape($no_identitas);
+  $gender     = escape($gender);
   $alamat     = escape($alamat);
-  $noHP       = escape($noHP);
+  $hp         = escape($hp);
   $asal       = escape($asal);
+  //enkripsi password
   $password   = md5($password);
   //user duplicate
-  $query      = "SELECT * FROM users WHERE username = '$username'";
+  $query      = "SELECT * FROM user WHERE user_name = '$username'";
   $result     = mysqli_query($link, $query);
-  $row1        = mysqli_fetch_assoc($result);
+  $row1       = mysqli_fetch_assoc($result);
   //email duplicate
-  $query      = "SELECT * FROM users WHERE email = '$email'";
+  $query      = "SELECT * FROM user WHERE email = '$email'";
   $result     = mysqli_query($link, $query);
   $row2        = mysqli_fetch_assoc($result);
   //email validation
-  $valid=emailValidation($email);
+  $valid = emailValidation($email);
 
-  if($row1 == 0 && $row2==0 && $valid==true) {
-    $query    = "INSERT INTO users(firstname, lastname, username, email, password, identitas, no_identitas, alamat, no_hp, asal, online)
-                  VALUES('$firstname', '$lastname', '$username', '$email', '$password', '$identitas', '$noIdentitas', '$alamat', '$noHP', '$asal', 0)";
+  if($row1 == 0 && $row2 == 0 && $valid == true) {
+    $query    = "INSERT INTO user(nama, user_name, email, password, jenis_id, no_id, hp, alamat, gender, akademik, online)
+                  VALUES('$nama', '$username', '$email', '$password', '$identitas', '$no_identitas', '$hp', '$alamat', '$gender', '$asal', 0)";
     $register = mysqli_query($link, $query);
     return true;
   } else {
@@ -61,23 +62,29 @@ function offline($username) {
 function login($username, $password) {
   global $link;
 
+  $username = escape($username);
   $password = escape($password);
   $password = md5($password);
-  $query    = "SELECT username, password FROM users WHERE username = '$username' AND password = '$password'";
+  $query    = "SELECT user_name, password FROM user WHERE user_name = '$username' AND password = '$password'";
   $result1   = mysqli_query($link, $query);
-  $query    = "SELECT username, email, password FROM users WHERE email = '$username' AND password = '$password'";
+  $query    = "SELECT user_name, email, password FROM user WHERE email = '$username' AND password = '$password'";
   $result2   = mysqli_query($link, $query);
 
   if(mysqli_num_rows($result1) != 0) {
-    $_SESSION['user']=$username;
+    $_SESSION['user'] = $username;
     return true;
   } else if (mysqli_num_rows($result2) != 0) {
-    $row=mysqli_fetch_assoc($result2);
-    $_SESSION['user']=$row['username'];
-    return true;
-  }else{
-    return false;
+      $row = mysqli_fetch_assoc($result2);
+      $_SESSION['user'] = $row['user_name'];
+      return true;
+  } else {
+      return false;
   }
+}
+
+function akun($user) {
+  global $link;
+  
 }
 
  ?>

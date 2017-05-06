@@ -1,6 +1,6 @@
 <?php
 require_once 'core/init.php';
-include_once 'view/header.php';
+require_once 'view/header.php';
 
 $login = false;
 $pesan = '';

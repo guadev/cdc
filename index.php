@@ -62,29 +62,16 @@ $allPost = showAllPost();
             <p>Derah malang dan sekitarnya</p>
           </div>
           <div class="col-md-offset-2 col-md-8 scroll">
+            <form action="search" mehod="post">
             <div class="secondary-colorwhite">
-              <div class="col-md-12 col-sm-12 col-xs-12 inline button no-padding">
-                <button type="button" class="btn btn-danger" name="button">Hot</button>
-                <button type="button" class="btn btn-primary" name="button">New</button>
-                <button type="button" class="btn btn-success" name="button">Jas</button>
-                <button type="button" class="btn btn-warning" name="button">asas</button>
-              </div>
-              <div class="col-md-10 col-sm-10 col-xs-9 text-box no-padding no-margin">
-                <input id="inputcari" class="search" type="text" name="search" placeholder="Cari Buku!" value="">
+                <div id="box" class="col-md-10 col-sm-10 col-xs-9 text-box no-padding no-margin">
+                  <input id="inputcari" class="search" type="text" name="search" placeholder="Ketik judul buku yang dicari...">
+                </div>
                 <div id="suggest"></div>
-              </div>
-              <div class="col-md-2 col-sm-2 col-xs-3 text-box no-padding no-margin">
-                <button class="btn btn-lg btn-primary no-margin" type="submit" id="search"><p><i class="fa fa-search"></i></p></button>
-              </div>
-              <div class="col-md-12 col-sm-12 col-xs-12 populer">
-                <p class="inline secondary-colorwhite caripopuler">Pencarian populer : </p>
-                <ul class="">
-                  <li><a href="#"><p class="inline caripopuler text-primary">uin</p></a></li>
-                  <li><a href="#"><p class="inline caripopuler text-warning">maulana</p></a></li>
-                  <li><a href="#"><p class="inline caripopuler text-danger">malik</p></a></li>
-                  <li><a href="#"><p class="inline caripopuler text-success">ibrahim</p></a></li>
-                </ul>
-              </div>
+                <div class="col-md-2 col-sm-2 col-xs-3 text-box no-padding no-margin">
+                  <button class="btn btn-lg btn-primary no-margin" type="submit" id="search" name="submit"><p><i class="fa fa-search"></i></p></button>
+                </div>
+            </form>
             </div>
           </div>
         </div>
@@ -219,20 +206,16 @@ $allPost = showAllPost();
                       </a>
                     </div>
                     <div class="media-body garisbawah">
-                      <a href="post.php?show=<?php echo $row['url_post']; ?>"><h4 class="media-heading"><?php echo $row['judul_buku']; ?></h4></a>
-                      <small>Diposting: <?php echo $row['penulis_post']; ?>, Penulis buku: <?php echo $row['penulis_buku']; ?></small> <br>
-                      <small>Waktu: <?php echo $row['tanggal_post']; ?></small>
-                      <p><?php echo excerpt($row['deskripsi_buku']); ?></p>
+                      <a href="post?show=<?php echo $row['url']; ?>"><h4 class="media-heading"><?php echo $row['judul']; ?></h4></a>
+                      <small>Diposting: <?php echo $row['nama']; ?>, Penulis buku: <?php echo $row['pengarang']; ?></small> <br>
+                      <small>Waktu: <?php echo $row['tgl_publikasi']; ?></small>
+                      <p><?php echo excerpt($row['deskripsi']); ?></p>
                       <div class="navbody">
                         <div class="col-md-6 col-sm-6 no-padding">
                           <small>Kategori: <?php echo $row['tag']; ?></small>
-                          <!-- <small class="inline">Share : </small>
-                          <a class="sosmed" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="assets/fb.png" alt="Share to Facebook"></a>
-                          <a class="sosmed" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="assets/wa.png" alt="Share to Instagram"></a>
-                          <a class="sosmed" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="assets/tw.png" alt="Share to Twiter"></a> -->
                         </div>
                         <div class="col-md-6 col-sm-6 attention">
-                          <a href="post.php?show=<?php echo $row['url_post']; ?>"><button type="button" class="btn btn-primary" name="button">Lihat selengkapnya >></button></a>
+                          <a href="post?show=<?php echo $row['url']; ?>"><button type="button" class="btn btn-primary" name="button">Lihat selengkapnya >></button></a>
                         </div>
                       </div>
                     </div>
@@ -265,4 +248,177 @@ $allPost = showAllPost();
       </div>
     </section>
 
-<?php include_once 'view/footer.php'; ?>
+    <footer>
+      <section class="darklight">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12"><h4 class="text-center text-muted">Mengapa Gedebuk.com ?</h4></div>
+              <div class="col-md-3 col-sm-3 text-center">
+                <div class="fade-up">
+                <div class="spec center-block wow animated pulse">
+                  <h1 class="inline"><i class="fa fa-laptop fa-fw"></i></h1>
+                </div>
+                <h2>User Interface Ramah</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nulla.</p>
+              </div>
+            </div>
+              <div class="col-md-3 col-sm-3 text-center">
+                <div class="fade-up">
+                <div class="spec center-block wow animated pulse delay-2s">
+                  <h1 class="inline"><i class="fa fa-line-chart fa-fw"></i></h1>
+                </div>
+                <h2>Tingkat akurasi maksimal</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nulla.</p>
+              </div>
+            </div>
+              <div class="col-md-3 col-sm-3 text-center">
+                <div class="fade-up">
+                <div class="spec center-block wow animated pulse delay-4s">
+                  <h1 class="inline"><i class="fa fa-chain-broken fa-fw"></i></h1>
+                </div>
+                <h2>Lebih mudah</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nulla.</p>
+              </div>
+            </div>
+              <div class="col-md-3 col-sm-3 text-center">
+                <div class="fade-up">
+                <div class="spec center-block wow animated pulse delay-6s">
+                  <h1 class="inline"><i class="fa fa-handshake-o fa-fw"></i></h1>
+                </div>
+                <h2>Saling menguntungkan</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nulla.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="dark">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-sm-4">
+              <a href="#">
+                <div class="block help text-center">Hubungi kami</div>
+              </a>
+              <a href="#">
+                <div class="block help text-center">Tips belanja aman</div>
+              </a>
+              <a href="#">
+                <div class="block help text-center">Tips measas</div>
+              </a>
+            </div>
+            <div class="col-md-2 col-md-offset-3 text-center">
+              <p>Dukungan</p>
+              <ul>
+                <li><a href="#">F.A.Q</a></li>
+                <li><a href="#">F.A.Q</a></li>
+                <li><a href="#">F.A.Q</a></li>
+              </ul>
+            </div>
+            <div class="col-md-2 text-center">
+              <p>Bisnis</p>
+              <ul>
+                <li><a href="#">Career</a></li>
+                <li><a href="#">Career</a></li>
+                <li><a href="#">Career</a></li>
+              </ul>
+            </div>
+            <div class="col-md-2 text-center">
+              <p>Gedebuk</p>
+              <ul>
+                <li><a href="#">About Gedebuk</a></li>
+                <li><a href="#">About Gedebuk</a></li>
+                <li><a href="#">About Gedebuk</a></li>
+              </ul>
+            </div>
+        </div>
+      </section>
+      <section class="powered clearfix">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 pull-left">
+              <small class="block">Supported by:</small>
+              <abbr title="Stasion">
+                <a href="#">
+                  <img src="assets/stasion.png" alt="">
+                </a>
+              </abbr>
+              <abbr title="CDC ICT">
+                <a href="#">
+                  <img src="assets/ict.jpg" alt="">
+                </a>
+              </abbr>
+              <abbr title="Inagata technosmith">
+                <a href="#">
+                  <img src="assets/inagata.png" alt="">
+                </a>
+              </abbr>
+            </div>
+            <div class="col-md-6 dev text-right">
+              <p class="inline"><span class="primary-colorwhite">Copyright <?php echo date('Y'); ?></span> | developed by &nbsp; </p>
+              <abbr title="Guadev">
+                <a href="#">
+                  <img src="assets/GUAdev.jpg" alt="">
+                </a>
+              </abbr>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script src="js/jquery.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script type="text/javascript">
+    new WOW().init();
+
+    function parallax(){
+      var prlx_lyr_1 = document.getElementById('layer');
+      prlx_lyr_1.style.top = (window.pageYOffset / 1.38 )+'px';
+    }
+      window.addEventListener("scroll", parallax, false);
+
+    $(document).ready(function(){
+      $(window).scroll(function (event) {
+            var y = $(this).scrollTop();
+            if (y <= 500) {
+              $('#home-bar').addClass('navbar-hidden');
+            }else {
+              $('#home-bar').addClass('animated').addClass('fadeInDown');
+              $('#home-bar').addClass('navbar-fixed-top').addClass('navbar-default');
+              $('#home-bar').removeClass('navbar-hidden');
+            }
+            if (y >= 200) {
+              $('.scroll').addClass('none');
+            }else {
+              $('.scroll').removeClass('none');
+            }
+        });
+    });
+
+    //searching with suggestion
+    $(document).ready(function(){
+      var left = $('#box').position().left;
+      var top = $('#box').position().top;
+      var width = $('#box').width();
+
+      $('#suggest').css('left', left).css('top', top+32).css('width', width);
+
+      $('#inputcari').keyup(function(){
+        var value = $(this).val();
+
+        if(value != '') {
+          $('#suggest').show();
+          $.post('hasilcari.php', {value: value}, function(data){
+            $('#suggest').html(data);
+          });
+        } else {
+          $('#suggest').hide();
+        }
+      });
+
+    });
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
+<?php mysqli_close($link); ?>

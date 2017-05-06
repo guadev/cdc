@@ -2,7 +2,7 @@
 
 function showAllPost() {
   global $link; //mengambil nilai variabel dari $link pada koneksi db
-  $query  = "SELECT * FROM post ORDER BY id_post DESC LIMIT 5";
+  $query  = "SELECT buku.*, user.nama, user.no_id FROM buku, user WHERE id_penjual = no_id ORDER BY id_buku DESC LIMIT 5";
   $result = mysqli_query($link, $query) or die('Gagal memuat post!');
   return $result;
 }
@@ -52,7 +52,7 @@ function deleteData($id) {
 }
 
 function excerpt($string) { //membatasi karakter yang ditampilkan
-  $string = substr($string, 0, 100); //hanya menampilkan 10 karakter awal
+  $string = substr($string, 0, 250);
 
   return $string . '...';
 }
