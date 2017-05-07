@@ -36,7 +36,7 @@ function run($query) {
 
 function showPostByUrl($url) {
   global $link;
-  $query = "SELECT * FROM post WHERE url_post='$url'";
+  $query = "SELECT buku.*, user.nama, user.no_id FROM buku, user WHERE id_penjual = no_id AND url = '$url'";
   $result = mysqli_query($link, $query) or die('Gagal memuat postingan!');
   return $result;
 }
@@ -64,7 +64,7 @@ function escape($data) {
 
 function viewsCounter($url) {
   global $link;
-  $query = "UPDATE post SET views = views + 1 WHERE url_post = '$url'";
+  $query = "UPDATE buku SET views = views + 1 WHERE url = '$url'";
   $result = mysqli_query($link, $query) or die('null');
   return $result;
 }

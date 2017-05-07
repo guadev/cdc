@@ -68,6 +68,7 @@ $allPost = showAllPost();
                   <input id="inputcari" class="search" type="text" name="search" placeholder="Ketik judul buku yang dicari...">
                 </div>
                 <div id="suggest"></div>
+            </div>
                 <div class="col-md-2 col-sm-2 col-xs-3 text-box no-padding no-margin">
                   <button class="btn btn-lg btn-primary no-margin" type="submit" id="search" name="submit"><p><i class="fa fa-search"></i></p></button>
                 </div>

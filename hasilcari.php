@@ -14,7 +14,7 @@ while($run = mysqli_fetch_array($query)) {
 
   $judul = $run['judul'];
   $url	 = $run['url']; ?>
-  <li><br><a href="post.php?=show<?php echo $url;?>"><?php echo $judul; ?></a></li><br>
+  <li><br><a href="post?show=<?php echo $url;?>"><?php echo $judul; ?></a></li><br>
 
 <?php } ?>
 

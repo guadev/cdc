@@ -24,7 +24,7 @@ if(isset($_SESSION['user'])) {
     <div class="collapse navbar-collapse" id="menu">
       <form class="navbar-form navbar-left search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Cari judul buku/nama pengarang">
+          <input type="text" class="form-control" placeholder="Ketik judul buku...">
         </div>
         <button type="submit" class="btn btn-default">Cari</button>
       </form>
