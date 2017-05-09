@@ -23,6 +23,27 @@ if(isset($_GET['show'])) {
     $tag            = $row['tag'];
     $deskripsi      = $row['deskripsi'];
     $views          = $row['views'];
+
+    //value status -> 0 jika tersedia, 1 jika sedang disewa, 2 jika telah habis terjual
+    $status         = $row['status'];
+    if($status == 0) {
+      $status = '<div class="alert alert-success" role="alert">Tersedia!</div>';
+    } else if($status == 1) {
+      $status = '<div class="alert alert-warning" role="alert">Buku sedang disewa hingga 1-6-2017</div>';
+    }
+
+    if($stock == 0) {
+      $status = '<div class="alert alert-danger" role="alert">Sold out!</div>';
+    }
+
+    if($hargaBeli == 0) {
+      $hargaBeli = 'Tidak dijual';
+    }
+
+    if($hargaSewa == 0) {
+      $hargaSewa = 'Tidak disewakan';
+    }
+
   }
 }
 
@@ -82,9 +103,9 @@ if(isset($_GET['show'])) {
             <div class="featured no-margin no-padding">
               <div class="col-md-6 garisbawah">
                 <h2><?php echo $judulBuku; ?></h2>
-                <small><i class="fa fa-pencil-square-o"></i> Diposting: <?php echo $penulisPost; ?></small>
-                <p class="text-muted">Dilihat: <?php echo $views; ?> kali</p>
-                <p class="text-muted">Tersedia</p>
+                <small><i class="fa fa-pencil-square-o"></i> Diposting: <?php echo $penulisPost; ?></small><br>
+                <small>Dilihat: <?php echo $views; ?> kali</small>
+                <span><?php echo $status; ?></span>
               </div>
               <div class="col-md-6 garisbawah">
                 <button type="submit" name="button">Sewa</button>

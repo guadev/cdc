@@ -1,60 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Get The Book | Home</title>
+<?php
+require_once 'core/init.php';
+require_once 'view/header.php';
+require_once 'view/navbar_fix.php';
 
-    <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/animate.min.css">
-    <link rel="stylesheet" href="../css/font-awesome.css">
-    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
-    <link rel="stylesheet" href="../css/core.css">
+if(!isset($_SESSION['user'])) {
+  header('location:login');
+}
+$profile = $_SESSION['user'];
+$readData = akun($profile);
+$akunPost = showAkunPost($profile);
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <!-- nav -->
-    <nav id="top-bar" class="navbar navbar-hidden" data-nav-status="toggle">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">GEDEBUK</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="menu">
-          <form class="navbar-form navbar-left search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Cari judul buku/nama pengarang">
-            </div>
-            <button type="submit" class="btn btn-default">Cari</button>
-          </form>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="pages/login.html">Log In</a></li>
-            <li><a  href="pages/signup.html"><span class="text-warning">Daftar</span></a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-    <!--end of nav -->
+while($row = mysqli_fetch_assoc($readData)) {
+  $nama     = $row['nama'];
+  $jenis_id = $row['jenis_id'];
+  $no_id    = $row['no_id'];
+  $alamat   = $row['alamat'];
+  $hp       = $row['hp'];
+}
+?>
 
     <section class="sec">
       <div class="container">
         <div class="row">
+          <br><br><br>
           <div class="col-md-3">
             <div class="photo-wrapper">
               <img src="../assets/bg.jpeg" class="img-responsive img-thumbnail" alt="">
@@ -62,134 +30,37 @@
           </div>
           <div class="col-md-8">
             <div class="featured no-margin no-padding">
-              <h2>Nama orang</h2>
-              <small><i class="fa fa-star"></i> Premium User</small>
+              <h2><?php echo $nama; ?></h2>
+              <!-- <small><i class="fa fa-star"></i> Premium User</small><br> -->
+              <small>Kartu Identitas: <?php echo $jenis_id; ?>, No Identitas: <?php echo $no_id; ?></small><br>
+              <small>Alamat: <?php echo $alamat; ?></small><br>
+              <small>Contact: <?php echo $hp; ?></small><br>
               <p>Bergabung sejak 2 Juli 2018</p>
               <ul class="nav nav-pills">
                 <li role="presentation" class="active"><a href="#" class="garisbawah">Koleksi Buku</a></li>
                 <li role="presentation" ><a href="#" class="garisbawah">Pengaturan akun</a></li>
               </ul>
-              <div class="media ">
-                <div class="media-left">
-                  <a href="#">
-                    <img class="media-object" src="../assets/coverbuku.jpg" alt="Judul Buku">
-                  </a>
-                </div>
-                <div class="media-body garisbawah">
-                  <a href="#"><h4 class="media-heading">Ini judul buku</h4></a>
-                  <small>oleh WR. Supratman</small>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam blanditiis neque sit necessitatibus architecto iusto voluptates ex optio, quia, ipsam cupiditate esse maiores vero dolore.</p>
-                  <div class="navbody">
-                    <div class="col-md-6 no-padding">
-                      <small class="inline">Share : </small>
-                      <a class="sosmed" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="../assets/fb.png" alt="Share to Facebook"></a>
-                      <a class="sosmed" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="../assets/wa.png" alt="Share to Instagram"></a>
-                      <a class="sosmed" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="../assets/tw.png" alt="Share to Twiter"></a>
-                    </div>
-                    <div class="col-md-6">
-                      <a href="#"><button type="button" class="btn btn-primary" name="button">Sewa</button></a>
-                      <a href="#"><button type="button" class="btn btn-danger" name="button">Beli</button></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="media ">
-                <div class="media-left">
-                  <a href="#">
-                    <img class="media-object" src="../assets/coverbuku.jpg" alt="Judul Buku">
-                  </a>
-                </div>
-                <div class="media-body garisbawah">
-                  <a href="#"><h4 class="media-heading">Ini judul buku</h4></a>
-                  <small>oleh WR. Supratman</small>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam blanditiis neque sit necessitatibus architecto iusto voluptates ex optio, quia, ipsam cupiditate esse maiores vero dolore.</p>
-                  <div class="navbody">
-                    <div class="col-md-6">
-                      <small class="inline">Share : </small>
-                      <a class="sosmed" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="../assets/fb.png" alt="Share to Facebook"></a>
-                      <a class="sosmed" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="../assets/wa.png" alt="Share to Instagram"></a>
-                      <a class="sosmed" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="../assets/tw.png" alt="Share to Twiter"></a>
-                    </div>
-                    <div class="col-md-6">
-                      <a href="#"><button type="button" class="btn btn-primary" name="button">Sewa</button></a>
-                      <a href="#"><button type="button" class="btn btn-danger" name="button">Beli</button></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="media ">
-                <div class="media-left">
-                  <a href="#">
-                    <img class="media-object" src="../assets/coverbuku.jpg" alt="Judul Buku">
-                  </a>
-                </div>
-                <div class="media-body garisbawah">
-                  <a href="#"><h4 class="media-heading">Ini judul buku</h4></a>
-                  <small>oleh WR. Supratman</small>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam blanditiis neque sit necessitatibus architecto iusto voluptates ex optio, quia, ipsam cupiditate esse maiores vero dolore.</p>
-                  <div class="navbody">
-                    <div class="col-md-6">
-                      <small class="inline">Share : </small>
-                      <a class="sosmed" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="../assets/fb.png" alt="Share to Facebook"></a>
-                      <a class="sosmed" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="../assets/wa.png" alt="Share to Instagram"></a>
-                      <a class="sosmed" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="../assets/tw.png" alt="Share to Twiter"></a>
-                    </div>
-                    <div class="col-md-6">
-                      <a href="#"><button type="button" class="btn btn-primary" name="button">Sewa</button></a>
-                      <a href="#"><button type="button" class="btn btn-danger" name="button">Beli</button></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="media ">
-                <div class="media-left">
-                  <a href="#">
-                    <img class="media-object" src="../assets/coverbuku.jpg" alt="Judul Buku">
-                  </a>
-                </div>
-                <div class="media-body garisbawah">
-                  <a href="#"><h4 class="media-heading">Ini judul buku</h4></a>
-                  <small>oleh WR. Supratman</small>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam blanditiis neque sit necessitatibus architecto iusto voluptates ex optio, quia, ipsam cupiditate esse maiores vero dolore.</p>
-                  <div class="navbody">
-                    <div class="col-md-6">
-                      <small class="inline">Share : </small>
-                      <a class="sosmed" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="../assets/fb.png" alt="Share to Facebook"></a>
-                      <a class="sosmed" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="../assets/wa.png" alt="Share to Instagram"></a>
-                      <a class="sosmed" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="../assets/tw.png" alt="Share to Twiter"></a>
-                    </div>
-                    <div class="col-md-6">
-                      <a href="#"><button type="button" class="btn btn-primary" name="button">Sewa</button></a>
-                      <a href="#"><button type="button" class="btn btn-danger" name="button">Beli</button></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="media ">
-                <div class="media-left">
-                  <a href="#">
-                    <img class="media-object" src="../assets/coverbuku.jpg" alt="Judul Buku">
-                  </a>
-                </div>
-                <div class="media-body garisbawah">
-                  <a href="#"><h4 class="media-heading">Ini judul buku</h4></a>
-                  <small>oleh WR. Supratman</small>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam blanditiis neque sit necessitatibus architecto iusto voluptates ex optio, quia, ipsam cupiditate esse maiores vero dolore.</p>
-                  <div class="navbody">
-                    <div class="col-md-6">
-                      <small class="inline">Share : </small>
-                      <a class="sosmed" href="https://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title; ?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=550,height=400"><img src="../assets/fb.png" alt="Share to Facebook"></a>
-                      <a class="sosmed" href="whatsapp://send?text=Lihat buku di gedebuk.com, bagus!"data-action="share/whatsapp/share"><img src="../assets/wa.png" alt="Share to Instagram"></a>
-                      <a class="sosmed" href="https://twitter.com/share?source=sharethiscom&text=<?php echo $title;?>&url=<?php echo $url; ?>&via=gedebuk.com"><img src="../assets/tw.png" alt="Share to Twiter"></a>
-                    </div>
-                    <div class="col-md-6">
-                      <a href="#"><button type="button" class="btn btn-primary" name="button">Sewa</button></a>
-                      <a href="#"><button type="button" class="btn btn-danger" name="button">Beli</button></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
+              <?php while($row2 = mysqli_fetch_array($akunPost)) { ?>
+              <div class="media ">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object" src="../assets/coverbuku.jpg" alt="Judul Buku">
+                  </a>
+                </div>
+                <div class="media-body garisbawah">
+                  <a href="post?show=<?php echo $row2['url']; ?>"><h4 class="media-heading"><?php echo $row2['judul']; ?></h4></a>
+                  <small><?php echo $row2['pengarang']; ?></small>
+                  <p><?php echo excerpt($row2['deskripsi'],0,250); ?></p>
+                  <div class="navbody">
+                    <!-- <div class="col-md-6">
+                      <a href="#"><button type="button" class="btn btn-primary" name="button">Sewa</button></a>
+                      <a href="#"><button type="button" class="btn btn-danger" name="button">Beli</button></a>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+              <?php } ?>
 
             </div>
           </div>

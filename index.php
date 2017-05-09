@@ -1,8 +1,10 @@
 <?php
-include_once 'view/header.php';
-include_once 'view/navbar.php';
+require_once 'core/init.php';
+require_once 'view/header.php';
+require_once 'view/navbar.php';
 
-$allPost = showAllPost();
+$allPost      = showAllPost();
+$popularPost  = popularPost();
 
 ?>
 
@@ -122,68 +124,22 @@ $allPost = showAllPost();
               </div>
             </div>
             <div class="promoted first-content">
-              <h2 class="garisbawah">Promoted Books</h2>
+              <h2 class="garisbawah">Paling Banyak Dilihat</h2>
               <div class="scroll-page">
-                <a href="#">
+                <?php while($trend = mysqli_fetch_array($popularPost)) { ?>
+                <a href="post?show=<?php echo $trend['url']; ?>">
                   <div class="media">
                     <div class="media-left">
                         <img class="media-object" src="assets/bg.jpeg" alt="Judul Buku">
                     </div>
                     <div class="media-body garisbawah">
-                      <h4 class="media-heading">Ini judul buku</h4>
-                      <small>oleh WR. Supratman</small>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, reiciendis?</p>
+                      <h4 class="media-heading"><?php echo $trend['judul']; ?></h4>
+                      <small>Penulis: <?php echo $trend['pengarang']; ?></small>
+                      <p><?php echo excerpt50($trend['deskripsi']); ?></p>
                     </div>
                   </div>
                 </a>
-                <a href="#">
-                  <div class="media ">
-                    <div class="media-left">
-                        <img class="media-object" src="assets/bg2.jpg" alt="Judul Buku">
-                    </div>
-                    <div class="media-body garisbawah">
-                      <h4 class="media-heading">Ini judul buku</h4>
-                      <small>oleh WR. Supratman</small>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, reiciendis?</p>
-                    </div>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="media ">
-                    <div class="media-left">
-                        <img class="media-object" src="assets/fb.png" alt="Judul Buku">
-                    </div>
-                    <div class="media-body garisbawah">
-                      <h4 class="media-heading">Ini judul buku</h4>
-                      <small>oleh WR. Supratman</small>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, reiciendis?</p>
-                    </div>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="media ">
-                    <div class="media-left">
-                        <img class="media-object" src="assets/coverbuku.jpg" alt="Judul Buku">
-                    </div>
-                    <div class="media-body garisbawah">
-                      <h4 class="media-heading">Ini judul buku</h4>
-                      <small>oleh WR. Supratman</small>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, reiciendis?</p>
-                    </div>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="media ">
-                    <div class="media-left">
-                      <img class="media-object" src="assets/coverbuku.jpg" alt="Judul Buku">
-                    </div>
-                    <div class="media-body garisbawah">
-                      <h4 class="media-heading">Ini judul buku</h4>
-                      <small>oleh WR. Supratman</small>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, reiciendis?</p>
-                    </div>
-                  </div>
-                </a>
+                <?php } ?>
               </div>
 
               <a href=""><small class="first-content text-primary premium"><i class="fa fa-tasks"></i> Bagaimana agar buku dipromosikan?</small></a>

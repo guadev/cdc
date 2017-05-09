@@ -7,45 +7,62 @@ $pesan = '';
 if(isset($_SESSION['user'])) {
   $login = true;
 } else {
-  header('location:login.php');
+  header('location:login');
 }
 
 //validate form
 $penulisPost = '';
+$no_id = '';
+
+//fixed dynamic value
+$tglPost            = date('j-m-Y');
+$sessionUser        = $_SESSION['user'];
+
+//get nama penulis post
+$query              = "SELECT nama FROM user WHERE user_name = '$sessionUser'";
+$getNamaPenulisPost = mysqli_query($link, $query);
+while($row1 = mysqli_fetch_assoc($getNamaPenulisPost)) {
+  $penulisPost = $row1['nama'];
+}
+
+//get no_id penulis post (identitas)
+$query              = "SELECT no_id FROM user WHERE nama = '$penulisPost'";
+$getNoIdPenulisPost = mysqli_query($link, $query);
+while($row = mysqli_fetch_assoc($getNoIdPenulisPost)) {
+  $no_id = $row['no_id'];
+}
+
+//set default value
+$hargaBeli = 0;
+$hargaSewa = 0;
 if(isset($_POST['submit'])) {
-
-  $judulBuku      = $_POST['judulBuku'];
-  $penulisBuku    = $_POST['penulisBuku'];
-  $tahunTerbit    = $_POST['tahunTerbit'];
-  $penerbit       = $_POST['penerbit'];
+  $judul          = $_POST['judul'];
+  $penulisBuku    = $_POST['pengarang'];
+  $tahunTerbit    = $_POST['tahun_terbit'];
+  $stock          = $_POST['stock'];
   $tag            = $_POST['tag'];
-  $harga          = $_POST['harga'];
-  $deskripsi      = $_POST['deskripsibuku'];
-  $alamat         = $_POST['alamat'];
-  $penulisPost    = $_SESSION['user'];
-  $jenisTransaksi = '';
-  if(!empty($_POST['jual']) || !empty($_POST['sewa'])) {
-    if(isset($_POST['jual'])) {
-      $jenisTransaksi = 'jual';
-    } else if($_POST['sewa']){
-      $jenisTransaksi = 'sewa';
-    }
-  }
+  $hargaSewa      = $_POST['harga_sewa'];
+  $hargaBeli      = $_POST['harga_beli'];
+  $deskripsi      = $_POST['deskripsi'];
+  $cod            = $_POST['cod'];
 
-
-
-  if(!empty(trim($judulBuku)) && !empty(trim($penulisBuku)) && !empty(trim($tahunTerbit)) && !empty(trim($penerbit)) && !empty(trim($tag))
-      && !empty(trim($harga)) && !empty(trim($deskripsi)) && !empty(trim($alamat)) && !empty(trim($jenisTransaksi))){
-    if(postingBuku($judulBuku, $penulisBuku, $tahunTerbit, $penerbit, $tag, $harga, $deskripsi, $alamat, $penulisPost, $jenisTransaksi)) {
-      $pesan = '<div class="alert alert-success" role="alert"><strong>Berhasil!</strong> Postingan anda berhasil dipublish.</div>';
+  if(!empty(trim($judul)) && !empty(trim($penulisBuku)) && !empty(trim($tahunTerbit)) && !empty($stock) && !empty(trim($tag))
+      && !empty(trim($hargaSewa)) && !empty(trim($hargaBeli)) && !empty(trim($deskripsi)) && !empty(trim($cod)) && !empty(trim($tglPost))){
+    if(publishBuku($judul, $penulisBuku, $tahunTerbit, $stock, $tag, $hargaSewa, $hargaBeli, $deskripsi, $cod, $penulisPost, $tglPost, $no_id)) {
+      $pesan = '<div class="alert alert-success" role="alert"><strong>Berhasil!</strong> Postingan anda berhasil dipublish. <a href="akun"><strong>KLIK</strong></a> untuk melihat.</div>';
       //header('location:index.php');
     } else {
-      $pesan = '<div class="alert alert-danger" role="alert"><strong>Oops!</strong> Ada masalah saat memposting..</div>';
+      $pesan = '<div class="alert alert-danger" role="alert"><strong>Oops!</strong> Mohon maaf ada masalah dengan sistem kami.</div>';
     }
   } else {
-    $pesan = '<div class="alert alert-warning" role="alert"><strong>Note: </strong>Semua form harus diisi</div>';
+    $pesan = '<div class="alert alert-warning" role="alert"><strong>Catatan: </strong>Semua form harus diisi</div>';
   }
-
+}
+function isSubmit() {
+  if (isset($_POST['submit'])) {
+    return true;
+  }
+  return false;
 }
 ?>
     <!-- nav -->
@@ -111,73 +128,47 @@ if(isset($_POST['submit'])) {
               </div>
             </div>
             <div class="garisbawah"></div>
-            <!-- <h4 class="first-content">Model transaksi</h4>
-            <div class="input-group">
-                <div class="input-group-addon">
-                  <input type="checkbox" name="jual" value="jual">
-                </div>
-                <p class="form-control">Dijual</p>
-            </div>
-            <div class="input-group">
-                <div class="input-group-addon">
-                  <input type="checkbox" name="sewa" value="sewa">
-                </div>
-                <p class="form-control">Disewakan</p>
-            </div> -->
           </div>
 
           <div class="col-md-9 panelkanan">
             <h4>Informasi Buku</h4>
             <?php echo $pesan; ?>
             <form action="" method="post" autocomplete="on">
-              <input class="form-control" type="text" name="judulBuku" value="" placeholder="Judul Buku" required>
-              <input class="form-control" type="text" name="penulisBuku" value="" placeholder="Nama Penulis" required>
+              <input class="form-control" type="text" name="judul" value="<?php if(isSubmit())echo $judul; ?>" placeholder="Judul Buku" required>
+              <input class="form-control" type="text" name="pengarang" value="<?php if(isSubmit())echo $penulisBuku; ?>" placeholder="Nama Penulis" required>
               <div class="col-md-2 space space-left">
-                <input class="form-control" type="text" name="tahunTerbit" value="" placeholder="Tahun Terbit" required>
+                <input class="form-control" type="text" name="tahun_terbit" value="<?php if(isSubmit())echo $tahunTerbit; ?>" placeholder="Tahun Terbit" required>
               </div>
-              <div class="col-md-5 space">
-                <input class="form-control" type="text" name="penerbit" value="" placeholder="Penerbit" required>
+              <div class="col-md-3 space">
+                <input class="form-control" type="text" name="stock" value="<?php if(isSubmit())echo $stock; ?>" placeholder="Stock buku" required>
               </div>
-              <div class="col-md-4 space">
+              <div class="col-md-7 space">
                 <select class="form-control" name="tag" required>
-                  <option value="edukasi">Edukasi</option>
-                  <option value="bisnis">Bisnis</option>
-                  <option value="novel">Novel dan komik</option>
-                  <option value="lain">Lainnya</option>
+                  <option value="Edukasi">Edukasi</option>
+                  <option value="Bisnis">Bisnis</option>
+                  <option value="Novel">Novel dan komik</option>
+                  <option value="Lain">Lainnya</option>
                 </select>
               </div>
-              <!-- <div class="col-md-5 space space-right">
-                <input class="form-control" type="text" name="" value="" placeholder="Tempat terbit" required>
-              </div> -->
               <div class="input-group">
                 <div class="input-group-addon">
                   <input type="checkbox" name="jual" value="jual">
                 </div>
                 <p class="form-control">Jual</p>
+                <input class="form-control" type="number" name="harga_beli" value="<?php if(isSubmit())echo $hargaBeli; ?>" placeholder="Harga Jual. e.g: 40000">
               </div>
+              <br>
               <!-- jika pinjemin maka langsung centang -->
               <div class="input-group">
                 <div class="input-group-addon">
-                  <?php
-                    if (isset($_POST['pinjemin'])) {
-                    ?>
-                    <input type="checkbox" name="sewa" value="sewa" checked="true">
-                    <?php
-                  }else {
-                    ?>
                     <input type="checkbox" name="sewa" value="sewa" >
-                    <?php
-                  }
-                   ?>
                 </div>
                 <p class="form-control">Sewakan</p>
+                <input class="form-control" type="number" name="harga_sewa" value="<?php if(isSubmit())echo $hargaSewa; ?>" placeholder="Harga Sewa. e.g: 10000">
               </div>
-
-              <br>
-              <input class="form-control" type="number" min="4" name="harga" value="" placeholder="Harga. e.g: 10000" required>
               <label for="deskripsibuku" class="first-content block">Deskripsi</label>
-              <textarea name="deskripsibuku" id="deskripsibuku" class="block form-control" placeholder="Deskripsikan apa yang dibahas di dalam buku, sinopsis (jika novel), jumlah halaman dan informasi yang menggambarkan buku tersebut. " required></textarea> <br>
-              <input class="form-control" type="text" name="alamat" value="" placeholder="Alamat anda e.g: Lowokwaru, Malang Kota dsb untuk memudahkan transaksi.">
+              <textarea name="deskripsi" id="deskripsibuku" class="block form-control" value="<?php if(isSubmit())echo $deskripsi; ?>" placeholder="Deskripsikan apa yang dibahas di dalam buku, sinopsis (jika novel), jumlah halaman dan informasi yang menggambarkan buku tersebut. " required></textarea> <br>
+              <input class="form-control" type="text" name="cod" value="<?php if(isSubmit())echo $cod; ?>" placeholder="Alamat untuk bertransaksi (COD) e.g: Balai Kota Malang atau Jl. Gajayana dsb.">
               <!-- <label for="sinposis" class="first-content block">Sinopsis</label>
               <textarea name="sinposis" id="sinposis" class="block form-control"></textarea> -->
               <!-- <button type="submit" name="submit" class="first-content add-space btn btn-primary btn-lg"><i class="fa fa-send-o"></i>&nbsp; Posting</button> -->

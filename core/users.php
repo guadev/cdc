@@ -47,14 +47,14 @@ function emailValidation($email)
 
 function online($username) {
   global $link;
-  $query  = "UPDATE users SET online = 1 WHERE username='$username'";
+  $query  = "UPDATE user SET online = 1 WHERE user_name='$username'";
   $result = mysqli_query($link, $query);
   return $result;
 }
 
 function offline($username) {
   global $link;
-  $query  = "UPDATE users SET online = 0 WHERE username='$username'";
+  $query  = "UPDATE user SET online = 0 WHERE user_name='$username'";
   $result = mysqli_query($link, $query);
   return $result;
 }
@@ -80,11 +80,6 @@ function login($username, $password) {
   } else {
       return false;
   }
-}
-
-function akun($user) {
-  global $link;
-  
 }
 
  ?>
