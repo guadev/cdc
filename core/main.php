@@ -38,7 +38,7 @@ function publishBuku($judul, $penulisBuku, $tahunTerbit, $stock, $tag, $hargaSew
   $url            = time(); //generate random int for url
 
   $query = "INSERT INTO buku(url, judul, pengarang, tahun_terbit, harga_beli, harga_sewa, jumlah_tersedia, tgl_publikasi, id_penjual, tag, status, deskripsi, cod, views)
-            VALUES('$url', '$judul', '$penulisBuku', '$tahunTerbit', $hargaBeli, '$hargaSewa', '$stock', $tglPost, '$no_id', '$tag', 0, '$deskripsi', '$cod', 0)";
+            VALUES('$url', '$judul', '$penulisBuku', '$tahunTerbit', $hargaBeli, '$hargaSewa', '$stock', '$tglPost', '$no_id', '$tag', 0, '$deskripsi', '$cod', 0)";
   return run($query);
 }
 
@@ -68,14 +68,8 @@ function deleteData($id) {
   return run($query);
 }
 
-function excerpt($string) { //membatasi karakter yang ditampilkan
-  $string = substr($string, 0, 250);
-
-  return $string . '...';
-}
-
-function excerpt50($string) { //membatasi karakter yang ditampilkan
-  $string = substr($string, 0, 70);
+function excerpt($string, $max) { //membatasi karakter yang ditampilkan
+  $string = substr($string, 0, $max);
 
   return $string . '...';
 }
@@ -97,6 +91,14 @@ function popularPost() {
   $query = "SELECT * FROM buku ORDER BY views DESC LIMIT 5";
   $result = mysqli_query($link, $query);
   return $result;
+}
+
+
+function isSubmit() {
+  if (isset($_POST['submit'])) {
+    return true;
+  }
+  return false;
 }
 
  ?>

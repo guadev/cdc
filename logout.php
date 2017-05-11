@@ -5,9 +5,9 @@ if(isset($_SESSION['user'])) {
   offline($_SESSION['user']);
   session_unset();
   session_destroy();
-  header('location:login.php');
+  header('location:login');
 } else {
-  header('location:index.php');
+  header('location:index');
 }
 
  ?>

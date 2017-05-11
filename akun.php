@@ -51,7 +51,7 @@ while($row = mysqli_fetch_assoc($readData)) {
                 <div class="media-body garisbawah">
                   <a href="post?show=<?php echo $row2['url']; ?>"><h4 class="media-heading"><?php echo $row2['judul']; ?></h4></a>
                   <small><?php echo $row2['pengarang']; ?></small>
-                  <p><?php echo excerpt($row2['deskripsi'],0,250); ?></p>
+                  <p><?php echo excerpt($row2['deskripsi'], 250); ?></p>
                   <div class="navbody">
                     <!-- <div class="col-md-6">
                       <a href="#"><button type="button" class="btn btn-primary" name="button">Sewa</button></a>

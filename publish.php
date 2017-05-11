@@ -35,6 +35,7 @@ while($row = mysqli_fetch_assoc($getNoIdPenulisPost)) {
 //set default value
 $hargaBeli = 0;
 $hargaSewa = 0;
+
 if(isset($_POST['submit'])) {
   $judul          = $_POST['judul'];
   $penulisBuku    = $_POST['pengarang'];
@@ -58,12 +59,7 @@ if(isset($_POST['submit'])) {
     $pesan = '<div class="alert alert-warning" role="alert"><strong>Catatan: </strong>Semua form harus diisi</div>';
   }
 }
-function isSubmit() {
-  if (isset($_POST['submit'])) {
-    return true;
-  }
-  return false;
-}
+
 ?>
     <!-- nav -->
     <nav id="top-bar" class="navbar navbar-default navbar-fixed-top" data-nav-status="toggle">
@@ -133,7 +129,7 @@ function isSubmit() {
           <div class="col-md-9 panelkanan">
             <h4>Informasi Buku</h4>
             <?php echo $pesan; ?>
-            <form action="" method="post" autocomplete="on">
+            <form action="" method="post">
               <input class="form-control" type="text" name="judul" value="<?php if(isSubmit())echo $judul; ?>" placeholder="Judul Buku" required>
               <input class="form-control" type="text" name="pengarang" value="<?php if(isSubmit())echo $penulisBuku; ?>" placeholder="Nama Penulis" required>
               <div class="col-md-2 space space-left">

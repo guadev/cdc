@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Cari buku yang anda inginkan dengan mudah!">
-    <title>Get The Book | Home</title>
+    <title>Get The Book</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/font-awesome.css">
@@ -20,3 +20,4 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+  <body>

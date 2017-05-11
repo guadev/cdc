@@ -19,8 +19,7 @@ $popularPost  = popularPost();
             if ($login) {
             ?>
             <li class="pull-right"><a href="akun"><?php echo "Selamat datang, ".$_SESSION['user']; ?></a></li>
-            <li class="pull-right"><a href="logout">Log Out</a></li>
-
+            <li class="pull-right"><a href="logout">Logout</a></li>
             <?php
           }else{
             ?>
@@ -135,7 +134,7 @@ $popularPost  = popularPost();
                     <div class="media-body garisbawah">
                       <h4 class="media-heading"><?php echo $trend['judul']; ?></h4>
                       <small>Penulis: <?php echo $trend['pengarang']; ?></small>
-                      <p><?php echo excerpt50($trend['deskripsi']); ?></p>
+                      <p><?php echo excerpt($trend['deskripsi'], 40); ?></p>
                     </div>
                   </div>
                 </a>
@@ -166,7 +165,7 @@ $popularPost  = popularPost();
                       <a href="post?show=<?php echo $row['url']; ?>"><h4 class="media-heading"><?php echo $row['judul']; ?></h4></a>
                       <small>Diposting: <?php echo $row['nama']; ?>, Penulis buku: <?php echo $row['pengarang']; ?></small> <br>
                       <small>Waktu: <?php echo $row['tgl_publikasi']; ?></small>
-                      <p><?php echo excerpt($row['deskripsi']); ?></p>
+                      <p><?php echo excerpt($row['deskripsi'], 250); ?></p>
                       <div class="navbody">
                         <div class="col-md-6 col-sm-6 no-padding">
                           <small>Kategori: <?php echo $row['tag']; ?></small>

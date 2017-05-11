@@ -35,7 +35,7 @@ if(isset($_POST['submit'])) {
         $_POST = array();
         $pesan = '<div class="alert alert-success" role="alert">Berhasil mendaftar! Silahkan <a href="login"><b>Masuk</b></a> untuk melanjutkan</div>';
       } else {
-        $pesan = '<div class="alert alert-warning" role="alert">Username atau email telah digunakan/tidak valid!.</div>';
+        $pesan = '<div class="alert alert-warning" role="alert">Username atau email telah digunakan!.</div>';
       }
     } else {
       $pesan = '<div class="alert alert-danger" role="alert">Semua form harus diisi!</div>';
@@ -60,14 +60,7 @@ if(isset($_POST['submit'])) {
           // if(isset($_POST['firstname']))echo $_POST['firtsname']
          ?>
       </div>
-      <?php
-        function isSubmit() {
-          if (isset($_POST['submit'])) {
-            return true;
-          }
-          return false;
-        }
-       ?>
+
     <div class="row contact-form">
       <form class="first-content" action="" method="post">
 
