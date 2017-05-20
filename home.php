@@ -2,7 +2,10 @@
 require_once 'core/init.php';
 require_once 'view/header.php';
 // require_once 'view/navbar.php';
-$login = true;
+$login = false;
+if(isset($_SESSION['user'])) {
+  $login = true;
+}
 $value = '';
 if(isset($_GET['halaman'])) {
   $value = (int)$_GET['halaman'];
