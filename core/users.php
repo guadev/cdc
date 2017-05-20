@@ -27,10 +27,10 @@ function register($nama, $username, $email, $password, $identitas, $no_identitas
   $valid = emailValidation($email);
 
   if($row1 == 0 && $row2 == 0 && $valid == true) {
-    $query    = "INSERT INTO user(nama, user_name, email, password, jenis_id, no_id, hp, alamat, jenis_kelamin, akademik, online)
+    $query    = "INSERT INTO user(nama, user_name, email, password, jenis_id, no_id, hp, alamat, gender, akademik, online)
                   VALUES('$nama', '$username', '$email', '$password', '$identitas', '$no_identitas', '$hp', '$alamat', '$gender', '$asal', 0)";
-    $register = mysqli_query($link, $query);
-    return true;
+    $register = mysqli_query($link, $query) or die('Error query register!');
+    return $register;
   } else {
     return false;
   }

@@ -1,4 +1,4 @@
-<?php
+ <?php
 require_once 'core/init.php';
 $login = false;
 if(isset($_SESSION['user'])) {

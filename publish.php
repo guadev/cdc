@@ -4,6 +4,7 @@ require_once 'view/header.php';
 
 $login = false;
 $pesan = '';
+
 if(isset($_SESSION['user'])) {
   $login = true;
 } else {
@@ -50,8 +51,8 @@ if(isset($_POST['submit'])) {
   if(!empty(trim($judul)) && !empty(trim($penulisBuku)) && !empty(trim($tahunTerbit)) && !empty($stock) && !empty(trim($tag))
       && !empty(trim($hargaSewa)) && !empty(trim($hargaBeli)) && !empty(trim($deskripsi)) && !empty(trim($cod)) && !empty(trim($tglPost))){
     if(publishBuku($judul, $penulisBuku, $tahunTerbit, $stock, $tag, $hargaSewa, $hargaBeli, $deskripsi, $cod, $penulisPost, $tglPost, $no_id)) {
-      $pesan = '<div class="alert alert-success" role="alert"><strong>Berhasil!</strong> Postingan anda berhasil dipublish. <a href="akun"><strong>KLIK</strong></a> untuk melihat.</div>';
-      //header('location:index.php');
+      $pesan = '<div class="alert alert-success" role="alert"><strong style="color:#3c763d;">Berhasil!</strong> Postingan anda berhasil dipublish. <a href="akun"><strong>KLIK</strong></a> untuk melihat.</div>';
+      // header('location:publish?=sukOses');
     } else {
       $pesan = '<div class="alert alert-danger" role="alert"><strong>Oops!</strong> Mohon maaf ada masalah dengan sistem kami.</div>';
     }

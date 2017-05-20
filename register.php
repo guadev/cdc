@@ -82,9 +82,9 @@ if(isset($_POST['submit'])) {
             <small class="block underline first-content"><a href="#" class="text-warning">Untuk apa nomor identitas?</a></small>
             <div class="col-md-3 no-padding">
               <select class="form-control" id="select" name="identitas">
-                <option value="ktp">KTP</option>
-                <option value="ktm">KTM</option>
-                <option value="kartu pelajar">Kartu Pelajar</option>
+                <option value="KTP">KTP</option>
+                <option value="KTM">KTM</option>
+                <option value="Kartu Pelajar">Kartu Pelajar</option>
               </select>
             </div>
             <div class="col-md-9 col-xs-9 col-sm-9 text-box no-padding clearfix">

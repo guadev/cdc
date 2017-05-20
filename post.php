@@ -3,7 +3,7 @@ require_once 'core/init.php';
 require_once 'view/header.php';
 require_once 'view/navbar_fix.php';
 
-$allPost = showAllPost();
+$allPost = showAllPost(0, 5);
 
 $url          = $_GET['show'];
 $readData     = showPostByUrl($url);

@@ -1,37 +1,8 @@
 <?php
 require_once 'core/init.php';
-include_once 'view/header.php';
+require_once 'view/header.php';
+require_once 'view/navbar_fix.php';
 ?>
-    <!-- nav -->
-    <nav id="top-bar" class="navbar navbar-default navbar-fixed-top" data-nav-status="toggle">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.php">GEDEBUK</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="menu">
-          <form class="navbar-form navbar-left search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Cari judul buku/nama pengarang">
-            </div>
-            <button type="submit" class="btn btn-default">Cari</button>
-          </form>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="login.php">Log In</a></li>
-            <li><a  href="register.php"><span class="text-warning">Daftar</span></a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-    <!--end of nav -->
 
         <!-- category -->
     <section class="sec first-content page">
@@ -43,25 +14,25 @@ include_once 'view/header.php';
               <h2>Kategori</h2>
               <div class="input-group">
                 <div class="input-group-addon">
-                  <input type="checkbox" checked aria-label="...">
+                  <input name="edukasi" type="checkbox" checked aria-label="...">
                 </div>
                 <p class="inline deskrip form-control"><i class="fa fa-book fa-fw"></i> Edukasi</p>
               </div>
               <div class="input-group">
                 <div class="input-group-addon">
-                  <input type="checkbox" checked aria-label="...">
+                  <input name="bisnis" type="checkbox" checked aria-label="...">
                 </div>
                 <p class="inline deskrip form-control"><i class="fa fa-money fa-fw"></i> Bisnis</p>
               </div>
               <div class="input-group">
                 <div class="input-group-addon">
-                  <input type="checkbox" checked aria-label="...">
+                  <input name="komik" type="checkbox" checked aria-label="...">
                 </div>
                 <p class="inline deskrip form-control"><i class="fa fa-fire fa-fw"></i> Komik</p>
               </div>
               <div class="input-group">
                 <div class="input-group-addon">
-                  <input type="checkbox" checked aria-label="...">
+                  <input name="lainnya" type="checkbox" checked aria-label="...">
                 </div>
                 <p class="inline deskrip form-control"><i class="fa fa-book fa-fw"></i> Bacaan sehari-hari</p>
               </div>
@@ -92,7 +63,7 @@ include_once 'view/header.php';
               </div>
             </div>
             <div class="col-md-12 add-space first-content no-padding">
-              <button type="submit" class="btn btn-primary" name="tag">Apply</button>
+              <button name="filter" type="submit" class="btn btn-primary" name="tag">Filter</button>
             </div>
             <div class="promoted first-content">
               <h1 class="garisbawah no-margin">Rekomendasi</h1>

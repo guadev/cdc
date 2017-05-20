@@ -1,380 +1,307 @@
 <?php
 require_once 'core/init.php';
-require_once 'view/header.php';
-require_once 'view/navbar.php';
 
-$allPost      = showAllPost();
-$popularPost  = popularPost();
+if(isset($_SESSION['user'])) {
+  header('location:home.php');
+}
 
-?>
+$pesan = '';
 
-<!-- header -->
-<header class="parallax-window" data-parallax="scroll" data-speed="0.2" data-image-src="assets/bg.jpeg">
-  <div class="cover">
-    <div class="container first-content">
-      <div class="fly hidden-xs">
-        <ul>
-          <li class="pull-left"><a href="index"><i class="fa fa-gg"></i> Gedebuk</a></li>
-          <?php
-            if ($login) {
-            ?>
-            <li class="pull-right"><a href="akun"><?php echo "Selamat datang, ".$_SESSION['user']; ?></a></li>
-            <li class="pull-right"><a href="logout">Logout</a></li>
-            <?php
-          }else{
-            ?>
-            <li class="pull-right"><a href="login">Log In</a></li>
-            <li class="pull-right"><a href="register">Register</a></li>
-            <?php
-          }
-           ?>
-           <li class="pull-right"><a href="forum/">Forum</a></li>
+if(isset($_POST['login'])) {
+  $username  = escape($_POST['username']);
+  $password  = escape($_POST['password']);
 
-        </ul>
-      </div>
-      <div class="headerfooter">
-        <abbr title="Temukan kami di facebook!"><a class="sosmed fb" href="https://www.facebook.com/gedebuk"><img src="assets\fb.png" alt="Share to Facebook"></a></abbr>
-        <abbr title="Temukan kami di Instagram"><a class="sosmed" href="https://instagram.com/gedebuk"><img src="assets\ig.png" alt="Share to Instagram"></a></abbr>
-        <abbr title="Temukan kami di twitter!"><a class="sosmed" href="https://twitter.com/gedebuk"><img src="assets\tw.png" alt="Share to Twiter"></a></abbr>
-      </div>
-      <div class="forum hidden-xs hidden-sm">
-        <abbr title="Buka forum"><a href="#"><h4 class="garisbawah secondary-colorwhite">Forum</h4></a></abbr>
-        <ul class="fa fa-ul">
-          <h6 class="first-content">BELUM TERJAWAB</h6>
-          <li><a href="#" class="underline"><i class="fa fa-li fa-list"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, maxime.</a></li>
-          <li><a href="#" class="underline"><i class="fa fa-li fa-list"></i> Pertanyaan 2</a></li>
-          <li><a href="#" class="underline"><i class="fa fa-li fa-list"></i> Pertanyaan 3</a></li>
-          <li><a href="#" class="underline"><i class="fa fa-li fa-list"></i> Pertanyaan 4</a></li>
-          <li><a href="#" class="underline"><i class="fa fa-li fa-list"></i> Pertanyaan 5</a></li>
-          <li role="separator" class="divider first-content"></li>
-          <h6>SOLVED</h6>
-          <li><a href="#" class="underline"><i class="fa fa-li fa-list"></i> Pertanyaan 1 [SOLVED]</a></li>
-          <li><a href="#" class="underline"><i class="fa fa-li fa-list"></i> Pertanyaan 2</a></li>
-          <li><a href="#" class="underline"><i class="fa fa-li fa-list"></i> Pertanyaan 3</a></li>
-          <li><a href="#" class="underline"><i class="fa fa-li fa-list"></i> Pertanyaan 4</a></li>
-          <li><a href="#" class="underline"><i class="fa fa-li fa-list"></i> Pertanyaan 5</a></li>
-        </ul>
-      </div>
-      <div class="row">
-        <div class="col-md-9 col-md-offset-3 col-xs-12 col-sm-12 text-center add-space no-padding" id="layer">
-          <h1>Cara mudah cari buku!</h1>
-          <div class="secondary-colorwhite first-content scroll">
-            <p class="first-content">Lorem ipsum dolor sit amet, djsdnejnd ejsubd jues bjst dignissimos quisquam in.</p>
-            <p>Derah malang dan sekitarnya</p>
-          </div>
-          <div class="col-md-offset-2 col-md-8 scroll">
-            <form action="search" mehod="post">
-            <div class="secondary-colorwhite">
-                <div id="box" class="col-md-10 col-sm-10 col-xs-9 text-box no-padding no-margin">
-                  <input id="inputcari" class="search" type="text" name="search" placeholder="Ketik judul buku yang dicari...">
-                </div>
-                <div id="suggest"></div>
-            </div>
-                <div class="col-md-2 col-sm-2 col-xs-3 text-box no-padding no-margin">
-                  <button class="btn btn-lg btn-primary no-margin" type="submit" id="search" name="submit"><p><i class="fa fa-search"></i></p></button>
-                </div>
+  if(!empty(trim($username)) && !empty(trim($password))) {
+    if(login($username, $password)) {
+      online($_SESSION['user']);
+      header('location:home');
+    } else {
+      $pesan = '<div class="alert alert-danger" role="alert">username / email atau password salah!</div>';
+    }
+  } else {
+    $pesan = '<div class="alert alert-warning" role="alert">username / email dan password harus diisi!</div>';
+  }
+}
+
+$allPost = indexPost();
+
+
+ ?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cari buku yang anda inginkan dengan mudah!">
+    <title>Get The Book | Home</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="land">
+    <!-- nav -->
+    <nav id="home-bar" class="navbar navbar-hidden navbar-default navbar-fixed-top" data-nav-status="toggle">
+      <div class="navpad container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index">GEDEBUK</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="nav navbar-nav navbar-right">
+            <!-- <li><a  href="pages/forum.html">Servis</a></li> -->
+            <li><a  href="home.php">Produk</a></li>
+            <li><a id="pad" href="register.php"><button type="button" class="btn btn-primary btn-login" name="button">Gabung</button></a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!--end of nav -->
+
+    <header>
+      <div id="login-form">
+        <div class="wrapper">
+          <p>Login</p>
+          <small>Belum punya akun? <a href="register">Daftar disini.</a></small>
+          <?php echo $pesan; ?>
+          <div class="target">
+            <form action="" method="post">
+              <input type="text" class="inside-wrapper form-control" name="username" placeholder="Username" autofocus="true">
+              <input type="password" class="inside-wrapper form-control" name="password" placeholder="Password">
+              <input type="submit" class="btn btn-md btn-default" name="login" value="Masuk">
             </form>
-            </div>
+            <a href="#close" class="close"><i class="fa fa-arrow-circle-left"></i></a>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</header>
-<!-- end ofheader -->
-
-<section class="offer">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-9">
-        <h4>Punya buku tapi tidak terpakai, atau hanya sebagai hiasan rak?</h4>
-        <small>Dan dapatkan keuntungannya!</small>
-      </div>
-      <div class="col-xs-12 col-md-3">
-
-        <form action="publish.php" method="post">
-          <button  type="submit" class="btn btn-lg btn-default wow animated tada" name="pinjemin" >Pinjemin aja!</button>
-        </form>
-
-      </div>
-    </div>
-  </div>
-</section>
-    <!-- category -->
-    <section class="sec">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-sm-12 col-xs-12 panelkiri">
-            <div class="kategori add-space">
-              <h2 class="garisbawah">Kategori</h2>
-              <div class="list-group">
-                <a href="#" class="list-group-item">
-                  <i class="fa fa-book fa-fw"></i> Edukasi
-                </a>
-                <a href="#" class="list-group-item">
-                  <i class="fa fa-money fa-fw"></i> Bisnis
-                </a>
-                <a href="#" class="list-group-item">
-                  <i class="fa fa-fire fa-fw"></i> Komik
-                </a>
-                <a href="#" class="list-group-item">
-                  <i class="fa fa-book fa-fw"></i> Bacaan sehari-hari
-                </a>
+      <div class="cover">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <p class="welcome">Selamat datang di</p>
+              <h1>GEDEBUK</h1>
+              <p class="deskripsi">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non nesciunt optio, molestiae officiis. Aliquam, illo! Dicta illo rerum omnis minima!</p>
+              <div class="col-md-10 col-sm-10 col-xs-9 text-box no-padding no-margin">
+              <form action="search" method="post">
+                <input id="inputcari" class="search" type="text" name="search" placeholder="Cari Buku!" value="">
+              </div>
+              <div class="col-md-2 col-sm-2 col-xs-3 text-box no-padding no-margin">
+                <button class="btn btn-lg btn-primary no-margin" type="submit" id="search"><p><i class="fa fa-search"></i></p></button>
+              </div>
+            </form>
+              <div class="col-md-12 no-padding log">
+                <a href="#login-form"><button class="btn btn-primary btn-md btn1">Login</button></a>
+                <a href="register"><button class="btn btn-danger btn-md btn2">Daftar</button></a>
               </div>
             </div>
-            <div class="promoted first-content">
-              <h2 class="garisbawah">Paling Banyak Dilihat</h2>
-              <div class="scroll-page">
-                <?php while($trend = mysqli_fetch_array($popularPost)) { ?>
-                <a href="post?show=<?php echo $trend['url']; ?>">
-                  <div class="media">
-                    <div class="media-left">
-                        <img class="media-object" src="assets/bg.jpeg" alt="Judul Buku">
-                    </div>
-                    <div class="media-body garisbawah">
-                      <h4 class="media-heading"><?php echo $trend['judul']; ?></h4>
-                      <small>Penulis: <?php echo $trend['pengarang']; ?></small>
-                      <p><?php echo excerpt($trend['deskripsi'], 40); ?></p>
-                    </div>
-                  </div>
-                </a>
-                <?php } ?>
-              </div>
-
-              <a href=""><small class="first-content text-primary premium"><i class="fa fa-tasks"></i> Bagaimana agar buku dipromosikan?</small></a>
+            <div class="col-md-6">
+              <img src="assets/GUAdev.jpg" alt="" class="img-responsive">
             </div>
           </div>
-          <div class="col-md-8 col-sm-12 col-xs-12 no-page-padding">
-            <div class="featured">
-              <!-- <ul class="nav nav-pills no-padding">
-                <li role="presentation" class="active"><a href="#" class="garisbawah">Buku Populer</a></li>
-                <li role="presentation" ><a href="#" class="garisbawah">Buku baru</a></li>
-                <li role="presentation" ><a href="#" class="garisbawah">Buku terlaris</a></li>
-              </ul> -->
-              <ul>
-                <?php
-                while($row = mysqli_fetch_array($allPost)) { ?>
-                <li>
-                  <div class="media">
-                    <div class="media-left">
-                      <a href="#">
-                        <img class="media-object" src="assets/bg2.jpg" alt="Judul Buku">
-                      </a>
-                    </div>
-                    <div class="media-body garisbawah">
-                      <a href="post?show=<?php echo $row['url']; ?>"><h4 class="media-heading"><?php echo $row['judul']; ?></h4></a>
-                      <small>Diposting: <?php echo $row['nama']; ?>, Penulis buku: <?php echo $row['pengarang']; ?></small> <br>
-                      <small>Waktu: <?php echo $row['tgl_publikasi']; ?></small>
-                      <p><?php echo excerpt($row['deskripsi'], 250); ?></p>
-                      <div class="navbody">
-                        <div class="col-md-6 col-sm-6 no-padding">
-                          <small>Kategori: <?php echo $row['tag']; ?></small>
-                        </div>
-                        <div class="col-md-6 col-sm-6 attention">
-                          <a href="post?show=<?php echo $row['url']; ?>"><button type="button" class="btn btn-primary" name="button">Lihat selengkapnya >></button></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              <?php } //end of while ?>
-              </ul>
-              <nav aria-label="Page navigation first-content">
-                <ul class="pagination pull-right">
-                  <li>
-                    <a href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                    </a>
-                  </li>
-                  <li class="active"><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li>
-                    <a href="#" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
+        </div>
+        <div class="headerfooter">
+          <abbr title="Temukan kami di facebook!"><a class="sosmed" href="https://www.facebook.com/gedebuk"><img src="assets\fb.png" alt="Share to Facebook"></a></abbr>
+          <abbr title="Temukan kami di Instagram"><a class="sosmed" href="https://instagram.com/gedebuk"><img src="assets\ig.png" alt="Share to Instagram"></a></abbr>
+          <abbr title="Temukan kami di twitter!"><a class="sosmed" href="https://twitter.com/gedebuk"><img src="assets\tw.png" alt="Share to Twiter"></a></abbr>
+        </div>
+      </div>
+    </header>
+
+    <section class="desc">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2>Apa itu GEDEBUK? <span class="bottom wow animated fadeInLeft"></span></h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis odit eius distinctio culpa expedita sunt placeat, quae dolorum molestiae perspiciatis deleniti repudiandae natus repellendus voluptate excepturi officiis, provident voluptas sequi vero ab veniam dolorem temporibus. Quae quas rem cupiditate maxime, obcaecati provident adipisci excepturi error corporis, aperiam similique, perferendis itaque!</p>
+          </div>
+          <div class="col-md-8 col-md-offset-2 garisbawah"></div>
+        </div>
+      </div>
+    </section>
+    <section class="service">
+      <div class="container text-center">
+        <h2>Layanan kami<span class="bottom wow animated fadeInLeft"></span></h2>
+        <div class="row text-center">
+          <div class="col-md-12 no-padding log">
+            <div class="divider"></div>
+            <div class="col-md-3">
+              <div class="service-inner">
+                <img src="assets/bg.jpeg" alt="" class="img-responsive">
+                <h4>Meminjam</h4>
+                <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, sequi.</small>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="service-inner">
+                <img src="assets/bg.jpeg" alt="" class="img-responsive">
+                <h4>Menyewakan</h4>
+                <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, sequi.</small>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="service-inner">
+                <img src="assets/bg.jpeg" alt="" class="img-responsive">
+                <h4>Bisnis</h4>
+                <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, sequi.</small>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <section class="produk">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2>Produk-produk di gedebuk <span class="bottom wow animated fadeInLeft"></span></h2>
+          </div>
+          <div class="col-md-12 no-padding first-content">
+            <div class="col-md-1"></div> <!--Pembatas, jangan dihapus-->
+            <?php
+            while($row = mysqli_fetch_assoc($allPost)) {
+            ?>
+            <a href="post?show=<?php echo $row['url']; ?>" class="product">
+              <div class="col-md-2 text-center">
+                <div class="produk-inner">
+                  <div>
+                    <div class="img-wrapper">
+                      <img src="assets\coverbuku.jpg" alt="">
+                    </div>
+                    <p><?php echo $row['judul']; ?></p>
+                    <small>Oleh <?php echo $row['pengarang']; ?></small>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <?php } ?>
 
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="lend">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 left">
+            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod saepe, debitis iure voluptatum error quo magni quaerat. Impedit, consequuntur optio!</h4>
+          </div>
+          <div class="col-md-3 right">
+            <a href="publish.php"><button type="button" class="btn btn-lg btn-primary" name="button">Sewain aja</button></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <section class="first-content contact">
+			<div class="container first-content text-center">
+        <h2>Daftar <span class="bottom wow animated fadeInLeft"></span></h2>
+        <p class="contact-head ">Daftar dengan akun baru. Nikmati semua kemudahan
+          yang ada, gratis!</p>
+				<div class="row contact-form">
+					<form class="first-content">
+            <div class="col-md-7">
+              <img src="../assets/bg.jpeg" class="center-block add-space" alt="Icon">
+              <div class="col-md-12 first-content no-padding">
+                <p><b>Halo!</b> Tolong upload foto kamu agar kami dapat mengenali dengan mudah!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id maxime beatae adipisci voluptates quod incidunt aperiam! Maiores esse amet itaque.</p>
+              </div>
+            </div>
+            <div class="col-md-5 well signup">
+              <div class="col-md-12 text-box">
+                <div class="col-md-6 space space-left">
+                  <input type="text" class="form-control" placeholder="First Name" >
+                </div>
+                <div class="col-md-6 space space-right">
+                  <input type="text" class="form-control" placeholder="Last Name" >
+                </div>
+                <input type="text" placeholder="Username" class="form-control">
+                <input type="email" placeholder="e-Mail" class="form-control">
+                <input type="password" id="pass1" placeholder="Password" class="form-control">
+                <div class="confirmMessage">
+                  <input type="password" id="pass2" placeholder="Konfirmasi Password" class="form-control" onkeyup="checkPass(); return false;">
+                  <div id="confirmMessage"></div>
+                </div>
+                <small class="block underline first-content"><a href="#" class="text-warning">Untuk apa nomor identitas?</a></small>
+                <div class="col-md-3 no-padding">
+                  <select class="form-control" id="select">
+                    <option value="KTP">KTP</option>
+                    <option value="KTM">KTM</option>
+                    <option value="SIM">SIM</option>
+                    <option value="Paspor">Paspor</option>
+                    <option value="Kartu pelajar">Kartu pelajar</option>
+                  </select>
+                </div>
+                <div class="col-md-9 col-xs-9 col-sm-9 text-box no-padding clearfix">
+                  <input type="text" placeholder="Nomor identitas" class="form-control">
+                </div>
+                <div class="clearfix"></div>
+                <small class="text-muted block">Alamat</small>
+                <textarea name="alamat" class="form-control text-box"></textarea>
+                <small class="text-warning">*Jika masih mahasiswa/pelajar</small>
+                <input type="text" placeholder="Asal Universitas/sekolah" class="form-control">
+                <div class="col-md-12 first-content">
+                  <div class="col-md-2 no-padding text-left">
+                    <input class="inline no-padding" type="checkbox" name="deal" required>
+                  </div>
+                  <div class="col-md-10 no-padding add-space">
+                    <p>Setuju dengan semua <a class="text-warning underline" href="#">syarat</a> dan <a class="text-warning underline" href="#">ketentuan </a> gedebuk.</p>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-lg btn-primary center-block" name="button">Daftar</button>
+              </div>
+            </div>
+					</form>
+				</div>
+      </div>
+		</section> -->
     <footer>
-      <section class="darklight">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12"><h4 class="text-center text-muted">Mengapa Gedebuk.com ?</h4></div>
-              <div class="col-md-3 col-sm-3 text-center">
-                <div class="fade-up">
-                <div class="spec center-block wow animated pulse">
-                  <h1 class="inline"><i class="fa fa-laptop fa-fw"></i></h1>
-                </div>
-                <h2>User Interface Ramah</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nulla.</p>
-              </div>
-            </div>
-              <div class="col-md-3 col-sm-3 text-center">
-                <div class="fade-up">
-                <div class="spec center-block wow animated pulse delay-2s">
-                  <h1 class="inline"><i class="fa fa-line-chart fa-fw"></i></h1>
-                </div>
-                <h2>Tingkat akurasi maksimal</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nulla.</p>
-              </div>
-            </div>
-              <div class="col-md-3 col-sm-3 text-center">
-                <div class="fade-up">
-                <div class="spec center-block wow animated pulse delay-4s">
-                  <h1 class="inline"><i class="fa fa-chain-broken fa-fw"></i></h1>
-                </div>
-                <h2>Lebih mudah</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nulla.</p>
-              </div>
-            </div>
-              <div class="col-md-3 col-sm-3 text-center">
-                <div class="fade-up">
-                <div class="spec center-block wow animated pulse delay-6s">
-                  <h1 class="inline"><i class="fa fa-handshake-o fa-fw"></i></h1>
-                </div>
-                <h2>Saling menguntungkan</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nulla.</p>
-              </div>
-            </div>
-          </div>
+      <div class="container">
+        <div class="row">
+
         </div>
-      </section>
-      <section class="dark">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-3 col-sm-4">
-              <a href="#">
-                <div class="block help text-center">Hubungi kami</div>
-              </a>
-              <a href="#">
-                <div class="block help text-center">Tips belanja aman</div>
-              </a>
-              <a href="#">
-                <div class="block help text-center">Tips measas</div>
-              </a>
-            </div>
-            <div class="col-md-2 col-md-offset-3 text-center">
-              <p>Dukungan</p>
-              <ul>
-                <li><a href="#">F.A.Q</a></li>
-                <li><a href="#">F.A.Q</a></li>
-                <li><a href="#">F.A.Q</a></li>
-              </ul>
-            </div>
-            <div class="col-md-2 text-center">
-              <p>Bisnis</p>
-              <ul>
-                <li><a href="#">Career</a></li>
-                <li><a href="#">Career</a></li>
-                <li><a href="#">Career</a></li>
-              </ul>
-            </div>
-            <div class="col-md-2 text-center">
-              <p>Gedebuk</p>
-              <ul>
-                <li><a href="#">About Gedebuk</a></li>
-                <li><a href="#">About Gedebuk</a></li>
-                <li><a href="#">About Gedebuk</a></li>
-              </ul>
-            </div>
-        </div>
-      </section>
-      <section class="powered clearfix">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 pull-left">
-              <small class="block">Supported by:</small>
-              <abbr title="Stasion">
-                <a href="#">
-                  <img src="assets/stasion.png" alt="">
-                </a>
-              </abbr>
-              <abbr title="CDC ICT">
-                <a href="#">
-                  <img src="assets/ict.jpg" alt="">
-                </a>
-              </abbr>
-              <abbr title="Inagata technosmith">
-                <a href="#">
-                  <img src="assets/inagata.png" alt="">
-                </a>
-              </abbr>
-            </div>
-            <div class="col-md-6 dev text-right">
-              <p class="inline"><span class="primary-colorwhite">Copyright <?php echo date('Y'); ?></span> | developed by &nbsp; </p>
-              <abbr title="Guadev">
-                <a href="#">
-                  <img src="assets/GUAdev.jpg" alt="">
-                </a>
-              </abbr>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
     </footer>
     <script src="js/jquery.js"></script>
     <script src="js/parallax.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script type="text/javascript">
-    new WOW().init();
+      new WOW().init();
 
-    function parallax(){
-      var prlx_lyr_1 = document.getElementById('layer');
-      prlx_lyr_1.style.top = (window.pageYOffset / 1.38 )+'px';
-    }
-      window.addEventListener("scroll", parallax, false);
-
-    $(document).ready(function(){
-      $(window).scroll(function (event) {
-            var y = $(this).scrollTop();
-            if (y <= 500) {
-              $('#home-bar').addClass('navbar-hidden');
-            }else {
-              $('#home-bar').addClass('animated').addClass('fadeInDown');
-              $('#home-bar').addClass('navbar-fixed-top').addClass('navbar-default');
-              $('#home-bar').removeClass('navbar-hidden');
-            }
-            if (y >= 200) {
-              $('.scroll').addClass('none');
-            }else {
-              $('.scroll').removeClass('none');
-            }
-        });
-    });
-
-    //searching with suggestion
-    $(document).ready(function(){
-      var left = $('#box').position().left;
-      var top = $('#box').position().top;
-      var width = $('#box').width();
-
-      $('#suggest').css('left', left).css('top', top+32).css('width', width);
-
-      $('#inputcari').keyup(function(){
-        var value = $(this).val();
-
-        if(value != '') {
-          $('#suggest').show();
-          $.post('hasilcari.php', {value: value}, function(data){
-            $('#suggest').html(data);
+      $(document).ready(function(){
+        $(window).scroll(function (event) {
+              var y = $(this).scrollTop();
+              if (y <= 180) {
+                $('#home-bar').addClass('navbar-hidden');
+                $('#input').addClass('none');
+              }else {
+                $('#home-bar').addClass('animated').addClass('transition').removeClass('navbar-hidden');
+                $('#input').removeClass('none');
+              }
+              if (y >= 200) {
+                $('.scroll').addClass('none');
+              }else {
+                $('.scroll').removeClass('none');
+              }
           });
-        } else {
-          $('#suggest').hide();
-        }
       });
-
-    });
     </script>
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
-<?php mysqli_close($link); ?>
